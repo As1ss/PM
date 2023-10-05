@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Practica2</string>
+    <string name="hintName">Name</string>
+    <string name="hintLastName">SurName</string>
+    <string name="hintEmail">Email Address</string>
+    <string name="hintDate">Birth Date</string>
+    <string name="textViewCity">City</string>
+    <string name="textGender">Gender</string>
+    <string name="radioTextMale">Male</string>
+    <string name="radioTextFemale">Female</string>
+    <string name="textViewInterests">Interests</string>
+    <string name="textViewSign">Sign</string>
+    <string name="textViewAvatar">Avatar</string>
+
+
+
+    <string-array name="cityList">Burgos Madrid Barcelona Cuenca Málaga</string-array>
 </resources>
