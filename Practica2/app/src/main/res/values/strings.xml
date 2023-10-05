@@ -8,11 +8,24 @@
     <string name="textGender">Gender</string>
     <string name="radioTextMale">Male</string>
     <string name="radioTextFemale">Female</string>
-    <string name="textViewInterests">Interests</string>
+    <string name="textViewInterests">Interests in</string>
     <string name="textViewSign">Sign</string>
     <string name="textViewAvatar">Avatar</string>
 
 
-
-    <string-array name="cityList">Burgos Madrid Barcelona Cuenca Málaga</string-array>
+    <string-array name="cityList">
+        <item>Burgos</item>
+        <item>Madrid</item>
+        <item>Barcelona</item>
+        <item>Cuenca</item>
+        <item>Málaga</item>
+    </string-array>
+    <string-array name="hobbiesList">
+        <item>Reading</item>
+        <item>Painting</item>
+        <item>Gardening</item>
+        <item>Hiking</item>
+        <item>Cooking</item>
+        <item>Playing a Musical Instrument</item>
+    </string-array>
 </resources>
