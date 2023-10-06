@@ -29,17 +29,18 @@ public class MainActivity extends AppCompatActivity {
         adapterArrayHobbies.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spHobbies.setPrompt("Hobbies");
         spHobbies.setAdapter(adapterArrayHobbies);
+        loadImgOnSpinner();
 
 
     }
     private void loadImgOnSpinner() {
         Spinner spinner = findViewById(R.id.spinnerAvatar);
-        List<String> values = Arrays.asList("Op1", "Op 2", "Op3","Op4");
+        List<String> values = Arrays.asList("Op1", "Op2", "Op3","Op4");
         List<Integer> imageResIds = Arrays.asList(
-                R.drawable.image1,
-                R.drawable.image2,
-                R.drawable.image3,
-                R.drawable.image4
+                R.drawable.captainamerica,
+                R.drawable.hulk,
+                R.drawable.ironman,
+                R.drawable.thor
         );
 
         ImageSpinnerAdapter adapter = new ImageSpinnerAdapter(this, values, imageResIds);

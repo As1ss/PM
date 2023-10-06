@@ -3,7 +3,7 @@
     <string name="hintName">Name</string>
     <string name="hintLastName">SurName</string>
     <string name="hintEmail">Email Address</string>
-    <string name="hintDate">Birth Date</string>
+    <string name="hintDate">Birth Date dd/mm/yy</string>
     <string name="textViewCity">City</string>
     <string name="textGender">Gender</string>
     <string name="radioTextMale">Male</string>
