@@ -11,6 +11,7 @@
     <string name="textViewInterests">Interests in</string>
     <string name="textViewSign">Sign</string>
     <string name="textViewAvatar">Avatar</string>
+    <string name="textSignUpButton">Sign up</string>
 
 
     <string-array name="cityList">
@@ -20,12 +21,14 @@
         <item>Cuenca</item>
         <item>Málaga</item>
     </string-array>
+
     <string-array name="hobbiesList">
         <item>Reading</item>
         <item>Painting</item>
         <item>Gardening</item>
         <item>Hiking</item>
         <item>Cooking</item>
-        <item>Playing a Musical Instrument</item>
+        <item>Videogames</item>
     </string-array>
+
 </resources>
