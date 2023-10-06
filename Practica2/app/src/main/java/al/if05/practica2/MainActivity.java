@@ -7,6 +7,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,15 +20,29 @@ public class MainActivity extends AppCompatActivity {
         String[] hobbies = getResources().getStringArray(R.array.hobbiesList);
 
         Spinner spCity = findViewById(R.id.spinnerCity);
-        ArrayAdapter<String> adapterArrayCities = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, cities);
+        ArrayAdapter<String> adapterArrayCities = new ArrayAdapter<>(this, R.layout.spinner_item, cities);
         adapterArrayCities.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spCity.setAdapter(adapterArrayCities);
 
         Spinner spHobbies = findViewById(R.id.spinerInterest);
-        ArrayAdapter<String> adapterArrayHobbies = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, hobbies);
+        ArrayAdapter<String> adapterArrayHobbies = new ArrayAdapter<>(this,  R.layout.spinner_item, hobbies);
+        adapterArrayHobbies.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spHobbies.setPrompt("Hobbies");
         spHobbies.setAdapter(adapterArrayHobbies);
 
 
+    }
+    private void loadImgOnSpinner() {
+        Spinner spinner = findViewById(R.id.spinnerAvatar);
+        List<String> values = Arrays.asList("Op1", "Op 2", "Op3","Op4");
+        List<Integer> imageResIds = Arrays.asList(
+                R.drawable.image1,
+                R.drawable.image2,
+                R.drawable.image3,
+                R.drawable.image4
+        );
+
+        ImageSpinnerAdapter adapter = new ImageSpinnerAdapter(this, values, imageResIds);
+        spinner.setAdapter(adapter);
     }
 }

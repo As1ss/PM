@@ -4,21 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/bg_login">
+    android:background="@drawable/bg_login"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tvInterests"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
         android:autofillHints=""
-
         android:text="@string/textViewInterests"
         android:textColor="@color/bone"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGender" />
 
@@ -27,57 +25,56 @@
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="150dp"
+        android:autofillHints=""
         android:ems="18"
         android:hint="@string/hintName"
-        android:textColorHint="@color/gray"
         android:inputType="text"
+        android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints=""
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextLastName"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="38dp"
+        android:autofillHints=""
         android:ems="18"
         android:hint="@string/hintLastName"
         android:inputType="text"
         android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName"
-        android:autofillHints=""/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="38dp"
+        android:autofillHints=""
         android:ems="18"
         android:hint="@string/hintEmail"
         android:inputType="textEmailAddress"
         android:textColorHint="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLastName"
-        android:autofillHints=""/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextLastName" />
 
     <EditText
         android:id="@+id/editTextDate"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginTop="38dp"
+        android:autofillHints=""
         android:ems="18"
         android:hint="@string/hintDate"
         android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
         android:textColorHint="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
-        android:autofillHints=""/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
 
     <Spinner
@@ -98,26 +95,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/textViewCity"
-        android:textSize="20sp"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
+
     <TextView
         android:id="@+id/tvGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="48dp"
         android:text="@string/textGender"
-        android:textSize="20sp"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCity" />
-
 
     <RadioGroup
         android:id="@+id/radioGroupGender"
@@ -126,10 +122,10 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/tvGender"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.659"
+        app:layout_constraintHorizontal_bias="0.682"
         app:layout_constraintStart_toEndOf="@+id/tvGender"
         app:layout_constraintTop_toTopOf="@+id/tvGender"
-        app:layout_constraintVertical_bias="0.259">
+        app:layout_constraintVertical_bias="0.555">
 
         <RadioButton
             android:id="@+id/radioMale"
@@ -138,6 +134,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/radioTextMale"
             android:textColor="@color/white"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.917"
             app:layout_constraintStart_toEndOf="parent"
@@ -150,6 +147,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/radioTextFemale"
             android:textColor="@color/white"
+            android:textSize="20dp"
 
             app:layout_constraintHorizontal_bias="0.226"
 
@@ -162,25 +160,23 @@
         android:layout_width="208dp"
         android:layout_height="38dp"
         android:layout_marginStart="7dp"
-        android:layout_marginTop="8dp"
-        android:foregroundTintMode="add"
-        app:layout_constraintBottom_toBottomOf="@+id/tvInterests"
+
+        app:layout_constraintBottom_toTopOf="@+id/editTextSign"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.317"
+        app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toEndOf="@+id/tvInterests"
-        app:layout_constraintTop_toTopOf="@+id/tvInterests"
-        app:layout_constraintVertical_bias="0.421" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupGender" />
 
     <TextView
         android:id="@+id/tvSign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
         android:text="@string/textViewSign"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvInterests" />
 
@@ -203,23 +199,24 @@
         android:id="@+id/tvAvatar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="108dp"
         android:text="@string/textViewAvatar"
-        android:textSize="20sp"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spinnerAvatar"
         android:layout_width="172dp"
-        android:layout_height="40dp"
+        android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="@+id/tvAvatar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toEndOf="@+id/tvAvatar"
-        app:layout_constraintTop_toTopOf="@+id/tvAvatar" />
+        app:layout_constraintTop_toTopOf="@+id/tvAvatar"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:layout_width="56dp"
