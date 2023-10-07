@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Practica2</string>
     <string name="hintName">Name</string>
-    <string name="hintLastName">SurName</string>
+    <string name="hintLastName">Last Name</string>
     <string name="hintEmail">Email Address</string>
     <string name="hintDate">Birth Date dd/mm/yy</string>
     <string name="textViewCity">City</string>
@@ -12,6 +12,7 @@
     <string name="textViewSign">Sign</string>
     <string name="textViewAvatar">Avatar</string>
     <string name="textSignUpButton">Sign up</string>
+    <string name="registerTextView">REGISTER</string>
 
 
     <string-array name="cityList">
@@ -22,13 +23,13 @@
         <item>Málaga</item>
     </string-array>
 
-    <string-array name="hobbiesList">
-        <item>Reading</item>
-        <item>Painting</item>
-        <item>Gardening</item>
-        <item>Hiking</item>
-        <item>Cooking</item>
-        <item>Videogames</item>
-    </string-array>
+
+    <string name="optionReading">Reading</string>
+    <string name="optionPainting">Painting</string>
+    <string name="optionGardening">Gardening</string>
+    <string name="optionHiking">Hiking</string>
+    <string name="optionCooking">Cooking</string>
+    <string name="optionVideoGames">Games</string>
+
 
 </resources>

@@ -9,4 +9,5 @@
     <color name="yellow">#ffc305</color>
     <color name="bone">#F9F6EE</color>
     <color name="gray">#C0C0C0</color>
+    <color name="transparent">#00000000</color>
 </resources>
