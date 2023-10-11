@@ -2,7 +2,9 @@ package al.if05.testevents;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.ObjectAnimator;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,8 +23,28 @@ public class MainActivity extends AppCompatActivity {
 
         //Método listener con expresion lambda
         boton.setOnClickListener(view -> {
+            final float velocidad = 500f;
             Toast.makeText(this, "HOLA BOTBERTO", Toast.LENGTH_SHORT).show();
             text.setText("AHORA HA CAMBIADOLF");
+            ObjectAnimator animator = ObjectAnimator.ofFloat(text, "translationY",  velocidad);
+            animator.setDuration(3500);
+            animator.start();
+
+            ObjectAnimator animatorButton = ObjectAnimator.ofFloat(boton,"scaleX",2f);
+            animatorButton.setDuration(2500);
+            animatorButton.start();
+
+            if(boton.getScaleX()==2f){
+                ObjectAnimator animatorButton2 = ObjectAnimator.ofFloat(boton,"scaleX",1f);
+                animatorButton2.setDuration(2500);
+                animatorButton2.start();
+            }
+
+
+
+
+            Log.d("DEBUG","TEST");
+
         });
 /*
   //Método listener instanciando una clase anónima
