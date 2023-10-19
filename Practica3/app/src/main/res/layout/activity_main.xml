@@ -8,14 +8,15 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/contador_textview"
+        android:id="@+id/tvContadorTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ContadorApp"
+        android:text="@string/tituloApp"
         android:textSize="24sp"
         android:layout_gravity="center"
         />
     <com.google.android.material.chip.ChipGroup
+        android:id="@+id/cgTemas"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,27 +24,31 @@
         app:singleSelection="true"
         >
         <com.google.android.material.chip.Chip
+            android:id="@+id/cpTema1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
-            android:text="Tema1"/>
+            android:text="@string/textChip1"/>
         <com.google.android.material.chip.Chip
+            android:id="@+id/cpTema2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
-            android:text="Tema2"/>
+            android:text="@string/textChip2"/>
         <com.google.android.material.chip.Chip
+            android:id="@+id/cpTema3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
-            android:text="Tema3"/>
+            android:text="@string/textChip3"/>
     </com.google.android.material.chip.ChipGroup>
     <TextView
+        android:id="@+id/tvContador"
         android:layout_marginTop="30dp"
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        android:text="0"
+        android:text="@string/contadorText"
         android:textSize="150sp"
         android:gravity="center"/>
 
@@ -54,45 +59,48 @@
         >
 
         <Button
-            android:id="@+id/aumentar_boton"
+            android:id="@+id/btnSuma"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="+"
+            android:text="@string/btnPlusText"
             android:textSize="20sp"/>
 
         <TextView
+            android:id="@+id/tvMaxValor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Max: 0 "
-            android:textSize="20sp" />
+            android:text="@string/textValorMax"
+            android:textSize="25sp" />
 
         <Button
-            android:id="@+id/disminuir_boton"
+            android:id="@+id/btnRestar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="-"
+            android:text="@string/btnMinusText"
             android:textSize="20sp"/>
     </LinearLayout>
 
     <Switch
+        android:id="@+id/swNegativos"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:minHeight="48dp"
-        android:text="Activar negativos"
+        android:text="@string/textSumarDosSwitch"
         android:textSize="25sp"
         android:layout_marginTop="30dp"/>
 
     <Switch
+        android:id="@+id/swDosenDos"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:minHeight="48dp"
-        android:text="Contar de dos en dos"
+        android:text="@string/textNegativosSwitch"
         android:textSize="25sp"
         android:layout_marginTop="30dp"/>
     <LinearLayout
@@ -102,27 +110,29 @@
         android:layout_marginTop="30dp"
         >
     <TextView
+        android:id="@+id/tvMaxValorInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Valor máximo"
+        android:text="@string/textValorMaxInput"
         android:textSize="25sp"
         android:layout_weight="1"/>
 
         <EditText
+            android:id="@+id/etMaxValor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="right"
             android:inputType="number"
             android:textSize="25sp"
-           android:text="0"/>
+           android:text="@string/inputValorText"/>
     </LinearLayout>
     <Button
+        android:id="@+id/btnReset"
         android:layout_marginTop="30dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Reiniciar valores"
+        android:text="@string/btnResetValoresText"
         android:layout_gravity="center"
-
         android:textSize="25sp"/>
 </LinearLayout>
