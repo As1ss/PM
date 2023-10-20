@@ -90,8 +90,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:minHeight="48dp"
-        android:text="@string/textSumarDosSwitch"
+        android:text="@string/textNegativosSwitch"
         android:textSize="25sp"
+        android:checked="false"
         android:layout_marginTop="30dp"/>
 
     <Switch
@@ -100,8 +101,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:minHeight="48dp"
-        android:text="@string/textNegativosSwitch"
+        android:text="@string/textSumarDosSwitch"
         android:textSize="25sp"
+        android:checked="false"
         android:layout_marginTop="30dp"/>
     <LinearLayout
         android:layout_width="300dp"
@@ -128,8 +130,8 @@
            android:text="@string/inputValorText"/>
         <ImageButton
             android:id="@+id/btnGuardarValorMax"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:background="@drawable/save_floppy_svgrepo_com"/>
