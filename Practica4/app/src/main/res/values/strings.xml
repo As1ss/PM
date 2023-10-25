@@ -1,20 +1,6 @@
 <resources>
-    <string name="app_name">Practica3</string>
-    <string name="tituloApp">Contador App</string>
-    <string name="textChip1">Tema1</string>
-    <string name="textChip2">Tema2</string>
-    <string name="textChip3">Tema3</string>
-    <string name="contadorText">0</string>
-    <string name="btnPlusText">+</string>
-    <string name="btnMinusText">-</string>
-    <string name="textValorMax">Max: 0</string>
-    <string name="textNegativosSwitch">Activar negativos</string>
-    <string name="textSumarDosSwitch">Contar de dos en dos</string>
-    <string name="textValorMaxInput">Valor máximo</string>
-    <string name="btnResetValoresText">Reiniciar valores</string>
-    <string name="inputValorText">0</string>
-    <string name="textGanador">ENHORABUENA HAS LLEGADO AL VALOR MÁXIMO</string>
-    <string name="btnTextGanador">Continuar</string>
-    <string name="landScapeTextMaxValue">Max</string>
-
+    <string name="app_name">Practica4</string>
+    <string name="btnTextEntrar">Entrar</string>
+    <string name="hintTextCaracteres">Min 2 caracteres</string>
+    <string name="labelTextUsuario">Usuario</string>
 </resources>
