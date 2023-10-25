@@ -28,18 +28,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
+            android:checked="true"
             android:text="@string/textChip1"/>
         <com.google.android.material.chip.Chip
             android:id="@+id/cpTema2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
+            android:checked="false"
             android:text="@string/textChip2"/>
         <com.google.android.material.chip.Chip
             android:id="@+id/cpTema3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
+            android:checked="false"
             android:text="@string/textChip3"/>
     </com.google.android.material.chip.ChipGroup>
     <TextView
