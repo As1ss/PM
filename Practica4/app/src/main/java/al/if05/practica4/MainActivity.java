@@ -2,6 +2,7 @@ package al.if05.practica4;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,12 +18,13 @@ public class MainActivity extends AppCompatActivity {
         EditText etUsuario = findViewById(R.id.etUsuario);
 
         btnSiguiente.setOnClickListener(view -> {
-            if (etUsuario.length()>2){
-                Toast.makeText(this,"LOGEO CORERCTO",Toast.LENGTH_SHORT).show();
+            if (etUsuario.length() > 2) {
+                Toast.makeText(this, "LOGEO CORERCTO", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, GameActivity.class);
+                startActivity(intent);
                 this.finish();
-            }
-            else {
-
+            } else {
+                Toast.makeText(this, "El usuario debe tener almenos más de 2 caracteres", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -3,4 +3,6 @@
     <string name="btnTextEntrar">Entrar</string>
     <string name="hintTextCaracteres">Min 2 caracteres</string>
     <string name="labelTextUsuario">Usuario</string>
+    <string name="textTitleUser">DICE SHOOTER</string>
+    <string name="textGameTitle">Dice Shooter</string>
 </resources>

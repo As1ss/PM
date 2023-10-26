@@ -6,58 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     >
+
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/tvTitulo"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="DICE SHOTER"
-        android:textSize="30sp"
+        android:text="@string/textTitleUser"
+        android:textSize="35sp"
         android:gravity="center"
         android:textColor="@color/white"
         android:background="@color/purple"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        android:fontFamily="@font/font"
+
+      />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="400dp"
-            android:src="@drawable/dados_icono"
-            />
+            android:layout_height="300dp"
+            android:src="@drawable/dados_icono" />
+
         <TextView
+            android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/labelTextUsuario"
-            android:textSize="25sp"
-            android:layout_gravity="center"/>
+            android:textSize="35sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/font"/>
 
         <EditText
+            android:layout_marginTop="20dp"
             android:id="@+id/etUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/hintTextCaracteres"
+            android:layout_gravity="center"
             android:textColorHint="#A1887F"
             android:textSize="25sp"
-            android:inputType="text"
-            />
+            android:inputType="text|textNoSuggestions" />
 
         <Button
+            android:layout_marginTop="40dp"
             android:id="@+id/btnEntrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:text="@string/btnTextEntrar"
-            android:textSize="25sp"/>
-
+            android:layout_gravity="center"
+            android:textSize="35sp"
+            android:fontFamily="@font/font"/>
 
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
