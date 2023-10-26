@@ -193,6 +193,7 @@
                     android:text="@string/textBtnTiraDado"
                     android:textSize="20sp"
                     app:cornerRadius="10dp"
+                    android:onClick="tirarDado"
                     tools:ignore="TextContrastCheck,VisualLintButtonSize" />
                 <TextView
                     android:id="@+id/tvVentanaDados"
@@ -208,6 +209,7 @@
                     tools:ignore="NestedWeights" />
 
                 <Button
+                    android:id="@+id/btnReinicio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/green"

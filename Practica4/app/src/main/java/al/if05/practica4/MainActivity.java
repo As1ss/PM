@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         btnSiguiente.setOnClickListener(view -> {
             String userName = etUsuario.getText().toString();
             if (userName.length() > 2) {
-                Toast.makeText(this, "LOGEO CORERCTO", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, GameActivity.class);
                 intent.putExtra("userName", userName);
                 startActivity(intent);
