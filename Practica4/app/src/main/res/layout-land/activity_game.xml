@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+       >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginStart="160dp"
+                android:text="@string/textGameTitle"
+                android:textStyle="italic|bold"
+                android:textSize="35sp" />
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_gravity="left"
+                android:layout_marginStart="30dp"
+                android:src="@drawable/logo"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+
+                <RadioButton
+                    android:id="@+id/opcDado4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    tools:ignore="DuplicateSpeakableTextCheck"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/textDado4"
+                        android:textSize="25sp"/>
+
+                    <ImageView
+                        android:id="@+id/ivDado4"
+                        android:layout_width="120dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:onClick="comprobarDadosImagen"
+                        android:src="@drawable/dado4caras"
+                        tools:ignore="ContentDescription,ImageContrastCheck,SpeakableTextPresentCheck" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                   >
+                    <RadioButton
+                        android:id="@+id/opcDado6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/textDado6"
+                            android:textSize="25sp"/>
+
+                        <ImageView
+                            android:id="@+id/ivDado6"
+                            android:layout_width="120dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:onClick="comprobarDadosImagen"
+                            android:src="@drawable/dado6caras"
+                            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+              android:layout_gravity="bottom"
+                >
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <RadioButton
+                            android:id="@+id/opcDado8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/textDado8"
+                                android:textSize="25sp"/>
+
+                            <ImageView
+                                android:id="@+id/ivDado8"
+                                android:layout_width="120dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:onClick="comprobarDadosImagen"
+                                android:src="@drawable/dado8caras"
+                                tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/green"
+                android:text="@string/textBtnTiraDado"
+                android:textSize="18sp"
+                app:cornerRadius="2dp"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/yellow"
+                android:gravity="center"
+                android:text="@string/textSuma"
+                android:textColor="@color/blue"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/green"
+                android:text="@string/textBtnReinicio"
+                android:textSize="18sp"
+                app:cornerRadius="2dp"
+                android:textColor="@color/black"
+                tools:ignore="TextContrastCheck,VisualLintButtonSize"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="@string/textFraseDado"
+                android:gravity="center"
+                android:layout_marginStart="80dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/textResultadoDado"
+                android:textColor="#43A047"
+                android:textSize="55sp"
+                android:layout_marginStart="10dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

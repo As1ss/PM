@@ -5,4 +5,12 @@
     <string name="labelTextUsuario">Usuario</string>
     <string name="textTitleUser">DICE SHOOTER</string>
     <string name="textGameTitle">Dice Shooter</string>
+    <string name="textBtnTiraDado">TIRA DADO</string>
+    <string name="textBtnReinicio">REINICIO</string>
+    <string name="textDado4">Dado 4 caras</string>
+    <string name="textDado6">Dado 6 caras</string>
+    <string name="textDado8">Dado 8 caras</string>
+    <string name="textSuma">0</string>
+    <string name="textFraseDado">Dado de 8 caras saca un</string>
+    <string name="textResultadoDado">7</string>
 </resources>

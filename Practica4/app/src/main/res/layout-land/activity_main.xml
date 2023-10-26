@@ -30,45 +30,43 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/dados_icono">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-            android:src="@drawable/dados_icono"
-            tools:ignore="ContentDescription" />
-
-        <TextView
-            android:layout_marginTop="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/labelTextUsuario"
-            android:textSize="35sp"
-            android:layout_gravity="center"
-            android:fontFamily="@font/font"/>
+            <TextView
+                android:layout_marginTop="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/labelTextUsuario"
+                android:textSize="65sp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:fontFamily="@font/font"/>
 
         <EditText
-            android:layout_marginTop="20dp"
             android:id="@+id/etUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:autofillHints=""
+            android:background="@color/white"
             android:hint="@string/hintTextCaracteres"
-            android:layout_gravity="center"
-            android:textColorHint="#A1887F"
-            android:textSize="25sp"
             android:inputType="text|textNoSuggestions"
-            android:autofillHints="" />
+            android:minHeight="48dp"
+            android:textColorHint="#A1887F"
+            android:textSize="35sp" />
+            <Button
+                android:layout_marginTop="50dp"
+                android:id="@+id/btnEntrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btnTextEntrar"
+                android:layout_gravity="center"
+                android:textSize="45sp"
+                android:fontFamily="@font/font"
+                tools:ignore="VisualLintButtonSize"
+                />
+        </LinearLayout>
 
-        <Button
-            android:layout_marginTop="40dp"
-            android:id="@+id/btnEntrar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btnTextEntrar"
-            android:layout_gravity="center"
-            android:textSize="35sp"
-            android:fontFamily="@font/font"
-            tools:ignore="VisualLintButtonSize" />
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

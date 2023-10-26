@@ -36,26 +36,106 @@
                 android:padding="10dp"
                 android:layout_gravity="top"
                 android:layout_weight="1"
-
-                android:src="@drawable/logo" />
+                android:src="@drawable/logo"
+                tools:ignore="ContentDescription" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:baselineAligned="false">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                >
 
+                >
                 <RadioGroup
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    tools:ignore="UselessParent"
+                    android:layout_marginStart="20dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        >
 
-                    >
+                        <RadioButton
+                            android:id="@+id/opcDado4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            tools:ignore="DuplicateSpeakableTextCheck"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/textDado4"
+                                android:textStyle="bold"
+                                android:textSize="25sp"/>
+
+                            <ImageView
+                                android:id="@+id/ivDado4"
+                                android:layout_width="120dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:onClick="comprobarDadosImagen"
+                                android:src="@drawable/dado4caras"
+                                tools:ignore="ContentDescription,ImageContrastCheck,SpeakableTextPresentCheck" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="40dp">
+
+                        <RadioButton
+                            android:id="@+id/opcDado6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/textDado6"
+                                android:textStyle="bold"
+                                android:textSize="25sp"/>
+
+                            <ImageView
+                                android:id="@+id/ivDado6"
+                                android:layout_width="120dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:onClick="comprobarDadosImagen"
+                                android:src="@drawable/dado6caras"
+                                tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -65,77 +145,7 @@
                         >
 
                         <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Dado 4 cartas"
-                                android:textStyle="bold"
-                                android:textSize="25sp"/>
-
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="80dp"
-                                android:src="@drawable/dado4caras"
-                                android:layout_gravity="center"/>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="60dp">
-
-                        <RadioButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                           >
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Dado 6 cartas"
-                                android:textStyle="bold"
-                                android:textSize="25sp"/>
-
-                            <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="80dp"
-                                android:src="@drawable/dado6caras"
-                                android:layout_gravity="center"/>
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="60dp"
-                        >
-
-                        <RadioButton
+                            android:id="@+id/opcDado8"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -145,21 +155,24 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            >
+                            tools:ignore="UseCompoundDrawables">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="Dado 8 cartas"
+                                android:text="@string/textDado8"
                                 android:textStyle="bold"
                                 android:textSize="25sp"/>
 
                             <ImageView
-                                android:layout_width="100dp"
-                                android:layout_height="80dp"
+                                android:id="@+id/ivDado8"
+                                android:layout_width="120dp"
+                                android:layout_height="100dp"
+                                android:layout_gravity="center"
+                                android:onClick="comprobarDadosImagen"
                                 android:src="@drawable/dado8caras"
-                                android:layout_gravity="center"/>
+                                tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
                         </LinearLayout>
                     </LinearLayout>
                 </RadioGroup>
@@ -170,33 +183,35 @@
                 android:layout_weight="1"
                 android:orientation="vertical"
                 android:layout_marginEnd="10dp">
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TIRA DADO"
-                    android:padding="0dp"
-                    android:textSize="20sp"
                     android:backgroundTint="@color/green"
-
-
-                    />
+                    android:text="@string/textBtnTiraDado"
+                    android:textSize="20sp"
+                    app:cornerRadius="10dp"
+                    tools:ignore="TextContrastCheck,VisualLintButtonSize" />
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
                     android:background="@color/yellow"
-                    android:text="0"
+                    android:text="@string/textSuma"
                     android:textStyle="bold"
                     android:textColor="@color/blue"
                     android:textSize="90sp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    tools:ignore="NestedWeights" />
+
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/green"
-                    android:text="REINICIO"
+                    android:text="@string/textBtnReinicio"
                     android:textSize="20sp"
-                    />
+                    app:cornerRadius="10dp"
+                    tools:ignore="TextContrastCheck,VisualLintButtonSize" />
             </LinearLayout>
 
 
@@ -209,16 +224,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:text="Dado de 8 caras saca un"
+                android:text="@string/textFraseDado"
                 android:gravity="center"
                 android:layout_weight="1"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="7"
-                android:textSize="85sp"
                 android:layout_weight="1"
-                android:textColor="@color/green"/>
+                android:text="@string/textResultadoDado"
+                android:textColor="#43A047"
+                android:textSize="85sp" />
 
         </LinearLayout>
 
