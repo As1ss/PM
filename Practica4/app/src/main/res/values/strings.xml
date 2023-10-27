@@ -13,4 +13,6 @@
     <string name="textSuma">0</string>
     <string name="textFraseDado">Dado de 8 caras saca un</string>
     <string name="textResultadoDado">7</string>
+    <string name="textGameOverTitle">Dice Shooter</string>
+    <string name="textContinuarBtnGameOver">Continuar</string>
 </resources>
