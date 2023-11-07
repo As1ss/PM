@@ -55,7 +55,7 @@ public class GameActivity extends AppCompatActivity {
                 String cellTag = "c" + i + j;
                 ImageView cellView = tableLayout.findViewWithTag(cellTag);
                 if (tablero[i][j] == 0) {
-                    cellView.setBackgroundColor(Color.GREEN);
+                    cellView.setBackgroundColor(Color.WHITE);
                 } else if (tablero[i][j] == player1) {
                     cellView.setBackgroundColor(Color.RED);
                 } else if (tablero[i][j] == player2) {
