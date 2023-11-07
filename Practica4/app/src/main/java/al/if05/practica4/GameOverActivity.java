@@ -31,8 +31,8 @@ public class GameOverActivity extends AppCompatActivity {
         TextView tvMensajeFinal = findViewById(R.id.tvMensajeFinal);
         Button btnContinuar = findViewById(R.id.btnContinuarGameOver);
         String mensajeFInal = userName + " ha logrado un total de " + sumaTiradas + " de puntos en " + numTiradas + " tiradas\n\n"
-                + numTiradas4 + " tiradas con el dado de 4 caras para lograr " + sumaDado4 + " puntos.\n\n" + numTiradas6 + " tiradas con el dado de 6 caras para lograr " + sumaDado6 + " puntos" +
-                "\n\n" + numTiradas8 + " tiradas con el dado de 8 caras para lograr " + sumaDado8 + " puntos";
+                + numTiradas4 + " tiradas con el dado de 4 caras para lograr " + sumaDado4 + " puntos.\n\n" + numTiradas6 + " tiradas con el dado de 6 caras para lograr " + sumaDado6 + " puntos." +
+                "\n\n" + numTiradas8 + " tiradas con el dado de 8 caras para lograr " + sumaDado8 + " puntos.";
         tvMensajeFinal.setText(mensajeFInal);
 
 

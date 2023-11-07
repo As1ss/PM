@@ -11,21 +11,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="20dp"
         android:text="@string/textGameOverTitle"
         android:textSize="55sp"
         android:fontFamily="@font/font"/>
     <TextView
         android:id="@+id/tvMensajeFinal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:gravity="center"
         android:fontFamily="@font/font"
+        android:textAlignment="center"
         />
     <Button
         android:id="@+id/btnContinuarGameOver"
@@ -37,6 +38,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvMensajeFinal"
         app:layout_constraintEnd_toEndOf="parent"
         android:fontFamily="@font/font"
+        android:layout_marginTop="40dp"
         android:text="@string/textContinuarBtnGameOver"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
