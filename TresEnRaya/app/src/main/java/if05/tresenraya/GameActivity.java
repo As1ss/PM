@@ -208,15 +208,15 @@ public class GameActivity extends AppCompatActivity {
                 if (!winGame) { // Si no hemos ganado
                     turnoIA();
                     pintarTablero();
-                    loseGame = winCondition(player2);
-                    if (loseGame) {
-                     gameOver();
+                    loseGame = winCondition(player2); //Verificamos si la IA ha ganado
+                    if (loseGame) {//Si la IA ha ganado
+                     gameOver();//Se ejecuta el método que nos pasa a la activity de GameOver
                     }
                 } else {
                    gameOver();
                 }
             }
-           tablas =  drawCondition();
+           tablas =  drawCondition(); //Verificamos si el usuario o la ia no han ganado y no hay espacios libres en el tablero
             if(tablas){
             gameOver();
             }

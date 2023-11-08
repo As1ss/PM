@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 
 public class MusicService extends Service {
     private MediaPlayer mediaPlayer;
+
     public class LocalBinder extends Binder {
         public MusicService getService() {
             return MusicService.this;
@@ -21,7 +22,7 @@ public class MusicService extends Service {
         super.onCreate();
         mediaPlayer = MediaPlayer.create(this, R.raw.lady_of_the_80x27s);
         mediaPlayer.setLooping(true); // Reproduce la canción en bucle
-        mediaPlayer.setVolume(0.5f,0.5f);
+        mediaPlayer.setVolume(0.5f, 0.5f);
 
     }
 
@@ -31,10 +32,11 @@ public class MusicService extends Service {
         return START_STICKY;
     }
 
-    public void stopMusic(){
+    public void stopMusic() {
         mediaPlayer.stop();
     }
-    public void resumeMusic(){
+
+    public void resumeMusic() {
         mediaPlayer.start();
     }
 

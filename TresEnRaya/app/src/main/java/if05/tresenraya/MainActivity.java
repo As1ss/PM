@@ -26,11 +26,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onServiceConnected(ComponentName name, IBinder binder) {
             MusicService.LocalBinder localBinder = (MusicService.LocalBinder) binder;
+            //Obtenemos el servicio para acceder a su clase y todos sus atributos y métodos
             musicService = localBinder.getService();
             isBound = true;
             // Controla la reproducción de la música aquí
         }
 
+
+        //Si el servicio se desconecta el servicio se desvincula
         @Override
         public void onServiceDisconnected(ComponentName name) {
             isBound = false;
@@ -97,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
+        //Desvinculadel servicio cuando la actividad se para
         if (isBound) {
             unbindService(serviceConnection);
             isBound = false;
