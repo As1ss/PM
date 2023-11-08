@@ -1,3 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">TicTacToe</string>
+    <string name="textViewUsuario">User</string>
+    <string name="btnTextJugar">Play</string>
+    <string name="tvTitulo">I\'ts showtime!</string>
+    <string name="nombreJugadorPorDefecto">Player 1</string>
+    <string name="nombreJugador2porDefecto">Player 2</string>
+    <string name="menuTitulo">TicTacToe</string>
+    <string name="mensajeGanador">THE WINNER IS</string>
+    <string name="textBotonContinuar">CONTINUE</string>
+    <string name="empateTexto">HAS TIED WITH PLAYER 2</string>
+    <string name="errorUsuarioTexto">Please enter a username with more than 2 characters.</string>
+
 </resources>

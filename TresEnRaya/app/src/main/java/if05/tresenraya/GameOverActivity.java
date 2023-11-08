@@ -89,7 +89,7 @@ public class GameOverActivity extends AppCompatActivity {
     private void showWinner() {
         if (winGame){
             tvTest.setTextColor(Color.GREEN);
-            tvTest.setText("EL GANADOR ES "+userName);
+            tvTest.setText(getText(R.string.mensajeGanador)+" "+userName);
 
             youWinSound.start();
 
@@ -97,12 +97,12 @@ public class GameOverActivity extends AppCompatActivity {
         }
         else if (loseGame){
             tvTest.setTextColor(Color.GREEN);
-            tvTest.setText("EL GANADOR ES EL JUGADOR 2");
+            tvTest.setText(getText(R.string.mensajeGanador)+" "+userName);
             youLoseSound.start();
         }
         else if (tablas){
             tvTest.setTextColor(Color.YELLOW);
-            tvTest.setText(userName+"HA EMPATADO CON JUGADOR 2");
+            tvTest.setText(userName+" "+getText(R.string.empateTexto));
         }
     }
 }

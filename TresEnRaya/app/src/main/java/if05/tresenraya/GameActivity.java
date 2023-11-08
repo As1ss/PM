@@ -210,17 +210,14 @@ public class GameActivity extends AppCompatActivity {
                     pintarTablero();
                     loseGame = winCondition(player2);
                     if (loseGame) {
-                        Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
                      gameOver();
                     }
                 } else {
-                    Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
                    gameOver();
                 }
             }
            tablas =  drawCondition();
             if(tablas){
-                Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
             gameOver();
             }
         }
@@ -234,18 +231,15 @@ public class GameActivity extends AppCompatActivity {
                     pintarTablero();
                     loseGame = winCondition(player2);
                     if (loseGame) {
-                        Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
                         gameOver();
                     }
                 } else {
-                    Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
                    gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
-                Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
              gameOver();
 
             }
@@ -260,18 +254,15 @@ public class GameActivity extends AppCompatActivity {
                     pintarTablero();
                     loseGame = winCondition(player2);
                     if (loseGame) {
-                        Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
                        gameOver();
                     }
                 } else {
-                    Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
                   gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
-                Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
               gameOver();
             }
         }
@@ -285,18 +276,15 @@ public class GameActivity extends AppCompatActivity {
                     pintarTablero();
                     loseGame = winCondition(player2);
                     if (loseGame) {
-                        Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
                        gameOver();
                     }
                 } else {
-                    Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
                    gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
-                Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
               gameOver();
             }
         }
@@ -310,18 +298,15 @@ public class GameActivity extends AppCompatActivity {
                     pintarTablero();
                     loseGame = winCondition(player2);
                     if (loseGame) {
-                        Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
                         gameOver();
                     }
                 } else {
-                    Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
                    gameOver();
                 }
 
             }
             tablas =  drawCondition();
             if(tablas){
-                Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
                gameOver();
             }
         }
@@ -335,18 +320,15 @@ public class GameActivity extends AppCompatActivity {
                     pintarTablero();
                     loseGame = winCondition(player2);
                     if (loseGame) {
-                        Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
                       gameOver();
                     }
                 } else {
-                    Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
                    gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
-                Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
                 gameOver();
             }
         }
@@ -360,18 +342,15 @@ public class GameActivity extends AppCompatActivity {
                     pintarTablero();
                     loseGame = winCondition(player2);
                     if (loseGame) {
-                        Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
                         gameOver();
                     }
                 } else {
-                    Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
                     gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
-                Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
                gameOver();
             }
         }
@@ -385,18 +364,15 @@ public class GameActivity extends AppCompatActivity {
                     pintarTablero();
                     loseGame = winCondition(player2);
                     if (loseGame) {
-                        Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
                         gameOver();
                     }
                 } else {
-                    Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
                    gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
-                Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
                gameOver();
             }
         }
@@ -410,18 +386,15 @@ public class GameActivity extends AppCompatActivity {
                     pintarTablero();
                     loseGame = winCondition(player2);
                     if (loseGame) {
-                        Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
                         gameOver();
                     }
                 } else {
-                    Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
                     gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
-                Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
                 gameOver();
             }
         }

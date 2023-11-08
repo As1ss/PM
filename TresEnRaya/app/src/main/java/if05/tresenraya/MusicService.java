@@ -22,6 +22,7 @@ public class MusicService extends Service {
         mediaPlayer = MediaPlayer.create(this, R.raw.lady_of_the_80x27s);
         mediaPlayer.setLooping(true); // Reproduce la canción en bucle
         mediaPlayer.setVolume(0.5f,0.5f);
+
     }
 
     @Override
@@ -30,6 +31,12 @@ public class MusicService extends Service {
         return START_STICKY;
     }
 
+    public void stopMusic(){
+        mediaPlayer.stop();
+    }
+    public void resumeMusic(){
+        mediaPlayer.start();
+    }
 
 
     @Override
@@ -38,6 +45,7 @@ public class MusicService extends Service {
         mediaPlayer.release();
         super.onDestroy();
     }
+
 
     @Nullable
     @Override

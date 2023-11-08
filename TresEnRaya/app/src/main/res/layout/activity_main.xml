@@ -23,7 +23,8 @@
             android:layout_height="225dp"
             android:layout_gravity="center"
             android:src="@drawable/neon_banner_1"
-            android:translationY="130dp" />
+            android:translationY="130dp"
+            tools:ignore="ContentDescription" />
 
 
 
@@ -33,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/neon"
-            android:text="Tres en raya"
+            android:text="@string/menuTitulo"
             android:textColor="@color/white"
             android:textSize="45sp" />
 
@@ -42,7 +43,8 @@
             android:layout_height="125dp"
             android:layout_gravity="center"
             android:src="@drawable/neon_banner_3"
-            android:translationY="20dp" />
+            android:translationY="20dp"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/tvUser"
@@ -61,14 +63,15 @@
             android:layout_width="185dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:background="@drawable/button_neon"
+            android:gravity="center"
             android:inputType="textCapSentences"
+            android:shadowColor="@color/white"
             android:textColor="@color/white"
             android:textSize="25sp"
             android:translationY="-80dp"
-            android:shadowColor="@color/white"
-            android:gravity="center"
-            android:background="@drawable/button_neon"
-            />
+            tools:ignore="LabelFor,SpeakableTextPresentCheck"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/btnJugar"
@@ -89,12 +92,13 @@
             android:layout_height="180dp"
             android:layout_marginStart="25dp"
             android:src="@drawable/purple_neon_arrow_4"
-            android:translationY="-155dp"/>
+            android:translationY="-155dp"
+            tools:ignore="ContentDescription" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/red_neon_arrow_3"
-           />
+            tools:ignore="ContentDescription" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -104,7 +108,8 @@
             android:rotationX="4"
             android:src="@drawable/red_neon_arrow_3"
             android:translationY="-880dp"
-            android:translationZ="-30dp" />
+            android:translationZ="-30dp"
+            tools:ignore="ContentDescription" />
 
         <ImageView
             android:layout_width="525dp"
@@ -116,7 +121,8 @@
             android:src="@drawable/xletter"
             android:translationY="-560dp"
             android:translationZ="-30dp"
-            android:layout_marginEnd="150dp"/>
+            android:layout_marginEnd="150dp"
+            tools:ignore="ContentDescription" />
 
         <ImageView
             android:layout_width="525dp"
@@ -128,7 +134,8 @@
             android:rotationY="-37"
             android:src="@drawable/neon_circle"
             android:translationY="-880dp"
-            android:translationZ="-20dp" />
+            android:translationZ="-20dp"
+            tools:ignore="ContentDescription" />
 
 
 

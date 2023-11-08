@@ -43,7 +43,7 @@
         android:layout_marginBottom="24dp"
         android:background="@drawable/button_neon"
         android:fontFamily="@font/neon"
-        android:text="Continuar"
+        android:text="@string/textBotonContinuar"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"

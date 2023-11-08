@@ -5,4 +5,9 @@
     <string name="tvTitulo">¡Es hora del espectáculo!</string>
     <string name="nombreJugadorPorDefecto">Jugador 1</string>
     <string name="nombreJugador2porDefecto">Jugador 2</string>
+    <string name="menuTitulo">Tres en raya</string>
+    <string name="mensajeGanador">EL GANADOR ES</string>
+    <string name="textBotonContinuar">CONTINUAR</string>
+    <string name="empateTexto">HA EMPATADO CON JUGADOR 2</string>
+    <string name="errorUsuarioTexto">Introduce un usuario con más de 2 caracteres por favor.</string>
 </resources>

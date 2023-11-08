@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Inicia el servicio de música
         Intent musicIntent = new Intent(this, MusicService.class);
-        startService(musicIntent);
+        startForegroundService(musicIntent);
+
 
         // Vincúlate al servicio
         bindService(musicIntent, serviceConnection, Context.BIND_AUTO_CREATE);
@@ -63,11 +64,17 @@ public class MainActivity extends AppCompatActivity {
                 finish();
 
             } else {
-                Toast.makeText(this, "Por favor introduzca un usuario con almenos 2 caractéres", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getText(R.string.errorUsuarioTexto), Toast.LENGTH_SHORT).show();
             }
 
         });
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        
     }
 
     @Override
