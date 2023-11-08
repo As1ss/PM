@@ -1,5 +1,6 @@
 package if05.tresenraya;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -24,10 +25,9 @@ public class GameActivity extends AppCompatActivity {
     boolean winGame;
     boolean loseGame;
     boolean tablas;
-
     static String userName;
 
-    int[][] tablero ;
+    static int[][] tablero ;
     TextView etUsuario;
 
     @Override
@@ -59,6 +59,38 @@ public class GameActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Convierte la matriz tablero en una matriz plana de enteros
+        int[] flattenedTablero = new int[tablero.length * tablero[0].length];
+        int k = 0;
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                flattenedTablero[k++] = tablero[i][j];
+            }
+        }
+
+        // Guarda la matriz plana en el Bundle
+        outState.putIntArray("flattenedTablero", flattenedTablero);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        // Restaura la matriz plana del Bundle
+        int[] flattenedTablero = savedInstanceState.getIntArray("flattenedTablero");
+        // Convierte la matriz plana de enteros de nuevo a la matriz bidimensional tablero
+        int k = 0;
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                tablero[i][j] = flattenedTablero[k++];
+            }
+        }
+
+        // Luego, puedes llamar a pintarTablero() para reflejar los cambios en tu vista.
+        pintarTablero();
+    }
 
     private void turnoIA() {
 

@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="295dp"
         android:fontFamily="@font/neon"
-        android:text="HAS GANADO?"
         android:textColor="@color/white"
         android:textSize="45sp"
         android:gravity="center"

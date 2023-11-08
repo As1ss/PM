@@ -7,12 +7,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,6 +22,8 @@ public class GameOverActivity extends AppCompatActivity {
     boolean tablas;
     TextView tvTest;
     ImageView ivScreenshot;
+    MediaPlayer youWinSound;
+    MediaPlayer youLoseSound;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +80,10 @@ public class GameOverActivity extends AppCompatActivity {
         winGame = getIntent().getBooleanExtra("winGame",false);
         loseGame= getIntent().getBooleanExtra("loseGame",false);
         tablas = getIntent().getBooleanExtra("tablas",false);
+        youWinSound = MediaPlayer.create(this,R.raw.youwin);
+
+        youLoseSound = MediaPlayer.create(this,R.raw.youlose);
+        youLoseSound.setVolume(2f,2f);
     }
 
     private void showWinner() {
@@ -88,10 +91,14 @@ public class GameOverActivity extends AppCompatActivity {
             tvTest.setTextColor(Color.GREEN);
             tvTest.setText("EL GANADOR ES "+userName);
 
+            youWinSound.start();
+
+
         }
         else if (loseGame){
             tvTest.setTextColor(Color.GREEN);
             tvTest.setText("EL GANADOR ES EL JUGADOR 2");
+            youLoseSound.start();
         }
         else if (tablas){
             tvTest.setTextColor(Color.YELLOW);
