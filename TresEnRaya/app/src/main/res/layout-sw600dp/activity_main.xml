@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="525dp"
+            android:layout_gravity="center"
+            android:src="@drawable/neon_banner_1"
+            tools:ignore="ContentDescription" />
+
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/neon"
+            android:text="@string/menuTitulo"
+            android:textColor="@color/white"
+            android:layout_marginTop="-305dp"
+            android:textSize="65sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="225dp"
+            android:layout_gravity="center"
+            android:src="@drawable/neon_banner_3"
+            android:translationY="50dp"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="65dp"
+            android:fontFamily="@font/neon"
+            android:text="@string/textViewUsuario"
+            android:textColor="@color/white"
+            android:textSize="75sp"
+            android:translationZ="100dp"
+            android:translationY="-155dp" />
+
+        <EditText
+            android:id="@+id/etUsuario"
+            android:layout_width="385dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_neon"
+            android:gravity="center"
+            android:inputType="textCapSentences"
+            android:shadowColor="@color/white"
+            android:textColor="@color/white"
+            android:textSize="45sp"
+            android:translationY="-115dp"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck"
+            android:autofillHints="" />
+
+        <Button
+            android:id="@+id/btnJugar"
+            android:layout_width="wrap_content"
+            android:layout_height="155dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@color/transparent"
+            android:fontFamily="@font/neon"
+            android:gravity="center"
+            android:text="@string/btnTextJugar"
+            android:textColor="@color/white"
+            android:textSize="60sp"
+            android:translationY="-85dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_marginStart="175dp"
+            android:src="@drawable/purple_neon_arrow_4"
+            android:translationY="-310dp"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/red_neon_arrow_3"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="580dp"
+            android:layout_marginEnd="85dp"
+            android:rotation="-83"
+            android:rotationX="4"
+            android:src="@drawable/red_neon_arrow_3"
+            android:translationY="-1450dp"
+            android:translationZ="-30dp"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="525dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:rotation="-25"
+            android:rotationX="12"
+            android:rotationY="29"
+            android:src="@drawable/xletter"
+            android:translationY="-1160dp"
+            android:translationZ="-30dp"
+            android:layout_marginEnd="470dp"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="525dp"
+            android:layout_height="600dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="-260dp"
+            android:rotation="-4"
+            android:rotationX="-29"
+            android:rotationY="-37"
+            android:src="@drawable/neon_circle"
+            android:translationY="-1380dp"
+            android:translationZ="-20dp"
+            tools:ignore="ContentDescription" />
+
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
