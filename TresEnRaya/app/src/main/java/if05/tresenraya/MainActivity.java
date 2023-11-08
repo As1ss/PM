@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Inicia el servicio de música
         Intent musicIntent = new Intent(this, MusicService.class);
-        startForegroundService(musicIntent);
+        startService(musicIntent);
 
 
         // Vincúlate al servicio
