@@ -17,15 +17,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-
         <ImageView
             android:layout_width="525dp"
             android:layout_height="225dp"
             android:layout_gravity="center"
             android:src="@drawable/neon_banner_1"
-            android:translationY="130dp" />
-
-
+            android:translationY="20dp" />
 
         <TextView
             android:id="@+id/tvTitle"
@@ -35,45 +32,47 @@
             android:fontFamily="@font/neon"
             android:text="Tres en raya"
             android:textColor="@color/white"
-            android:textSize="45sp" />
+            android:textSize="45sp"
+            android:translationY="-115dp"/>
+
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="125dp"
-            android:layout_gravity="center"
-            android:src="@drawable/neon_banner_3"
-            android:translationY="20dp" />
+            android:layout_height="180dp"
+            android:layout_marginStart="555dp"
+            android:src="@drawable/purple_neon_arrow_4"
+            android:translationY="-85dp" />
 
         <TextView
             android:id="@+id/tvUser"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="105dp"
             android:layout_gravity="center"
             android:layout_marginTop="65dp"
             android:fontFamily="@font/neon"
             android:text="@string/textViewUsuario"
             android:textColor="@color/white"
             android:textSize="35sp"
-            android:translationY="-125dp" />
+            android:translationY="-295dp" />
 
         <EditText
             android:id="@+id/etUsuario"
             android:layout_width="185dp"
-            android:layout_height="wrap_content"
+            android:layout_height="52dp"
             android:layout_gravity="center"
+            android:background="@drawable/button_neon"
+            android:gravity="center"
             android:inputType="textCapSentences"
+            android:shadowColor="@color/white"
             android:textColor="@color/white"
             android:textSize="25sp"
-            android:translationY="-80dp"
-            android:shadowColor="@color/white"
-            android:gravity="center"
-            android:background="@drawable/button_neon"
+            android:translationY="-345dp"
             />
 
         <Button
             android:id="@+id/btnJugar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="125dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:background="@color/transparent"
@@ -82,52 +81,42 @@
             android:text="@string/btnTextJugar"
             android:textColor="@color/white"
             android:textSize="35sp"
-            android:translationY="-42dp" />
+            android:layout_marginStart="265dp"
+            android:translationY="-480dp" />
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="180dp"
-            android:layout_marginStart="25dp"
-            android:src="@drawable/purple_neon_arrow_4"
-            android:translationY="-155dp"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/red_neon_arrow_3"
-           />
+            android:layout_height="315dp"
+            android:layout_marginStart="-150dp"
+            android:rotation="261"
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="380dp"
-            android:layout_marginEnd="85dp"
-            android:rotation="-83"
-            android:rotationX="4"
+            android:rotationX="331"
+            android:rotationY="-4"
             android:src="@drawable/red_neon_arrow_3"
-            android:translationY="-880dp"
-            android:translationZ="-30dp" />
+            android:translationY="-900dp" />
 
         <ImageView
             android:layout_width="525dp"
-            android:layout_height="100dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             android:rotation="-25"
             android:rotationX="12"
             android:rotationY="29"
             android:src="@drawable/xletter"
-            android:translationY="-560dp"
+            android:translationY="-960dp"
             android:translationZ="-30dp"
-            android:layout_marginEnd="150dp"/>
+            android:layout_marginEnd="340dp"/>
 
         <ImageView
             android:layout_width="525dp"
-            android:layout_height="100dp"
+            android:layout_height="400dp"
             android:layout_gravity="center"
             android:layout_marginEnd="-150dp"
             android:rotation="-4"
             android:rotationX="-29"
             android:rotationY="-37"
             android:src="@drawable/neon_circle"
-            android:translationY="-880dp"
+            android:translationY="-1280dp"
             android:translationZ="-20dp" />
 
 

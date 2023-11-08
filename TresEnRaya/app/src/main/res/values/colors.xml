@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="neonPink">#FF10F0</color>
+    <color name="neonPurple">#bc13fe</color>
+    <color name="neonYellow">#FFF857</color>
+    <color name="transparent">#00FF0000</color>
 </resources>
