@@ -2,4 +2,7 @@
     <string name="app_name">TresEnRaya</string>
     <string name="textViewUsuario">Usuario</string>
     <string name="btnTextJugar">Jugar</string>
+    <string name="tvTitulo">¡Es hora del espectáculo!</string>
+    <string name="nombreJugadorPorDefecto">Jugador 1</string>
+    <string name="nombreJugador2porDefecto">Jugador 2</string>
 </resources>

@@ -2,11 +2,13 @@ package if05.tresenraya;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TableLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -15,10 +17,12 @@ public class GameActivity extends AppCompatActivity {
     static TableLayout tableLayout;
     private int player1;
     private int player2;
-
     boolean winGame;
     boolean loseGame;
     boolean tablas;
+
+    static String userName;
+
     static int[][] tablero = {
             {0, 0, 0},
             {0, 0, 0},
@@ -33,10 +37,15 @@ public class GameActivity extends AppCompatActivity {
         player2 = 2;
         tableLayout = findViewById(R.id.tlBoard);
         pintarTablero();
+        userName = getIntent().getExtras().get("userName").toString();
+        TextView etUsuario = findViewById(R.id.tvPlayer);
+        etUsuario.setText(userName);
+
 
     }
 
     private void turnoIA() {
+
         Random rng = new Random();
         int x, y;
         do {
@@ -55,15 +64,23 @@ public class GameActivity extends AppCompatActivity {
                 String cellTag = "c" + i + j;
                 ImageView cellView = tableLayout.findViewWithTag(cellTag);
                 if (tablero[i][j] == 0) {
-                    cellView.setBackgroundColor(Color.WHITE);
+                    cellView.setBackgroundColor(Color.BLACK);
                 } else if (tablero[i][j] == player1) {
-                    cellView.setBackgroundColor(Color.RED);
+                    cellView.setBackground(getDrawable(R.drawable.xletter));
                 } else if (tablero[i][j] == player2) {
-                    cellView.setBackgroundColor(Color.CYAN);
+                    cellView.setBackground(getDrawable(R.drawable.neon_circle));
                 }
 
             }
         }
+    }
+    private void gameOver(){
+        Intent intent = new Intent(this, GameOverActivity.class);
+        intent.putExtra("userName",userName);
+        intent.putExtra("winGame",winGame);
+        intent.putExtra("loseGame",loseGame);
+        intent.putExtra("tablas",tablas);
+        startActivity(intent);
     }
 
     private boolean winCondition(int player) {
@@ -123,14 +140,17 @@ public class GameActivity extends AppCompatActivity {
                     loseGame = winCondition(player2);
                     if (loseGame) {
                         Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
+                        gameOver();
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
+                    gameOver();
                 }
             }
            tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
+                gameOver();
             }
         }
         if ("c01".equals(tag)) {
@@ -144,15 +164,19 @@ public class GameActivity extends AppCompatActivity {
                     loseGame = winCondition(player2);
                     if (loseGame) {
                         Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
+                        gameOver();
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
+                    gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
+                gameOver();
+
             }
         }
         if ("c02".equals(tag)) {
@@ -166,15 +190,18 @@ public class GameActivity extends AppCompatActivity {
                     loseGame = winCondition(player2);
                     if (loseGame) {
                         Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
+                        gameOver();
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
+                    gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
+                gameOver();
             }
         }
         if ("c10".equals(tag)) {
@@ -188,15 +215,18 @@ public class GameActivity extends AppCompatActivity {
                     loseGame = winCondition(player2);
                     if (loseGame) {
                         Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
+                        gameOver();
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
+                    gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
+                gameOver();
             }
         }
         if ("c11".equals(tag)) {
@@ -210,15 +240,18 @@ public class GameActivity extends AppCompatActivity {
                     loseGame = winCondition(player2);
                     if (loseGame) {
                         Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
+                        gameOver();
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
+                    gameOver();
                 }
 
             }
             tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
+                gameOver();
             }
         }
         if ("c12".equals(tag)) {
@@ -232,15 +265,18 @@ public class GameActivity extends AppCompatActivity {
                     loseGame = winCondition(player2);
                     if (loseGame) {
                         Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
+                        gameOver();
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
+                    gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
+                gameOver();
             }
         }
         if ("c20".equals(tag)) {
@@ -254,15 +290,18 @@ public class GameActivity extends AppCompatActivity {
                     loseGame = winCondition(player2);
                     if (loseGame) {
                         Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
+                        gameOver();
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
+                    gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
+                gameOver();
             }
         }
         if ("c21".equals(tag)) {
@@ -276,15 +315,18 @@ public class GameActivity extends AppCompatActivity {
                     loseGame = winCondition(player2);
                     if (loseGame) {
                         Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
+                        gameOver();
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
+                    gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
+                gameOver();
             }
         }
         if ("c22".equals(tag)) {
@@ -298,15 +340,18 @@ public class GameActivity extends AppCompatActivity {
                     loseGame = winCondition(player2);
                     if (loseGame) {
                         Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
+                        gameOver();
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
+                    gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
+                gameOver();
             }
         }
 
