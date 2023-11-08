@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, GameActivity.class);
                 intent.putExtra("userName",userName);
                 startActivity(intent);
+                finish();
 
             }
             else{

@@ -3,6 +3,7 @@ package if05.tresenraya;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,9 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Random;
 
 public class GameActivity extends AppCompatActivity {
@@ -23,26 +27,38 @@ public class GameActivity extends AppCompatActivity {
 
     static String userName;
 
-    static int[][] tablero = {
-            {0, 0, 0},
-            {0, 0, 0},
-            {0, 0, 0}
-    };
+    int[][] tablero ;
+    TextView etUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        player1 = 1;
-        player2 = 2;
-        tableLayout = findViewById(R.id.tlBoard);
+        loadComponents();
         pintarTablero();
-        userName = getIntent().getExtras().get("userName").toString();
-        TextView etUsuario = findViewById(R.id.tvPlayer);
-        etUsuario.setText(userName);
 
 
     }
+
+    private void loadComponents() {
+        player1 = 1;
+        player2 = 2;
+        tableLayout = findViewById(R.id.tlBoard);
+
+        userName = getIntent().getExtras().get("userName").toString();
+        etUsuario = findViewById(R.id.tvPlayer);
+        etUsuario.setText(userName);
+        tablero = new int[][]{
+                {0, 0, 0},
+                {0, 0, 0},
+                {0, 0, 0}
+        };
+        winGame=false;
+        loseGame=false;
+        tablas=false;
+
+    }
+
 
     private void turnoIA() {
 
@@ -55,7 +71,6 @@ public class GameActivity extends AppCompatActivity {
 
         tablero[x][y] = player2;
     }
-
 
     private void pintarTablero() {
         for (int i = 0; i < tablero.length; i++) {
@@ -75,14 +90,39 @@ public class GameActivity extends AppCompatActivity {
         }
     }
     private void gameOver(){
-        Intent intent = new Intent(this, GameOverActivity.class);
-        intent.putExtra("userName",userName);
-        intent.putExtra("winGame",winGame);
-        intent.putExtra("loseGame",loseGame);
-        intent.putExtra("tablas",tablas);
-        startActivity(intent);
-    }
+        // Crear una referencia a la vista raíz de tu actividad
+        View rootView = getWindow().getDecorView().getRootView();
 
+        // Crear un bitmap de la vista raíz
+        rootView.setDrawingCacheEnabled(true);
+        Bitmap screenshot = Bitmap.createBitmap(rootView.getDrawingCache());
+        rootView.setDrawingCacheEnabled(false);
+
+        // Guardar el bitmap en un archivo temporal
+        try {
+            File screenshotFile = new File(getExternalCacheDir(), "screenshot.png");
+            FileOutputStream outputStream = new FileOutputStream(screenshotFile);
+            screenshot.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+            outputStream.flush();
+            outputStream.close();
+
+            // Ahora puedes agregar la ruta del archivo temporal al intent
+            Intent intent = new Intent(this, GameOverActivity.class);
+            intent.putExtra("userName", userName);
+            intent.putExtra("winGame", winGame);
+            intent.putExtra("loseGame", loseGame);
+            intent.putExtra("tablas", tablas);
+            intent.putExtra("screenshotPath", screenshotFile.getAbsolutePath());
+
+            // Iniciar la actividad GameOverActivity
+            startActivity(intent);
+            finish();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Manejar errores aquí
+        }
+
+    }
     private boolean winCondition(int player) {
         // Verifica líneas horizontales
         for (int i = 0; i < 3; i++) {
@@ -117,13 +157,12 @@ public class GameActivity extends AppCompatActivity {
                 }
             }
         }
-        //Si existe 1 casilla libre y el player 1 y el player 2 no han ganado devuelve true
+        //Si no existe casilla libre y el player 1 y el player 2 no han ganado devuelve true
         if (contador==0 && !loseGame && !winGame){
             return true;
         }
         return false;
     }
-
 
     public void clickCelda(View view) {
         String tag = (String) view.getTag();
@@ -140,17 +179,17 @@ public class GameActivity extends AppCompatActivity {
                     loseGame = winCondition(player2);
                     if (loseGame) {
                         Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
-                        gameOver();
+                     gameOver();
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
-                    gameOver();
+                   gameOver();
                 }
             }
            tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
-                gameOver();
+            gameOver();
             }
         }
         if ("c01".equals(tag)) {
@@ -168,14 +207,14 @@ public class GameActivity extends AppCompatActivity {
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
-                    gameOver();
+                   gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
-                gameOver();
+             gameOver();
 
             }
         }
@@ -190,18 +229,18 @@ public class GameActivity extends AppCompatActivity {
                     loseGame = winCondition(player2);
                     if (loseGame) {
                         Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
-                        gameOver();
+                       gameOver();
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
-                    gameOver();
+                  gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
-                gameOver();
+              gameOver();
             }
         }
         if ("c10".equals(tag)) {
@@ -215,18 +254,18 @@ public class GameActivity extends AppCompatActivity {
                     loseGame = winCondition(player2);
                     if (loseGame) {
                         Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
-                        gameOver();
+                       gameOver();
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
-                    gameOver();
+                   gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
-                gameOver();
+              gameOver();
             }
         }
         if ("c11".equals(tag)) {
@@ -244,14 +283,14 @@ public class GameActivity extends AppCompatActivity {
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
-                    gameOver();
+                   gameOver();
                 }
 
             }
             tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
-                gameOver();
+               gameOver();
             }
         }
         if ("c12".equals(tag)) {
@@ -265,11 +304,11 @@ public class GameActivity extends AppCompatActivity {
                     loseGame = winCondition(player2);
                     if (loseGame) {
                         Toast.makeText(this, "HAS PERIDOD", Toast.LENGTH_SHORT).show();
-                        gameOver();
+                      gameOver();
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
-                    gameOver();
+                   gameOver();
                 }
             }
 
@@ -301,7 +340,7 @@ public class GameActivity extends AppCompatActivity {
             tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
-                gameOver();
+               gameOver();
             }
         }
         if ("c21".equals(tag)) {
@@ -319,14 +358,14 @@ public class GameActivity extends AppCompatActivity {
                     }
                 } else {
                     Toast.makeText(this, "HAS GANADO", Toast.LENGTH_SHORT).show();
-                    gameOver();
+                   gameOver();
                 }
             }
 
             tablas =  drawCondition();
             if(tablas){
                 Toast.makeText(this, "EMPATE", Toast.LENGTH_SHORT).show();
-                gameOver();
+               gameOver();
             }
         }
         if ("c22".equals(tag)) {

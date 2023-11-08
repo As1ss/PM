@@ -20,7 +20,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <TableRow android:weightSum="3">
+
 
             <ImageView
                 android:layout_width="0dp"
@@ -29,7 +31,9 @@
                 android:layout_weight="1"
                 android:onClick="clickCelda"
                 android:scaleType="fitXY"
-                android:tag="c00" />
+                android:tag="c00" >
+            </ImageView>
+
 
             <View
                 android:id="@+id/divider"
