@@ -9,11 +9,11 @@
 
     <TableLayout
         android:id="@+id/tlBoard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="838dp"
+        android:layout_height="611dp"
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="520dp"
         android:layout_marginEnd="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,13 +26,12 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_height="200dp"
                 android:layout_column="0"
                 android:layout_weight="1"
                 android:onClick="clickCelda"
                 android:scaleType="fitXY"
-                android:tag="c00" >
-            </ImageView>
+                android:tag="c00"></ImageView>
 
 
             <View
@@ -43,7 +42,7 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_height="match_parent"
                 android:layout_column="1"
                 android:layout_weight="1"
                 android:onClick="clickCelda"
@@ -58,7 +57,7 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_height="match_parent"
                 android:layout_column="2"
                 android:layout_weight="1"
                 android:onClick="clickCelda"
@@ -77,7 +76,7 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_height="match_parent"
                 android:layout_column="0"
                 android:layout_weight="1"
                 android:onClick="clickCelda"
@@ -92,7 +91,7 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_height="212dp"
                 android:layout_column="1"
                 android:layout_weight="1"
                 android:onClick="clickCelda"
@@ -107,7 +106,7 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_height="match_parent"
                 android:layout_column="2"
                 android:layout_weight="1"
                 android:onClick="clickCelda"
@@ -125,7 +124,7 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_height="200dp"
                 android:layout_column="0"
                 android:layout_weight="1"
                 android:onClick="clickCelda"
@@ -140,7 +139,7 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_height="198dp"
                 android:layout_column="1"
                 android:layout_weight="1"
                 android:onClick="clickCelda"
@@ -157,7 +156,7 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="120dp"
+                android:layout_height="198dp"
                 android:layout_column="2"
                 android:layout_weight="1"
                 android:onClick="clickCelda"
@@ -168,15 +167,16 @@
 
     <TextView
         android:id="@+id/tvGameTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
         android:layout_marginTop="52dp"
         android:fontFamily="@font/neon"
         android:foregroundGravity="center"
+        android:gravity="center"
         android:text="@string/tvTitulo"
         android:textColor="@color/neonPink"
-        android:textSize="40sp"
+        android:textSize="70sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -192,7 +192,7 @@
         android:text="@string/nombreJugadorPorDefecto"
         android:textAlignment="center"
         android:textColor="@color/neonYellow"
-        android:textSize="25sp"
+        android:textSize="65sp"
         app:flow_horizontalAlign="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGameTitle" />
@@ -206,26 +206,26 @@
         android:fontFamily="@font/neon"
         android:text="@string/nombreJugador2porDefecto"
         android:textColor="@color/white"
-        android:textSize="25sp"
+        android:textSize="65sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGameTitle" />
 
     <ImageView
         android:id="@+id/ivPlayer1"
-        android:layout_width="94dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="187dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPlayer"
         app:srcCompat="@drawable/xletter" />
 
     <ImageView
         android:id="@+id/ivPlayer2"
-        android:layout_width="94dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="56dp"
+        android:layout_width="214dp"
+        android:layout_height="153dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="104dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPlayer2"
         app:srcCompat="@drawable/neon_circle" />

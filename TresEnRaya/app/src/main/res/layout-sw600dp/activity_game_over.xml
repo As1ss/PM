@@ -13,7 +13,7 @@
         android:layout_height="295dp"
         android:fontFamily="@font/neon"
         android:textColor="@color/white"
-        android:textSize="45sp"
+        android:textSize="65sp"
         android:gravity="center"
         android:translationZ="30dp"
         android:background="@color/black"
@@ -22,7 +22,7 @@
     <TextView
         android:id="@+id/tvParche"
         android:layout_width="match_parent"
-        android:layout_height="295dp"
+        android:layout_height="415dp"
         android:translationZ="29dp"
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,19 +33,20 @@
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:translationZ="-30dp"/>
+        android:translationZ="-30dp"
+        android:layout_marginBottom="200dp"/>
 
     <Button
         android:id="@+id/btnContinue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginStart="288dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/button_neon"
         android:fontFamily="@font/neon"
         android:text="@string/textBotonContinuar"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
