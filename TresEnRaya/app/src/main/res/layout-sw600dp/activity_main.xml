@@ -91,7 +91,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="300dp"
-            android:layout_marginStart="175dp"
+            android:layout_marginStart="55dp"
             android:src="@drawable/purple_neon_arrow_4"
             android:translationY="-310dp"
             tools:ignore="ContentDescription" />
@@ -121,9 +121,9 @@
             android:rotationX="12"
             android:rotationY="29"
             android:src="@drawable/xletter"
-            android:translationY="-1160dp"
+            android:translationY="-760dp"
             android:translationZ="-30dp"
-            android:layout_marginEnd="470dp"
+            android:layout_marginEnd="370dp"
             tools:ignore="ContentDescription" />
 
         <ImageView
