@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Practica 6</string>
+    <string name="btnText">Empezar</string>
+    <string name="tvNombreText">Nombre</string>
+    <string name="tvTituloText">Cuestionator</string>
+    <string name="rbSobre100Text">Sobre 100</string>
+    <string name="rbSobre10Text">Sobre 10</string>
+    <string name="etNombreHintText">Ej: Alexis Lopez</string>
+</resources>
