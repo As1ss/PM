@@ -31,12 +31,7 @@ public class FragmentProgreso extends Fragment {
 
 
     }
-    public void actualizarValorPregunta(int nuevoValor) {
-        // Actualizar la vista con el nuevo valor de valorpregunta
-        // por ejemplo, si tienes un TextView para mostrarlo:
-        TextView textViewValorPregunta = getView().findViewById(R.id.tvTest);
-        textViewValorPregunta.setText(String.valueOf(nuevoValor));
-    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

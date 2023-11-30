@@ -33,30 +33,16 @@ public class Pregunta1 extends AppCompatActivity {
             puntuacionMax=100;
             valorpregunta=valorpregunta*10;
         }
+
         bundle.putInt("puntuacionMax",puntuacionMax);
         bundle.putInt("NUMEROPREGUNTA",NUMEROPREGUNTA);
         bundle.putInt("valorpregunta",valorpregunta);
         fragmentProgress.setArguments(bundle);
-
-        //fragmentProgress.actualizarValorPregunta(valorpregunta);
-
-
-
-
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentProgress,fragmentProgress).commit();
 
 
 
-       btnTest.setOnClickListener(v -> {
-            valorpregunta++;
 
-           bundle.putInt("puntuacionMax",puntuacionMax);
-           bundle.putInt("NUMEROPREGUNTA",NUMEROPREGUNTA);
-           bundle.putInt("valorpregunta",valorpregunta);
-           fragmentProgress.setArguments(bundle);
-
-           getSupportFragmentManager().beginTransaction().replace(R.id.fragmentProgress,fragmentProgress).commit();
-       });
 
     }
 }
