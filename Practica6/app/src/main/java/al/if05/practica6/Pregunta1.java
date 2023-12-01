@@ -10,7 +10,7 @@ import android.widget.EditText;
 public class Pregunta1 extends AppCompatActivity implements Form {
 
     private final static int NUMEROPREGUNTA = 1;
-    private final static int VALORPREGUNTA = 2;
+    private final static int VALORPREGUNTA = 3;
     private int puntuacion;
     private int puntuacionMax;
 
@@ -20,8 +20,9 @@ public class Pregunta1 extends AppCompatActivity implements Form {
         setContentView(R.layout.activity_pregunta1);
 
 
-        FragmentProgreso fragmentProgress = new FragmentProgreso();
-        Bundle bundle = new Bundle();
+
+
+
         Button btnTest = findViewById(R.id.btnPULSA);
         EditText etRespuesta = findViewById(R.id.etRespuesta);
 
@@ -35,21 +36,20 @@ public class Pregunta1 extends AppCompatActivity implements Form {
         btnTest.setOnClickListener(view -> {
             String respuesta = etRespuesta.getText().toString();
             if (respuesta.equalsIgnoreCase("hola")) {
-                puntuacion = setCorrectAnswer(modo10);
+                puntuacion += setCorrectAnswer(modo10);
+            }
+            else{
+                puntuacion=0;
             }
             Intent intent = new Intent(this, Pregunta2.class);
             intent.putExtra("puntuacion", puntuacion);
-            intent.putExtra("puntuacionMax", puntuacionMax);
+            intent.putExtra("modo10",modo10);
+
             startActivity(intent);
         });
 
 
-        bundle.putInt("puntuacionMax", puntuacionMax);
-        bundle.putInt("NUMEROPREGUNTA", NUMEROPREGUNTA);
-        bundle.putInt("puntuacion", puntuacion);
-        fragmentProgress.setArguments(bundle);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentProgress, fragmentProgress).commit();
-
+        initFragment();
 
     }
 
@@ -72,5 +72,16 @@ public class Pregunta1 extends AppCompatActivity implements Form {
         } else {
             return VALORPREGUNTA * 10;
         }
+    }
+
+    @Override
+    public void initFragment() {
+        FragmentProgreso fragmentProgress = new FragmentProgreso();
+        Bundle bundle = new Bundle();
+        bundle.putInt("puntuacionMax", puntuacionMax);
+        bundle.putInt("NUMEROPREGUNTA", NUMEROPREGUNTA);
+        bundle.putInt("puntuacion", puntuacion);
+        fragmentProgress.setArguments(bundle);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentProgress, fragmentProgress).commit();
     }
 }

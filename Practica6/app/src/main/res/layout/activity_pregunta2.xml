@@ -24,12 +24,55 @@
             android:textSize="25sp"
             android:text="Pregunta 2"
             android:gravity="center"/>
+        <RadioGroup
+            android:id="@+id/rgPregunta2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <RadioButton
+                android:layout_marginTop="20dp"
+                android:id="@+id/rbRespuesta1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Respuesta 1"
+                android:textSize="25sp"/>
+            <RadioButton
+                android:layout_marginTop="20dp"
+                android:id="@+id/rbRespuesta2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Respuesta 2"
+                android:textSize="25sp"/>
+            <RadioButton
+                android:layout_marginTop="20dp"
+                android:id="@+id/rbRespuesta3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Respuesta 3"
+                android:textSize="25sp"/>
+            <RadioButton
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:text="Respuesta 4"/>
+
+
+
+
+
+
+        </RadioGroup>
+        <Button
+            android:layout_marginTop="30dp"
+            android:id="@+id/btnSiguiente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="Siguiente"
+            android:layout_gravity="center"/>
         
-
-
-
-
-
 
 
 
