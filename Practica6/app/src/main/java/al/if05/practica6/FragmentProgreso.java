@@ -39,10 +39,10 @@ public class FragmentProgreso extends Fragment {
         Bundle args = getArguments();
         int puntuacionMax = args.getInt("puntuacionMax");
         int numPregunta = args.getInt("NUMEROPREGUNTA");
-        int valorpregunta = args.getInt("valorpregunta");
+        int puntuacion = args.getInt("puntuacion");
         View view = inflater.inflate(R.layout.fragment_progreso, container, false);
         TextView tvTest = view.findViewById(R.id.tvTest);
-        tvTest.setText("Pregunta "+numPregunta+"/5"+" Puntuacion "+valorpregunta+"/"+puntuacionMax);
+        tvTest.setText("Pregunta "+numPregunta+"/5"+" Puntuacion "+puntuacion+"/"+puntuacionMax);
 
 
 
