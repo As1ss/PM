@@ -9,23 +9,29 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class Pregunta3 extends AppCompatActivity implements Form{
 
     private final static int NUMEROPREGUNTA =3;
     private final static int VALORPREGUNTA = 1;
+    private int valorPregunta;
     private int puntuacionMax;
     private int puntuacion;
     private boolean modo10;
     private boolean preguntaRespondida;
-    String[] respuestas;
-    ArrayAdapter<String> arrayAdapter;
-    Button btnSiguiente;
-    Spinner spRespuesta;
+    private String[] respuestas;
+    private ArrayAdapter<String> arrayAdapter;
+    private Button btnSiguiente;
+    private Spinner spRespuesta;
+    private String nombre;
+    private ArrayList<String> respuestasHistorial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pregunta3);
+        ActivityManager.addActivity(this);
 
         spRespuesta = findViewById(R.id.spRespuestas);
 
@@ -37,9 +43,14 @@ public class Pregunta3 extends AppCompatActivity implements Form{
         spRespuesta.setAdapter(arrayAdapter);
         puntuacion=getIntent().getExtras().getInt("puntuacion");
         modo10= getIntent().getExtras().getBoolean("modo10");
+        nombre= getIntent().getExtras().getString("nombre");
+        respuestasHistorial = getIntent().getExtras().getStringArrayList("respuestasHistorial");
         puntuacionMax =setMaxScore(modo10);
+        valorPregunta = setCorrectAnswer(modo10);
 
         preguntaRespondida=false;
+
+
 
 
         btnSiguiente.setOnClickListener(view -> {
@@ -53,14 +64,15 @@ public class Pregunta3 extends AppCompatActivity implements Form{
                if (itemSelected.equalsIgnoreCase("Respuesta 4") && !preguntaRespondida){
                    puntuacion+=setCorrectAnswer(modo10);
                    preguntaRespondida=true;
-                   Toast.makeText(this,"PUNTUACION: "+puntuacion,Toast.LENGTH_SHORT).show();
+
                    spRespuesta.setEnabled(false);
+                   respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" correcta: "+valorPregunta);
                }
                else{
                    if (!preguntaRespondida){
                        preguntaRespondida=true;
-                       Toast.makeText(this,"PUNTUACION: "+puntuacion,Toast.LENGTH_SHORT).show();
                        spRespuesta.setEnabled(false);
+                       respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" incorrecta: "+0);
                    }
 
 
@@ -70,6 +82,11 @@ public class Pregunta3 extends AppCompatActivity implements Form{
                Intent intent  = new Intent(this,Pregunta4.class);
                intent.putExtra("puntuacion",puntuacion);
                intent.putExtra("modo10",modo10);
+               intent.putExtra("nombre",nombre);
+               intent.putExtra("respuestasHistorial",respuestasHistorial);
+
+
+
                startActivity(intent);
            }
 
@@ -112,7 +129,7 @@ public class Pregunta3 extends AppCompatActivity implements Form{
 
         FragmentProgreso fragmentProgreso = new FragmentProgreso();
         Bundle bundle = new Bundle();
-        bundle.putInt("puntuacion", puntuacion);
+        bundle.putInt("valorPregunta", valorPregunta);
         bundle.putInt("NUMEROPREGUNTA", NUMEROPREGUNTA);
         bundle.putInt("puntuacionMax",puntuacionMax);
         fragmentProgreso.setArguments(bundle);

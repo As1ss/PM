@@ -15,10 +15,10 @@ public class FragmentProgreso extends Fragment {
 
     private int puntuacionMax;
     private int numPregunta;
-    private int puntuacion;
+    private int valorPregunta;
 
     public FragmentProgreso() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -35,15 +35,15 @@ public class FragmentProgreso extends Fragment {
         Bundle args = getArguments();
         puntuacionMax = args.getInt("puntuacionMax");
         numPregunta = args.getInt("NUMEROPREGUNTA");
-        puntuacion = args.getInt("puntuacion");
+        valorPregunta = args.getInt("valorPregunta");
         View view = inflater.inflate(R.layout.fragment_progreso, container, false);
         TextView tvTest = view.findViewById(R.id.tvTest);
         ProgressBar progressBar = view.findViewById(R.id.progressBar);
-        tvTest.setText("Pregunta " + numPregunta + "/5" + " Puntuacion de la pregunta" + puntuacion + "/" + puntuacionMax);
+        tvTest.setText("Pregunta " + numPregunta + "/5" + "\nValor de la pregunta " + valorPregunta + "/" + puntuacionMax);
         progressBar.setProgress(numPregunta);
 
 
-        // Inflate the layout for this fragment
+
         return view;
     }
 }

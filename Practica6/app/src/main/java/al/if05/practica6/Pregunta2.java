@@ -9,6 +9,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class Pregunta2 extends AppCompatActivity implements Form{
     private final static int NUMEROPREGUNTA = 2;
     private final static int VALORPREGUNTA = 2;
@@ -17,18 +19,29 @@ public class Pregunta2 extends AppCompatActivity implements Form{
     private boolean modo10;
 
     private boolean preguntaRespondida;
+    private int valorPregunta;
+
+    private Button btnSiguiente;
+    private RadioGroup rgPregunta2;
+
+    private String nombre;
+    private ArrayList<String> respuestasHistorial;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pregunta2);
+        ActivityManager.addActivity(this);
 
-        Button btnSiguiente = findViewById(R.id.btnSiguiente);
-        RadioGroup rgPregunta2 = findViewById(R.id.rgPregunta2);
+        btnSiguiente = findViewById(R.id.btnSiguiente);
+        rgPregunta2 = findViewById(R.id.rgPregunta2);
         puntuacion = getIntent().getExtras().getInt("puntuacion");
         modo10= getIntent().getExtras().getBoolean("modo10");
+        nombre = getIntent().getExtras().getString("nombre");
+        respuestasHistorial =getIntent().getExtras().getStringArrayList("respuestasHistorial");
         puntuacionMax = setMaxScore(modo10);
+        valorPregunta = setCorrectAnswer(modo10);
         preguntaRespondida=false;
 
 
@@ -43,20 +56,27 @@ public class Pregunta2 extends AppCompatActivity implements Form{
 
 
                 if (rbSelected.getId()==rbCorrect.getId() && !preguntaRespondida){
-                    Toast.makeText(this, "RESPUESTA CORRECTA", Toast.LENGTH_SHORT).show();
+
                     puntuacion+=setCorrectAnswer(modo10);
                     deshabilitarRadioGroup(rgPregunta2);
                     preguntaRespondida=true;
+                    respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" correcta: "+valorPregunta);
 
 
 
                 }
                 else{
                     if(!preguntaRespondida){
-                        Toast.makeText(this,"RESPUESTA INCORRECTA",Toast.LENGTH_SHORT).show();
+
                         puntuacion-=(setCorrectAnswer(modo10)/2);
+
+                        if(puntuacion<0){
+                            puntuacion=0;
+                        }
                         deshabilitarRadioGroup(rgPregunta2);
                         preguntaRespondida=true;
+                        respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" incorrecta: -"+valorPregunta/2);
+
                     }
 
                 }
@@ -69,6 +89,8 @@ public class Pregunta2 extends AppCompatActivity implements Form{
             Intent intent = new Intent(this, Pregunta3.class);
             intent.putExtra("puntuacion", puntuacion);
             intent.putExtra("modo10",modo10);
+            intent.putExtra("nombre",nombre);
+            intent.putExtra("respuestasHistorial",respuestasHistorial);
 
 
             startActivity(intent);
@@ -103,7 +125,7 @@ public class Pregunta2 extends AppCompatActivity implements Form{
     public void initFragment() {
         FragmentProgreso fragmentProgreso = new FragmentProgreso();
         Bundle bundle = new Bundle();
-        bundle.putInt("puntuacion", puntuacion);
+        bundle.putInt("valorPregunta", valorPregunta);
         bundle.putInt("NUMEROPREGUNTA", NUMEROPREGUNTA);
         bundle.putInt("puntuacionMax",puntuacionMax);
         fragmentProgreso.setArguments(bundle);

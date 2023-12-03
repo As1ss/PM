@@ -24,6 +24,41 @@
             android:text="Pregunta 5"
             android:textSize="25sp"
             android:layout_gravity="center"/>
+        <CheckBox
+        android:id="@+id/cbRespuesta1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Respuesta 1"
+        android:textSize="25sp"/>
+        <CheckBox
+            android:id="@+id/cbRespuesta2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Respuesta 2"
+            android:textSize="25sp"/>
+        <CheckBox
+            android:id="@+id/cbRespuesta3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Respuesta 3"
+            android:textSize="25sp"/>
+        <CheckBox
+            android:id="@+id/cbRespuesta4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Respuesta 4"
+            android:textSize="25sp"/>
+        <Button
+            android:id="@+id/btnFinalizarForm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Finalizar formulario"
+            android:layout_gravity="center"
+            android:textSize="25sp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

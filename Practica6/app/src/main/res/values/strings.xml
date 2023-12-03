@@ -8,6 +8,7 @@
     <string name="etNombreHintText">Ej: Alexis Lopez</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pregunta1Text">Describe brevemente el propósito de un firewall en el contexto de la informática.</string>
     <string-array name="respuestasPregunta3">
         <item></item>
         <item>Respuesta 1</item>

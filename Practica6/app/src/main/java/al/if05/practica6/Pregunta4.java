@@ -17,6 +17,8 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipDrawable;
 import com.google.android.material.chip.ChipGroup;
 
+import java.util.ArrayList;
+
 public class Pregunta4 extends AppCompatActivity implements Form {
 
     private final static int NUMEROPREGUNTA = 4;
@@ -25,24 +27,36 @@ public class Pregunta4 extends AppCompatActivity implements Form {
     private int puntuacionMax;
     private boolean modo10;
 
+    private int valorPregunta;
     private boolean preguntaRespondida;
     private RadioButton resp1, resp2, resp3, resp4;
     private Button btnSiguiente;
+    private String nombre;
+    private ArrayList<String> respuestasHistorial;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pregunta4);
+        ActivityManager.addActivity(this);
+
+
         resp1 = findViewById(R.id.rbRespuesta1);
         resp2 = findViewById(R.id.rbRespuesta2);
         resp3 = findViewById(R.id.rbRespuesta3);
         resp4 = findViewById(R.id.rbRespuesta4);
         puntuacion = getIntent().getExtras().getInt("puntuacion");
         modo10 = getIntent().getExtras().getBoolean("modo10");
+        nombre = getIntent().getExtras().getString("nombre");
+        respuestasHistorial=getIntent().getExtras().getStringArrayList("respuestasHistorial");
         preguntaRespondida = false;
         puntuacionMax = setMaxScore(modo10);
+        valorPregunta = setCorrectAnswer(modo10);
         btnSiguiente = findViewById(R.id.btnSiguiente);
+
+
+
 
         Thread hilo = new Thread(new Runnable() {
             @Override
@@ -54,6 +68,8 @@ public class Pregunta4 extends AppCompatActivity implements Form {
             }
         });
 
+
+
         hilo.start();
 
         btnSiguiente.setOnClickListener(view -> {
@@ -63,25 +79,29 @@ public class Pregunta4 extends AppCompatActivity implements Form {
                 Toast.makeText(this, "ESCOGE UNA OPCION", Toast.LENGTH_SHORT).show();
             } else {
                 if (resp3.isChecked() && !preguntaRespondida) {
-                    Toast.makeText(this, "RESPUESTA CORRECTA", Toast.LENGTH_SHORT).show();
+
                     puntuacion+=setCorrectAnswer(modo10);
                     resp1.setEnabled(false);
                     resp2.setEnabled(false);
                     resp3.setEnabled(false);
                     resp4.setEnabled(false);
                     preguntaRespondida=true;
+                    respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" correcta: "+valorPregunta);
                 } else {
-                    Toast.makeText(this, "RESPUESTA INCORRECTA", Toast.LENGTH_SHORT).show();
+
                     resp1.setEnabled(false);
                     resp2.setEnabled(false);
                     resp3.setEnabled(false);
                     resp4.setEnabled(false);
                     preguntaRespondida=true;
+                    respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" incorrecta: "+0);
                 }
             }
             Intent intent = new Intent(this,Pregunta5.class);
             intent.putExtra("puntuacion",puntuacion);
             intent.putExtra("modo10",modo10);
+            intent.putExtra("nombre",nombre);
+            intent.putExtra("respuestasHistorial",respuestasHistorial);
             startActivity(intent);
         });
 
@@ -154,7 +174,7 @@ public class Pregunta4 extends AppCompatActivity implements Form {
 
         FragmentProgreso fragmentProgreso = new FragmentProgreso();
         Bundle bundle = new Bundle();
-        bundle.putInt("puntuacion", puntuacion);
+        bundle.putInt("valorPregunta", valorPregunta);
         bundle.putInt("NUMEROPREGUNTA", NUMEROPREGUNTA);
         bundle.putInt("puntuacionMax", puntuacionMax);
         fragmentProgreso.setArguments(bundle);

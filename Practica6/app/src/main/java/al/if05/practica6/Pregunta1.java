@@ -6,60 +6,81 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+
 
 public class Pregunta1 extends AppCompatActivity implements Form {
 
     private final static int NUMEROPREGUNTA = 1;
     private final static int VALORPREGUNTA = 3;
+
     private int puntuacion;
     private int puntuacionMax;
+    private int valorPregunta;
     private boolean preguntaRespondida;
+    private String nombre;
+    private boolean modo10;
+    private Button btnTest;
+    private EditText etRespuesta;
+    private ArrayList<String> respuestasHistorial;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pregunta1);
-
-        preguntaRespondida=false;
-
-
+        ActivityManager.addActivity(this);
+        respuestasHistorial= new ArrayList<String>();
 
 
-        Button btnTest = findViewById(R.id.btnPULSA);
-        EditText etRespuesta = findViewById(R.id.etRespuesta);
+        preguntaRespondida = false;
 
-        String nombre = getIntent().getExtras().getString("nombre");
-        boolean modo10 = getIntent().getExtras().getBoolean("modo10");
+
+        btnTest = findViewById(R.id.btnPULSA);
+        etRespuesta = findViewById(R.id.etRespuesta);
+
+        nombre = getIntent().getExtras().getString("nombre");
+        modo10 = getIntent().getExtras().getBoolean("modo10");
 
         puntuacion = 0;
         puntuacionMax = setMaxScore(modo10);
+        valorPregunta = setCorrectAnswer(modo10);
 
 
         btnTest.setOnClickListener(view -> {
             String respuesta = etRespuesta.getText().toString();
-            if (respuesta.equalsIgnoreCase("hola") && !preguntaRespondida) {
-                puntuacion += setCorrectAnswer(modo10);
-                etRespuesta.setEnabled(false);
-                preguntaRespondida=true;
-            }
-            else{
-                if (!preguntaRespondida){
-                    puntuacion=0;
+            String respuestaCorrecta = "Filtrar el trafico de red y prevenir accesos no autorizados";
+            if (respuesta.equals("")) {
+                Toast.makeText(this, "INTRODUCE UNA RESPUESTA", Toast.LENGTH_SHORT).show();
+            } else {
+                if (respuesta.equalsIgnoreCase(respuestaCorrecta) && !preguntaRespondida) {
+                    puntuacion += setCorrectAnswer(modo10);
+                    respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" correcta: "+valorPregunta);
                     etRespuesta.setEnabled(false);
-                    preguntaRespondida=true;
+                    preguntaRespondida = true;
+                } else {
+                    if (!preguntaRespondida) {
+                        etRespuesta.setEnabled(false);
+                        preguntaRespondida = true;
+                        respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" incorrecta: "+0);
+                    }
                 }
-
+                Intent intent = new Intent(this, Pregunta2.class);
+                intent.putExtra("puntuacion", puntuacion);
+                intent.putExtra("modo10", modo10);
+                intent.putExtra("nombre", nombre);
+                intent.putExtra("respuestasHistorial",respuestasHistorial);
+                startActivity(intent);
             }
-            Intent intent = new Intent(this, Pregunta2.class);
-            intent.putExtra("puntuacion", puntuacion);
-            intent.putExtra("modo10",modo10);
-            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 
-            startActivity(intent);
+
         });
 
 
         initFragment();
+
 
     }
 
@@ -90,8 +111,9 @@ public class Pregunta1 extends AppCompatActivity implements Form {
         Bundle bundle = new Bundle();
         bundle.putInt("puntuacionMax", puntuacionMax);
         bundle.putInt("NUMEROPREGUNTA", NUMEROPREGUNTA);
-        bundle.putInt("puntuacion", puntuacion);
+        bundle.putInt("valorPregunta", valorPregunta);
         fragmentProgress.setArguments(bundle);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentProgress, fragmentProgress).commit();
     }
+
 }

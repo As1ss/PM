@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("modo10",modo10);
                     intent.putExtra("nombre",nombre);
                     startActivity(intent);
+                    this.finish();
 
                 }
 
