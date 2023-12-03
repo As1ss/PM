@@ -39,7 +39,7 @@ public class FragmentProgreso extends Fragment {
         View view = inflater.inflate(R.layout.fragment_progreso, container, false);
         TextView tvTest = view.findViewById(R.id.tvTest);
         ProgressBar progressBar = view.findViewById(R.id.progressBar);
-        tvTest.setText("Pregunta " + numPregunta + "/5" + " Puntuacion " + puntuacion + "/" + puntuacionMax);
+        tvTest.setText("Pregunta " + numPregunta + "/5" + " Puntuacion de la pregunta" + puntuacion + "/" + puntuacionMax);
         progressBar.setProgress(numPregunta);
 
 

@@ -13,12 +13,14 @@ public class Pregunta1 extends AppCompatActivity implements Form {
     private final static int VALORPREGUNTA = 3;
     private int puntuacion;
     private int puntuacionMax;
+    private boolean preguntaRespondida;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pregunta1);
 
+        preguntaRespondida=false;
 
 
 
@@ -35,15 +37,23 @@ public class Pregunta1 extends AppCompatActivity implements Form {
 
         btnTest.setOnClickListener(view -> {
             String respuesta = etRespuesta.getText().toString();
-            if (respuesta.equalsIgnoreCase("hola")) {
+            if (respuesta.equalsIgnoreCase("hola") && !preguntaRespondida) {
                 puntuacion += setCorrectAnswer(modo10);
+                etRespuesta.setEnabled(false);
+                preguntaRespondida=true;
             }
             else{
-                puntuacion=0;
+                if (!preguntaRespondida){
+                    puntuacion=0;
+                    etRespuesta.setEnabled(false);
+                    preguntaRespondida=true;
+                }
+
             }
             Intent intent = new Intent(this, Pregunta2.class);
             intent.putExtra("puntuacion", puntuacion);
             intent.putExtra("modo10",modo10);
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 
             startActivity(intent);
         });
