@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -22,7 +23,8 @@ public class Pregunta1 extends AppCompatActivity implements Form {
     private boolean preguntaRespondida;
     private String nombre;
     private boolean modo10;
-    private Button btnTest;
+    private Button btnSiguiente;
+    private ImageButton btnBack;
     private EditText etRespuesta;
     private ArrayList<String> respuestasHistorial;
 
@@ -38,7 +40,8 @@ public class Pregunta1 extends AppCompatActivity implements Form {
         preguntaRespondida = false;
 
 
-        btnTest = findViewById(R.id.btnPULSA);
+        btnSiguiente = findViewById(R.id.btnPULSA);
+        btnBack = findViewById(R.id.btnBackPregunta1);
         etRespuesta = findViewById(R.id.etRespuesta);
 
         nombre = getIntent().getExtras().getString("nombre");
@@ -49,7 +52,7 @@ public class Pregunta1 extends AppCompatActivity implements Form {
         valorPregunta = setCorrectAnswer(modo10);
 
 
-        btnTest.setOnClickListener(view -> {
+        btnSiguiente.setOnClickListener(view -> {
             String respuesta = etRespuesta.getText().toString();
             String respuestaCorrecta = "Filtrar el trafico de red y prevenir accesos no autorizados";
             if (respuesta.equals("")) {
@@ -78,6 +81,9 @@ public class Pregunta1 extends AppCompatActivity implements Form {
 
         });
 
+        btnBack.setOnClickListener(view -> {
+            this.onBackPressed();
+        });
 
         initFragment();
 

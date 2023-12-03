@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class Pregunta5 extends AppCompatActivity implements Form {
     private boolean modo10;
     private boolean preguntaRespondida;
     private Button btnFinalizar;
+    private ImageButton btnBack;
     private CheckBox cbResp1,cbResp2,cbResp3,cbResp4;
     private String nombre;
     private ArrayList<String> respuestasHistorial;
@@ -39,6 +41,7 @@ public class Pregunta5 extends AppCompatActivity implements Form {
         valorPregunta = setCorrectAnswer(modo10);
         preguntaRespondida=false;
         btnFinalizar= findViewById(R.id.btnFinalizarForm);
+        btnBack = findViewById(R.id.btnBackPregunta5);
         cbResp1 = findViewById(R.id.cbRespuesta1);
         cbResp2 = findViewById(R.id.cbRespuesta2);
         cbResp3 = findViewById(R.id.cbRespuesta3);
@@ -52,7 +55,7 @@ public class Pregunta5 extends AppCompatActivity implements Form {
                 Toast.makeText(this, "POR FAVOR SELECCIONA UNA RESPUESTA", Toast.LENGTH_SHORT).show();
             }
             else{
-                if (cbResp1.isChecked() && cbResp3.isChecked() && !preguntaRespondida){
+                if (cbResp2.isChecked() && cbResp3.isChecked() && !preguntaRespondida){
                     puntuacion+=setCorrectAnswer(modo10);
                     preguntaRespondida=true;
                     respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" correcta: "+valorPregunta);
@@ -71,6 +74,10 @@ public class Pregunta5 extends AppCompatActivity implements Form {
             ActivityManager.finishActivities();
 
 
+        });
+
+        btnBack.setOnClickListener(view -> {
+            this.onBackPressed();
         });
         initFragment();
 

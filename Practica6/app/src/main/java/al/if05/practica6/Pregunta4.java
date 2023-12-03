@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -31,6 +33,7 @@ public class Pregunta4 extends AppCompatActivity implements Form {
     private boolean preguntaRespondida;
     private RadioButton resp1, resp2, resp3, resp4;
     private Button btnSiguiente;
+    private ImageButton btnBack;
     private String nombre;
     private ArrayList<String> respuestasHistorial;
 
@@ -54,6 +57,7 @@ public class Pregunta4 extends AppCompatActivity implements Form {
         puntuacionMax = setMaxScore(modo10);
         valorPregunta = setCorrectAnswer(modo10);
         btnSiguiente = findViewById(R.id.btnSiguiente);
+        btnBack = findViewById(R.id.btnBackPregunta4);
 
 
 
@@ -105,6 +109,9 @@ public class Pregunta4 extends AppCompatActivity implements Form {
             startActivity(intent);
         });
 
+        btnBack.setOnClickListener(view -> {
+            this.onBackPressed();
+        });
 
         initFragment();
     }
@@ -114,39 +121,39 @@ public class Pregunta4 extends AppCompatActivity implements Form {
 
 
         if (resp3.isChecked()) {
-            resp3.setScaleX(1.2f);
+            resp3.setBackground(getDrawable(R.drawable.bg_custom_rj45));
             resp2.setChecked(false);
             resp1.setChecked(false);
             resp4.setChecked(false);
         } else if (!resp3.isChecked()) {
-            resp3.setScaleX(1);
+            resp3.setBackground(getDrawable(R.drawable.rj45));
         }
 
         if (resp4.isChecked()) {
-            resp4.setScaleX(1.2f);
+            resp4.setBackground(getDrawable(R.drawable.bg_custom_coaxial));
             resp2.setChecked(false);
             resp3.setChecked(false);
             resp1.setChecked(false);
         } else if (!resp4.isChecked()) {
-            resp4.setScaleX(1);
+            resp4.setBackground(getDrawable(R.drawable.coaxial));
         }
 
         if (resp1.isChecked()) {
-            resp1.setScaleX(1.2f);
+            resp1.setBackground(getDrawable(R.drawable.bg_custom_rj11));
             resp2.setChecked(false);
             resp3.setChecked(false);
             resp4.setChecked(false);
         } else if (!resp1.isChecked()) {
-            resp1.setScaleX(1);
+            resp1.setBackground(getDrawable(R.drawable.rj11));
         }
 
         if (resp2.isChecked()) {
-            resp2.setScaleX(1.2f);
+            resp2.setBackground(getDrawable(R.drawable.bg_custom_fibra));
             resp1.setChecked(false);
             resp3.setChecked(false);
             resp4.setChecked(false);
         } else if (!resp2.isChecked()) {
-            resp2.setScaleX(1);
+            resp2.setBackground(getDrawable(R.drawable.fibraoptica));
         }
     }
 

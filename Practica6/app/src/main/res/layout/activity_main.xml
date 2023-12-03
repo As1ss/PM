@@ -4,34 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/background">
 
 
-
+    <TextView
+        android:id="@+id/tvtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="88dp"
+        android:padding="10dp"
+        android:text="@string/tvTituloText"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="256dp"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        android:orientation="vertical">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/bg_customlogin">
+
 
         <TextView
-            android:id="@+id/tvtitulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/tvTituloText"
-            android:textSize="35sp"
-            android:layout_marginTop="30dp"/>
-        <TextView
+
             android:id="@+id/tvNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tvNombreText"
             android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:textSize="25sp"/>
+            android:layout_marginTop="70dp"
+            android:text="@string/tvNombreText"
+            android:textSize="25sp" />
 
         <EditText
             android:id="@+id/etNombre"
@@ -42,36 +52,42 @@
             android:ems="10"
             android:hint="@string/etNombreHintText"
             android:inputType="textPersonName"
-            android:textSize="18sp"
+            android:textSize="20sp"
             tools:ignore="Autofill,TextContrastCheck" />
+
         <RadioGroup
             android:id="@+id/rgOpciones"
-            android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center"
-            >
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
             <RadioButton
                 android:id="@+id/rbSobre10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rbSobre10Text"
-                android:textSize="15sp"/>
+                android:textSize="20sp" />
+
             <RadioButton
                 android:id="@+id/rbSobre100"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rbSobre100Text"
-                android:textSize="15sp"/>
+                android:textSize="20sp" />
         </RadioGroup>
+
         <Button
-            android:layout_marginTop="20dp"
             android:id="@+id/btnEmpezar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btnText"
             android:layout_gravity="center"
-            android:textSize="20sp"/>
+            android:layout_marginTop="60dp"
+            android:text="@string/btnText"
+            android:textSize="25sp"
+            app:cornerRadius="10dp"
+            android:backgroundTint="@color/blue"
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,8 +3,10 @@ package al.if05.practica6;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -22,6 +24,7 @@ public class Pregunta2 extends AppCompatActivity implements Form{
     private int valorPregunta;
 
     private Button btnSiguiente;
+    private ImageButton btnBack;
     private RadioGroup rgPregunta2;
 
     private String nombre;
@@ -35,6 +38,7 @@ public class Pregunta2 extends AppCompatActivity implements Form{
         ActivityManager.addActivity(this);
 
         btnSiguiente = findViewById(R.id.btnSiguiente);
+        btnBack = findViewById(R.id.btnBackPregunta2);
         rgPregunta2 = findViewById(R.id.rgPregunta2);
         puntuacion = getIntent().getExtras().getInt("puntuacion");
         modo10= getIntent().getExtras().getBoolean("modo10");
@@ -95,6 +99,9 @@ public class Pregunta2 extends AppCompatActivity implements Form{
 
             startActivity(intent);
 
+        });
+        btnBack.setOnClickListener(view -> {
+            this.onBackPressed();
         });
 
         initFragment();

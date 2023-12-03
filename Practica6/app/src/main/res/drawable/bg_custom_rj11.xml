@@ -1,0 +1,13 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo redondeado con esquinas superiores izquierda y derecha -->
+    <item
+        android:drawable="@drawable/rj11" />
+    <item>
+        <shape android:shape="rectangle">
+           <stroke android:color="#00FF00" android:width="5dp"/>
+        </shape>
+    </item>
+
+    <!-- Imagen como capa en el fondo -->
+
+</layer-list>

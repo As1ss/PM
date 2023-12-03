@@ -4,35 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResultadoFinal">
+    tools:context=".ResultadoFinal"
+    android:background="@drawable/background">
+    <TextView
+        android:id="@+id/tvtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="88dp"
+        android:padding="10dp"
+        android:text="@string/tvTituloText"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/lyFinalActivity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="256dp"
+        android:background="@drawable/bg_customlogin"
+        android:gravity="center"
         android:orientation="vertical"
+        android:paddingTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center">
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:id="@+id/tvResultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Test"
             android:layout_gravity="center"
+            android:gravity="center"
             android:textSize="25sp"
-            android:gravity="center"/>
-
-
-
-
-
-
-
-
-
-
-
-
+            android:layout_marginBottom="20dp"/>
 
 
 

@@ -2,18 +2,31 @@
     <string name="app_name">Practica 6</string>
     <string name="btnText">Empezar</string>
     <string name="tvNombreText">Nombre</string>
-    <string name="tvTituloText">Cuestionator</string>
+    <string name="tvTituloText">CUESTIONATOR</string>
     <string name="rbSobre100Text">Sobre 100</string>
     <string name="rbSobre10Text">Sobre 10</string>
     <string name="etNombreHintText">Ej: Alexis Lopez</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="pregunta1Text">Describe brevemente el propósito de un firewall en el contexto de la informática.</string>
+    <string name="pregunta2Text">En el ámbito de la programación, ¿cuáles de las siguientes son lenguajes de programación de alto nivel?</string>
+    <string name="pregunta2_respuesta1">a) Assembly y C.</string>
+    <string name="pregunta2_respuesta2">b) Python y Java.</string>
+    <string name="pregunta2_respuesta3">c) HTML y CSS.</string>
+    <string name="pregunta2_respuesta4">d) SQL y JavaScript.</string>
+    <string name="pregunta3Text">¿Qué función realiza un sistema operativo en un ordenador?</string>
+    <string name="pregunta5Text">En el contexto de la programación orientada a objetos, ¿cuáles son dos características principales de la herencia?</string>
+    <string name="pregunta5_respuesta1">a) Encapsulamiento.</string>
+    <string name="pregunta5_respuesta2">b) Polimorfismo.</string>
+    <string name="pregunta5_respuesta3">c) Reutilización de código.</string>
+    <string name="pregunta5_respuesta4">d) Delegación.</string>
+    <string name="btnSiguienteText">Siguiente</string>
+    <string name="finalizarButtonText">Finalizar formulario</string>
     <string-array name="respuestasPregunta3">
         <item></item>
-        <item>Respuesta 1</item>
-        <item>Respuesta 2</item>
-        <item>Respuesta 3</item>
-        <item>Respuesta 4</item>
+        <item>Ejecutar programas de aplicación</item>
+        <item>Conectar dispositivos periféricos</item>
+        <item>Crear documentos y archivos</item>
+        <item>Controlar el hardware y gestionar recursos</item>
     </string-array>
 </resources>

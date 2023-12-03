@@ -5,57 +5,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Pregunta1">
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/background"
+
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="256dp"
+        android:background="@drawable/bg_customlogin"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:weightSum="4"
-        >
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentProgress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            />
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageButton
+            android:id="@+id/btnBackPregunta1"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:background="@drawable/arrow"
+            android:backgroundTint="@color/gray"/>
+
         <TextView
+            android:layout_marginTop="60dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="@string/pregunta1Text"
-            android:textSize="25sp"
-            android:gravity="center"/>
+            android:textSize="25sp" />
 
 
         <EditText
+            android:layout_marginTop="20dp"
             android:id="@+id/etRespuesta"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"/>
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:ems="15"
+            android:inputType="textMultiLine" />
+
         <Button
+            android:layout_marginTop="100dp"
             android:id="@+id/btnPULSA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="PULSA"
-            android:layout_gravity="center"/>
-
-
-
-
-
-
-
-
-
-
+            android:layout_gravity="center"
+            android:text="@string/btnSiguienteText"
+            android:backgroundTint="@color/blue"
+            app:cornerRadius="10dp"
+            android:textSize="25sp" />
 
 
     </LinearLayout>
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

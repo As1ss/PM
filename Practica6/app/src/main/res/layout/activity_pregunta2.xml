@@ -4,73 +4,84 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pregunta2">
+    tools:context=".Pregunta2"
+    android:background="@drawable/background">
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentProgress2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
     <LinearLayout
+
+        android:layout_marginTop="196dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:orientation="vertical"
-        android:weightSum="4">
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentProgress2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+        android:weightSum="4"
+        android:background="@drawable/bg_customlogin">
+        <ImageButton
+            android:id="@+id/btnBackPregunta2"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:background="@drawable/arrow"
+            android:backgroundTint="@color/gray"/>
+
         <TextView
             android:id="@+id/tvPregunta2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="25sp"
-            android:text="Pregunta 2"
-            android:gravity="center"/>
+            android:text="@string/pregunta2Text"
+            android:gravity="center"
+            />
         <RadioGroup
             android:id="@+id/rgPregunta2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center">
+            android:layout_marginStart="60dp"
+            android:layout_gravity="center">
             <RadioButton
                 android:layout_marginTop="20dp"
                 android:id="@+id/rbRespuesta1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Respuesta 1"
+                android:text="@string/pregunta2_respuesta1"
                 android:textSize="25sp"/>
             <RadioButton
                 android:layout_marginTop="20dp"
                 android:id="@+id/rbRespuesta2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Respuesta 2"
+                android:text="@string/pregunta2_respuesta2"
                 android:textSize="25sp"/>
             <RadioButton
                 android:layout_marginTop="20dp"
                 android:id="@+id/rbRespuesta3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Respuesta 3"
+                android:text="@string/pregunta2_respuesta3"
                 android:textSize="25sp"/>
             <RadioButton
                 android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:text="Respuesta 4"/>
-
-
-
-
-
-
+                android:text="@string/pregunta2_respuesta4"/>
         </RadioGroup>
         <Button
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:id="@+id/btnSiguiente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp"
-            android:text="Siguiente"
+            android:text="@string/btnSiguienteText"
+            app:cornerRadius="10dp"
+            android:backgroundTint="@color/blue"
             android:layout_gravity="center"/>
         
 

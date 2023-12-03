@@ -2,9 +2,13 @@ package al.if05.practica6;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -18,6 +22,7 @@ public class ResultadoFinal extends AppCompatActivity implements Form{
     private boolean modo10;
     private int puntuacionMax;
     private ArrayList<String> respuestasHistorial;
+    private Button btnContinuar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,7 @@ public class ResultadoFinal extends AppCompatActivity implements Form{
         puntuacionMax = setMaxScore(modo10);
         tvResultado = findViewById(R.id.tvResultado);
         layout= findViewById(R.id.lyFinalActivity);
+        createButton();
 
 
         for(int i = 0;i<respuestasHistorial.size();i++){
@@ -43,13 +49,36 @@ public class ResultadoFinal extends AppCompatActivity implements Form{
 
         }
 
+        layout.addView(btnContinuar);
 
 
 
         tvResultado.setText(mostrarMensaje(puntuacion));
 
+        btnContinuar.setOnClickListener(view -> {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        });
+
 
     }
+
+    private void createButton() {
+        btnContinuar =new Button(this);
+        btnContinuar.setTextSize(25f);
+        // Asegúrate de tener un método setCornerRadius definido o utiliza otras técnicas para redondear las esquinas del botón
+        btnContinuar.setBackgroundTintList(getResources().getColorStateList(R.color.blue));
+        btnContinuar.setText("Continuar");
+        btnContinuar.setTextColor(Color.WHITE);
+        //Creamos un objeto LayoutParams para agregar margenes y ancho alto
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,  // Ancho
+                ViewGroup.LayoutParams.WRAP_CONTENT   // Alto
+        );
+        layoutParams.setMargins(0, 180, 0, 0);
+        btnContinuar.setLayoutParams(layoutParams);
+    }
+
     private String mostrarMensaje(int puntuacion){
        switch (puntuacion){
            case 5:
