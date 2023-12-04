@@ -67,7 +67,7 @@ public class Pregunta1 extends AppCompatActivity implements Form {
                     if (!preguntaRespondida) {
                         etRespuesta.setEnabled(false);
                         preguntaRespondida = true;
-                        respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" incorrecta: "+0);
+                        respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" incorrecta: "+0+"\nLa respuesta correcta era: "+respuestaCorrecta);
                     }
                 }
                 Intent intent = new Intent(this, Pregunta2.class);

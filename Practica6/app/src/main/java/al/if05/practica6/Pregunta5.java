@@ -62,7 +62,7 @@ public class Pregunta5 extends AppCompatActivity implements Form {
                 }
                 else{
                     preguntaRespondida=true;
-                    respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" incorrecta: "+0);
+                    respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" incorrecta: "+0+"\nLa respuesta correcta era: "+cbResp2.getText().toString()+" y "+ cbResp3.getText().toString());
                 }
             }
             Intent intent = new Intent(this,ResultadoFinal.class);

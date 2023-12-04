@@ -74,7 +74,7 @@ public class Pregunta3 extends AppCompatActivity implements Form {
                     if (!preguntaRespondida) {
                         preguntaRespondida = true;
                         spRespuesta.setEnabled(false);
-                        respuestasHistorial.add("Pregunta " + NUMEROPREGUNTA + " incorrecta: " + 0);
+                        respuestasHistorial.add("Pregunta " + NUMEROPREGUNTA + " incorrecta: " + 0+"\nLa respuesta correcta era: "+respuestaCorrecta);
                     }
 
 

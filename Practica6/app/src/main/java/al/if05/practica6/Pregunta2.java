@@ -79,7 +79,7 @@ public class Pregunta2 extends AppCompatActivity implements Form{
                         }
                         deshabilitarRadioGroup(rgPregunta2);
                         preguntaRespondida=true;
-                        respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" incorrecta: -"+valorPregunta/2);
+                        respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" incorrecta: -"+valorPregunta/2+"\nLa respuesta correcta era: "+rbCorrect.getText().toString());
 
                     }
 

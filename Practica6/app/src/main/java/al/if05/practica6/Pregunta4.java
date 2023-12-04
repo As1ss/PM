@@ -98,7 +98,7 @@ public class Pregunta4 extends AppCompatActivity implements Form {
                     resp3.setEnabled(false);
                     resp4.setEnabled(false);
                     preguntaRespondida=true;
-                    respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" incorrecta: "+0);
+                    respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" incorrecta: "+0+"\nLa respuesta correcta era: c)");
                 }
             }
             Intent intent = new Intent(this,Pregunta5.class);

@@ -41,11 +41,16 @@ public class ResultadoFinal extends AppCompatActivity implements Form{
         for(int i = 0;i<respuestasHistorial.size();i++){
             TextView tvRespuesta = new TextView(this);
             tvRespuesta.setText(respuestasHistorial.get(i));
-            tvRespuesta.setTextSize(25f);
+            tvRespuesta.setTextSize(20f);
             tvRespuesta.setGravity(Gravity.CENTER);
-
-
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,  // Ancho
+                    ViewGroup.LayoutParams.WRAP_CONTENT   // Alto
+            );
+            layoutParams.setMargins(0, 10, 0, 0);
+            tvRespuesta.setLayoutParams(layoutParams);
             layout.addView(tvRespuesta);
+
 
         }
 

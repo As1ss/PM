@@ -47,6 +47,11 @@
            android:layout_height="wrap_content"
            android:orientation="horizontal">
 
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="a)"
+               android:textSize="25sp"/>
            <RadioButton
                android:id="@+id/rbRespuesta1"
                android:layout_width="120dp"
@@ -54,10 +59,15 @@
                android:button="@null"
                android:layout_marginEnd="20dp"
                android:background="@drawable/rj11"
-
-
                />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="b)"
+               android:textSize="25sp"/>
+
            <RadioButton
+
                android:id="@+id/rbRespuesta2"
                android:layout_width="120dp"
                android:layout_height="120dp"
@@ -71,6 +81,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="c)"
+                android:textSize="25sp"/>
             <RadioButton
                 android:id="@+id/rbRespuesta3"
                 android:layout_width="120dp"
@@ -80,6 +95,11 @@
                 android:background="@drawable/rj45"
 
                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="d)"
+                android:textSize="25sp"/>
             <RadioButton
                 android:id="@+id/rbRespuesta4"
                 android:layout_width="120dp"
