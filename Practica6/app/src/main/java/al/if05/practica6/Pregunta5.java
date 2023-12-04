@@ -60,6 +60,16 @@ public class Pregunta5 extends AppCompatActivity implements Form {
                     preguntaRespondida=true;
                     respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" correcta: "+valorPregunta);
                 }
+                else if (cbResp2.isChecked() && !preguntaRespondida){
+                    puntuacion+=setCorrectAnswer(modo10)/2;
+                    preguntaRespondida=true;
+                    respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" correcta: "+valorPregunta/2+"\nLa otra respuesta correcta era: "+cbResp3.getText().toString());
+                }
+                else if (cbResp3.isChecked() && !preguntaRespondida){
+                    puntuacion+=setCorrectAnswer(modo10)/2;
+                    preguntaRespondida=true;
+                    respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" correcta: "+valorPregunta/2+"\nLa otra respuesta correcta era: "+cbResp2.getText().toString());
+                }
                 else{
                     preguntaRespondida=true;
                     respuestasHistorial.add("Pregunta "+NUMEROPREGUNTA+" incorrecta: "+0+"\nLa respuesta correcta era: "+cbResp2.getText().toString()+" y "+ cbResp3.getText().toString());

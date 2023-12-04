@@ -80,7 +80,7 @@ public class ResultadoFinal extends AppCompatActivity implements Form{
                 ViewGroup.LayoutParams.WRAP_CONTENT,  // Ancho
                 ViewGroup.LayoutParams.WRAP_CONTENT   // Alto
         );
-        layoutParams.setMargins(0, 180, 0, 0);
+        layoutParams.setMargins(0, 80, 0, 0);
         btnContinuar.setLayoutParams(layoutParams);
     }
 
@@ -88,22 +88,25 @@ public class ResultadoFinal extends AppCompatActivity implements Form{
        switch (puntuacion){
            case 5:
            case 50:
-               return "¡Enhorabuena "+nombre+" has aprobado! Nota: "+puntuacion+"/"+puntuacionMax;
+               return "¡Enhorabuena "+nombre+" has aprobado!\nNota: "+puntuacion+"/"+puntuacionMax;
            case 6:
            case 60:
            case 7:
            case 70:
-               return "!Enhorabuena "+nombre+" has sacado un notable! Nota: "+puntuacion+"/"+puntuacionMax;
+               return "!Enhorabuena "+nombre+" has sacado un notable!\nNota: "+puntuacion+"/"+puntuacionMax;
            case 8:
            case 80:
            case 9:
            case 90:
-               return "!Enhorabuena "+nombre+" has sacado un sobresaliente! Nota: "+puntuacion+"/"+puntuacionMax;
+               return "!Enhorabuena "+nombre+" has sacado un sobresaliente!\nNota: "+puntuacion+"/"+puntuacionMax;
            case 10:
+               if(puntuacionMax==100){
+                   return "Lo lamento "+nombre+" has suspendido.\nNota: "+puntuacion+"/"+puntuacionMax;
+               }
            case 100:
-               return "!Enhorabuena "+nombre+" has sacado matrícula de honor! Nota: "+puntuacion+"/"+puntuacionMax;
+               return "!Enhorabuena "+nombre+" has sacado matrícula de honor!\nNota: "+puntuacion+"/"+puntuacionMax;
            default:
-               return "Lo lamento "+nombre+" has suspendido. Nota: "+puntuacion+"/"+puntuacionMax;
+               return "Lo lamento "+nombre+" has suspendido.\nNota: "+puntuacion+"/"+puntuacionMax;
 
 
 

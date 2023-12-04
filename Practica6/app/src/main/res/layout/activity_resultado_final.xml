@@ -25,7 +25,7 @@
         android:id="@+id/lyFinalActivity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="256dp"
+        android:layout_marginTop="206dp"
         android:background="@drawable/bg_customlogin"
         android:gravity="center"
         android:orientation="vertical"
