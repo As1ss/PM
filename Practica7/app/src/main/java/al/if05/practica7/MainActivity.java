@@ -1,9 +1,11 @@
 package al.if05.practica7;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -11,30 +13,88 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
+public class MainActivity extends AppCompatActivity  {
+
+    private static final int REQUEST_CODE_DETALLES_ACTIVITY = 1;
+    Pelicula[] peliculas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = new Intent(this, DetallesActivity.class);
+        LinearLayout lyGeneral = findViewById(R.id.lyGeneral);
+        Button btnSalir = findViewById(R.id.btnCerrar);
+        peliculas = cargarPeliculas();
+        cargarTitulosPuntuacion(peliculas);
 
-        LinearLayout layoutP0 = findViewById(R.id.lyP0);
-        LinearLayout layoutP1 = findViewById(R.id.lyP1);
-        LinearLayout layoutP2 = findViewById(R.id.lyP2);
-        LinearLayout layoutP3 = findViewById(R.id.lyP3);
+
+        for (int i = 0; i < lyGeneral.getChildCount(); i++) {
+            LinearLayout layout = (LinearLayout) lyGeneral.getChildAt(i);
+            Pelicula peliculaIntent = peliculas[i];
+            layout.setOnClickListener(view -> {
+                intent.putExtra("pelicula", peliculaIntent);
+                startActivityForResult(intent, REQUEST_CODE_DETALLES_ACTIVITY);
+            });
+        }
+
+
+        btnSalir.setOnClickListener(view -> {
+            this.finish();
+        });
+    }
+
+
+    // Método para recibir el resultado de DetallesActivity
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_CODE_DETALLES_ACTIVITY && resultCode == RESULT_OK) {
+            // Obtener la puntuación desde DetallesActivity
+            int puntuacion = data.getIntExtra("puntuacionDesdeFragmento", 0);
+            String titulo = data.getStringExtra("tituloFragment");
+            actualizarPelicula(titulo,puntuacion);
+            cargarTitulosPuntuacion(peliculas);
+        }
+    }
+    private void actualizarPelicula(String titulo,int puntuacion){
+        for (int i =0;i<peliculas.length;i++){
+            if (titulo.equalsIgnoreCase(peliculas[i].getTitulo())){
+                peliculas[i].setPuntuacion(puntuacion);
+            }
+        }
+    }
+    private void cargarTitulosPuntuacion(Pelicula[] peliculas) {
 
         TextView tvP0 = findViewById(R.id.tvTituloP0);
         RatingBar rbP0 = findViewById(R.id.rbP0);
+        tvP0.setText(peliculas[0].getTitulo());
+        rbP0.setProgress(peliculas[0].getPuntuacion());
 
         TextView tvP1 = findViewById(R.id.tvTituloP1);
         RatingBar rbP1 = findViewById(R.id.rbP1);
+        tvP1.setText(peliculas[1].getTitulo());
+        rbP1.setProgress(peliculas[1].getPuntuacion());
 
         TextView tvP2 = findViewById(R.id.tvTituloP2);
         RatingBar rbP2 = findViewById(R.id.rbP2);
+        tvP2.setText(peliculas[2].getTitulo());
+        rbP2.setProgress(peliculas[2].getPuntuacion());
 
         TextView tvP3 = findViewById(R.id.tvTituloP3);
         RatingBar rbP3 = findViewById(R.id.rbP3);
+        tvP3.setText(peliculas[3].getTitulo());
+        rbP3.setProgress(peliculas[3].getPuntuacion());
+    }
 
+
+
+    private Pelicula[] cargarPeliculas() {
+
+        Pelicula[] peliculas = new Pelicula[4];
 
         Pelicula p0 = new Pelicula();
         p0.setTitulo(getString(R.string.tituloP0));
@@ -44,9 +104,6 @@ public class MainActivity extends AppCompatActivity {
         p0.setSinopsis(getResources().getString(R.string.sinopsisP0));
         p0.setImagenFondo(R.drawable.abierto_hasta_el_amanecer);
         p0.setPuntuacion(2);
-        tvP0.setText(p0.getTitulo());
-        rbP0.setProgress(p0.getPuntuacion());
-
 
 
         Pelicula p1 = new Pelicula();
@@ -58,8 +115,6 @@ public class MainActivity extends AppCompatActivity {
         p1.setImagenFondo(R.drawable.eldiadelabestia_width);
         p1.setPuntuacion(3);
 
-        tvP1.setText(p1.getTitulo());
-        rbP1.setProgress(p1.getPuntuacion());
 
         Pelicula p2 = new Pelicula();
         p2.setTitulo(getResources().getString(R.string.tituloP2));
@@ -70,8 +125,6 @@ public class MainActivity extends AppCompatActivity {
         p2.setImagenFondo(R.drawable.isidisiwidth);
         p2.setPuntuacion(5);
 
-        tvP2.setText(p2.getTitulo());
-        rbP2.setProgress(p2.getPuntuacion());
 
         Pelicula p3 = new Pelicula();
         p3.setTitulo(getResources().getString(R.string.tituloP3));
@@ -82,34 +135,14 @@ public class MainActivity extends AppCompatActivity {
         p3.setImagenFondo(R.drawable.snowpiercer_width);
         p3.setPuntuacion(1);
 
-        tvP3.setText(p3.getTitulo());
-        rbP3.setProgress(p3.getPuntuacion());
+        peliculas[0] = p0;
+        peliculas[1] = p1;
+        peliculas[2] = p2;
+        peliculas[3] = p3;
 
-        Intent intent = new Intent(this,DetallesActivity.class);
-        Bundle bundle = new Bundle();
-
-
-        layoutP0.setOnClickListener(view -> {
-            intent.putExtra("pelicula",p0);
-            startActivity(intent);
-        });
-        layoutP1.setOnClickListener(view -> {
-            intent.putExtra("pelicula",p1);
-            startActivity(intent);
-        });
-        layoutP2.setOnClickListener(view -> {
-            intent.putExtra("pelicula",p2);
-            startActivity(intent);
-        });
-        layoutP3.setOnClickListener(view -> {
-            intent.putExtra("pelicula",p3);
-            startActivity(intent);
-        });
-
-
-
-
-
-
+        return peliculas;
     }
+
+
+
 }
