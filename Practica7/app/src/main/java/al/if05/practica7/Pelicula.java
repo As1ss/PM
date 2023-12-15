@@ -11,7 +11,8 @@ public class Pelicula implements Serializable {
     private String ano;
     private String[] actores;
     private String sinopsis;
-    private Drawable imagenFondo;
+    private int imagenFondo;
+    private int puntuacion;
 
     public Pelicula() {
 
@@ -37,7 +38,7 @@ public class Pelicula implements Serializable {
         return sinopsis;
     }
 
-    public Drawable getImagenFondo() {
+    public int getImagenFondo() {
         return imagenFondo;
     }
 
@@ -61,7 +62,28 @@ public class Pelicula implements Serializable {
         this.sinopsis = sinopsis;
     }
 
-    public void setImagenFondo(Drawable imagenFondo) {
+    public void setImagenFondo(int imagenFondo) {
         this.imagenFondo = imagenFondo;
+    }
+
+    public int getPuntuacion() {
+        return puntuacion;
+    }
+
+    public void setPuntuacion(int puntuacion) {
+        this.puntuacion = puntuacion;
+    }
+    public String getActoresString(String[] actores) {
+        StringBuilder actoresString = new StringBuilder();
+
+        for (int i = 0; i < actores.length; i++) {
+            actoresString.append(actores[i]);
+
+            // Añadir coma si no es la última iteración
+            if (i < actores.length - 1) {
+                actoresString.append(", ");
+            }
+        }
+        return actoresString.toString();
     }
 }

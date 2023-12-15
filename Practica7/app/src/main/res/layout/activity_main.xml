@@ -34,7 +34,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/lyPelicula1"
+                android:id="@+id/lyP0"
                 android:layout_width="wrap_content"
                 android:layout_height="155dp"
                 android:layout_marginStart="5dp"
@@ -43,27 +43,30 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/tvTituloP0"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="@string/tvTitlePelicula0"
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     android:textStyle="bold" />
 
                 <RatingBar
+                    android:id="@+id/rbP0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:numStars="5"
                     android:progressBackgroundTint="@color/white"
-                    android:progressTint="#FFFF00"
-
+                    android:progressTint="@color/yellow"
+                    android:stepSize="1"
+                    android:isIndicator="true"
                     />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lyP1"
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
                 android:layout_marginStart="5dp"
@@ -73,24 +76,28 @@
                 android:orientation="horizontal"
                >
                 <TextView
+                    android:id="@+id/tvTituloP1"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/tvTitlePelicula1"
                     android:textStyle="bold"
                     android:gravity="center"
                     android:textColor="@color/white"
                     android:textSize="25sp" />
                 <RatingBar
+                    android:id="@+id/rbP1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:numStars="5"
                     android:layout_gravity="center"
                     android:progressBackgroundTint="@color/white"
-                    android:progressTint="#FFFF00"/>
+                    android:progressTint="@color/yellow"
+                    android:stepSize="1"
+                    android:isIndicator="true"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lyP2"
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
                 android:layout_marginStart="5dp"
@@ -101,25 +108,29 @@
                >
 
                 <TextView
+                    android:id="@+id/tvTituloP2"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/tvTitlePelicula2"
                     android:gravity="center"
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:textSize="25sp" />
 
                 <RatingBar
+                    android:id="@+id/rbP2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:numStars="5"
                     android:layout_gravity="center"
                     android:progressBackgroundTint="@color/white"
-                    android:progressTint="#FFFF00"/>
+                    android:progressTint="@color/yellow"
+                    android:stepSize="1"
+                    android:isIndicator="true"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lyP3"
                 android:layout_width="match_parent"
                 android:layout_height="155dp"
                 android:layout_marginStart="5dp"
@@ -129,29 +140,32 @@
                 android:background="@drawable/snowpiercer_width">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tvTituloP3"
+                    android:layout_width="155dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/tvTitlePelicula4"
+                    android:gravity="center"
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:textSize="25sp" />
 
-
                 <RatingBar
+                    android:id="@+id/rbP3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:max="5"
                     android:numStars="5"
                     android:progressBackgroundTint="@color/white"
-                    android:progressTint="#FFFF00"
+                    android:progressTint="@color/yellow"
                     android:layout_gravity="center"
+                    android:stepSize="1"
+                    android:isIndicator="true"
                     />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
     <Button
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/btnCerrarAppText"

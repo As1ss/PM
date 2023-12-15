@@ -6,11 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".DetallesActivity">
     <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
     </androidx.fragment.app.FragmentContainerView>
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        android:textColor="@color/white"
+        android:fontFamily="@font/bebasneue_regular"
+        android:backgroundTint="@color/red"
+        android:textSize="35sp"
+        app:layout_constraintTop_toBottomOf="@id/fragmentContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cornerRadius="5dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
