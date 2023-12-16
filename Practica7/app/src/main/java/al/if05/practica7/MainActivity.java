@@ -2,8 +2,10 @@ package al.if05.practica7;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentContainerView;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -16,7 +18,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity  implements  FragmentPelicula.onFragmentInteractListener{
 
     private static final int REQUEST_CODE_DETALLES_ACTIVITY = 1;
     Pelicula[] peliculas;
@@ -26,17 +28,40 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
         Intent intent = new Intent(this, DetallesActivity.class);
         LinearLayout lyGeneral = findViewById(R.id.lyGeneral);
+        FragmentContainerView fragmentContainer = findViewById(R.id.fragmentContainerMain);
+        Bundle bundle = new Bundle();
         Button btnSalir = findViewById(R.id.btnCerrar);
         peliculas = cargarPeliculas();
         cargarTitulosPuntuacion(peliculas);
 
 
+
+
         for (int i = 0; i < lyGeneral.getChildCount(); i++) {
             LinearLayout layout = (LinearLayout) lyGeneral.getChildAt(i);
             Pelicula peliculaIntent = peliculas[i];
+
             layout.setOnClickListener(view -> {
-                intent.putExtra("pelicula", peliculaIntent);
-                startActivityForResult(intent, REQUEST_CODE_DETALLES_ACTIVITY);
+                //Si es en tablet landscape
+                if (isTablet()){
+                    FragmentPelicula fragmentPelicula = new FragmentPelicula();
+
+                    Toast.makeText(this, "ESTA LANDSCAPE TABLET", Toast.LENGTH_SHORT).show();
+                    bundle.putSerializable("pelicula",peliculaIntent);
+                    fragmentPelicula.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerMain,fragmentPelicula).commit();
+
+                }
+
+                else{
+                    //Si es portrait movil
+                    Toast.makeText(this, "ESTA PORTRAIT MOVIL", Toast.LENGTH_SHORT).show();
+                      intent.putExtra("pelicula", peliculaIntent);
+                    startActivityForResult(intent, REQUEST_CODE_DETALLES_ACTIVITY);
+
+                }
+
+
             });
         }
 
@@ -46,6 +71,11 @@ public class MainActivity extends AppCompatActivity  {
         });
     }
 
+    //Este metodo es para saber con que tipo de dispositivo estamos operando y poder actuar en consecuencia con los fragments
+    private boolean isTablet() {
+        Configuration configuration = getResources().getConfiguration();
+        return configuration.smallestScreenWidthDp >= 600;
+    }
 
     // Método para recibir el resultado de DetallesActivity
     @Override
@@ -144,5 +174,9 @@ public class MainActivity extends AppCompatActivity  {
     }
 
 
-
+    @Override
+    public void actualizarPuntuaciones(String titulo, int puntuacion) {
+        actualizarPelicula(titulo,puntuacion);
+        cargarTitulosPuntuacion(peliculas);
+    }
 }
