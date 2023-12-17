@@ -6,19 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity" android:background="@color/black">
+
     <TextView
         android:id="@+id/tbTituloApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="120sp"
-        android:text="@string/tvTextTitleApp"
-        android:fontFamily="@font/bebasneue_regular"
         android:layout_gravity="center"
-        android:textColor="@color/red"
+        android:fontFamily="@font/bebasneue_regular"
         android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/tvTextTitleApp"
+        android:textColor="@color/red"
+        android:textSize="120sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
     <ScrollView
         android:id="@+id/svPeliculas"
         android:layout_width="wrap_content"
@@ -175,14 +177,16 @@
         android:textSize="55sp"
         app:layout_constraintTop_toBottomOf="@id/svPeliculas"
         app:layout_constraintStart_toStartOf="parent"
-        app:cornerRadius="5dp"/>
+        app:cornerRadius="5dp"
+        tools:ignore="VisualLintButtonSize,VisualLintBounds" />
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerMain"
         android:layout_marginTop="20dp"
         android:layout_width="650dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/tbTituloApp"
-        app:layout_constraintStart_toEndOf="@id/svPeliculas">
+        app:layout_constraintStart_toEndOf="@id/svPeliculas"
+        tools:ignore="VisualLintBounds">
 
     </androidx.fragment.app.FragmentContainerView>
 

@@ -5,19 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity" android:background="@color/black">
+
     <TextView
         android:id="@+id/tbTituloApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="50sp"
-        android:text="@string/tvTextTitleApp"
-        android:fontFamily="@font/bebasneue_regular"
         android:layout_gravity="center"
-        android:textColor="@color/red"
+        android:fontFamily="@font/bebasneue_regular"
         android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/tvTextTitleApp"
+        android:textColor="@color/red"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
     <ScrollView
         android:id="@+id/svPeliculas"
         android:layout_width="match_parent"

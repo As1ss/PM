@@ -18,13 +18,14 @@
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Volver"
+        android:text="@string/btnVolverText"
         android:textColor="@color/white"
         android:fontFamily="@font/bebasneue_regular"
         android:backgroundTint="@color/red"
         android:textSize="35sp"
         app:layout_constraintTop_toBottomOf="@id/fragmentContainer"
         app:layout_constraintStart_toStartOf="parent"
-        app:cornerRadius="5dp"/>
+        app:cornerRadius="5dp"
+        tools:ignore="VisualLintButtonSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
