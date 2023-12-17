@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentContainerView;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.widget.Button;
@@ -34,7 +35,10 @@ public class MainActivity extends AppCompatActivity  implements  FragmentPelicul
         peliculas = cargarPeliculas();
         cargarTitulosPuntuacion(peliculas);
 
-
+        if (isTablet()) {
+            // Si es una tablet, establece la orientación en landscape
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        }
 
 
         for (int i = 0; i < lyGeneral.getChildCount(); i++) {
@@ -46,7 +50,6 @@ public class MainActivity extends AppCompatActivity  implements  FragmentPelicul
                 if (isTablet()){
                     FragmentPelicula fragmentPelicula = new FragmentPelicula();
 
-                    Toast.makeText(this, "ESTA LANDSCAPE TABLET", Toast.LENGTH_SHORT).show();
                     bundle.putSerializable("pelicula",peliculaIntent);
                     fragmentPelicula.setArguments(bundle);
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerMain,fragmentPelicula).commit();
@@ -55,19 +58,17 @@ public class MainActivity extends AppCompatActivity  implements  FragmentPelicul
 
                 else{
                     //Si es portrait movil
-                    Toast.makeText(this, "ESTA PORTRAIT MOVIL", Toast.LENGTH_SHORT).show();
                       intent.putExtra("pelicula", peliculaIntent);
                     startActivityForResult(intent, REQUEST_CODE_DETALLES_ACTIVITY);
-
                 }
-
-
             });
         }
 
 
+
+        //Finalizar la app cuando pulsemos sobre cerrar app
         btnSalir.setOnClickListener(view -> {
-            this.finish();
+            finishAffinity();
         });
     }
 

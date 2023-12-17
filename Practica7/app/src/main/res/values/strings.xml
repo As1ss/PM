@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">Practica7</string>
-    <string name="tvTextTitleApp">FREELICULAS</string>
-    <string name="btnCerrarAppText">Cerrar App</string>
+    <string name="tvTextTitleApp" translatable="false">FREELICULAS</string>
+    <string name="btnCerrarAppText">Close App</string>
 
     <!-- PELICULA 0 -->
 
-    <string name="tituloP0">Abierto hasta el amanecer</string>
-    <string name="directorP0">Robert Rodriguez</string>
-    <string name="anoP0">1996</string>
+    <string name="tituloP0">From Dusk Till Dawn</string>
+    <string name="directorP0" translatable="false">Robert Rodriguez</string>
+    <string name="anoP0" translatable="false">1996</string>
     <string-array name="actoresP0">
         <item>George Clooney</item>
         <item>Quentin Tarantino</item>
@@ -15,12 +15,12 @@
         <item>Juliette Lewis</item>
         <item>Salma Hayek</item>
     </string-array>
-    <string name="sinopsisP0">Los hermanos criminales Seth y Richie Gecko, huyendo de la ley, toman como rehenes a la familia Fuller y se dirigen a la frontera mexicana. Deciden detenerse en un club nocturno llamado "Titty Twister", aparentemente un lugar de perdición. Sin embargo, cuando la noche cae, el lugar se convierte en un infierno literalmente, poblado por vampiros sedientos de sangre. Los sobrevivientes deben unir fuerzas para sobrevivir hasta el amanecer.</string>
+    <string name="sinopsisP0">The criminal brothers Seth and Richie Gecko, fleeing from the law, take the Fuller family as hostages and head towards the Mexican border. They decide to stop at a nightclub called Titty Twister, seemingly a den of iniquity. However, when night falls, the place turns into a literal hell, inhabited by blood-thirsty vampires. The survivors must join forces to survive until dawn.</string>
 
     <!-- PELICULA 1 -->
-    <string name="tituloP1">El dia de la bestia</string>
-    <string name ="directorP1">Álex de la Iglesia</string>
-    <string name ="anoP1">1995</string>
+    <string name="tituloP1">The Day of the Beast</string>
+    <string name ="directorP1" translatable="false">Álex de la Iglesia</string>
+    <string name ="anoP1" translatable="false">1995</string>
     <string-array name="actoresP1">
         <item>Álex Angulo</item>
         <item>Santiago Segura</item>
@@ -28,28 +28,28 @@
         <item>Terele Pávez</item>
         <item>Nathalie Seseña</item>
     </string-array>
-    <string name="sinopsisP1">El padre Ángel Berriatúa, un sacerdote vasco, descifra el código apocalíptico en el libro del Apocalipsis y llega a la conclusión de que el Anticristo nacerá en Madrid el 25 de diciembre. Con la intención de detener este acontecimiento, el padre Ángel decide renunciar a su vida religiosa y realizar actos impuros para ganarse el favor del Diablo y encontrar al Anticristo. Junto con un fanático del death metal llamado José María y un profesor de ocultismo, emprenden una misión para evitar el fin del mundo.</string>
+    <string name="sinopsisP1">Father Ángel Berriatúa, a Basque priest, deciphers the apocalyptic code in the Book of Revelation and comes to the conclusion that the Antichrist will be born in Madrid on December 25th. With the intention of stopping this event, Father Ángel decides to renounce his religious life and perform impure acts to gain the favor of the Devil and find the Antichrist. Along with a death metal fanatic named José María and an occultism professor, they embark on a mission to prevent the end of the world.</string>
 
 
 
     <!-- PELICULA 2-->
 
-    <string name="tituloP2">Isi Disi: Alto Voltaje</string>
-    <string name ="directorP2">Miguel Ángel Lamata</string>
-    <string name ="anoP2">2006</string>
+    <string name="tituloP2">" Isi Disi: High Voltage"</string>
+    <string name ="directorP2" translatable="false">Miguel Ángel Lamata</string>
+    <string name ="anoP2" translatable="false">2006</string>
     <string-array name="actoresP2">
         <item>Santiago Segura</item>
         <item>Florentino Fernández</item>
         <item>Kira Miró</item>
         <item>Jaydy Michel</item>
     </string-array>
-    <string name="sinopsisP2">Isi y Disi, dos heavies españoles, se embarcan en una nueva aventura. Esta vez, la trama se centra en la participación de la banda "Dinosaurio" (encabezada por Isi y Disi) en un concurso musical llamado "Alto Voltaje". Mientras luchan por ganar el concurso y alcanzar la fama, se ven envueltos en situaciones cómicas y absurdas. La película combina humor irreverente con la pasión por la música rock.</string>
+    <string name="sinopsisP2">Isi and Disi, two Spanish heavy metal enthusiasts, embark on a new adventure. This time, the plot revolves around the participation of the band Dinosaurio (led by Isi and Disi) in a musical competition called High Voltage. As they strive to win the contest and achieve fame, they find themselves involved in comic and absurd situations. The film combines irreverent humor with a passion for rock music.</string>
 
     <!-- PELICULA 3-->
 
-    <string name="tituloP3">SnowPiercer</string>
-    <string name ="directorP3">Bong Joon-ho</string>
-    <string name ="anoP3">2013</string>
+    <string name="tituloP3" translatable="false">SnowPiercer</string>
+    <string name ="directorP3" translatable="false">Bong Joon-ho</string>
+    <string name ="anoP3" translatable="false">2013</string>
     <string-array name="actoresP3">
         <item>Chris Evans</item>
         <item>Song Kang-ho</item>
@@ -57,7 +57,14 @@
         <item>Jamie Bell</item>
         <item>Octavia Spencer</item>
     </string-array>
-    <string name="sinopsisP3">"Snowpiercer" se sitúa en un futuro distópico donde un intento fallido de contrarrestar el calentamiento global ha dejado a la Tierra sumida en un invierno perpetuo. La única supervivencia humana se encuentra en un tren llamado Snowpiercer, que viaja alrededor del mundo y alberga las últimas personas vivas. La sociedad en el tren está dividida en clases, con los ricos en la parte delantera y los pobres en la parte trasera. Curtis Everett, un hombre de la cola, lidera una revuelta para avanzar hacia la parte delantera del tren, enfrentándose a numerosos desafíos y descubriendo secretos oscuros sobre la verdadera naturaleza del tren.</string>
+    <string name="sinopsisP3">Snowpiercer is set in a dystopian future where a failed attempt to counteract global warming has plunged the Earth into perpetual winter. The only human survival exists on a train called Snowpiercer, which travels around the world and houses the last living people. Society on the train is divided into classes, with the rich at the front and the poor at the back. Curtis Everett, a man from the tail section, leads a rebellion to advance toward the front of the train, facing numerous challenges and uncovering dark secrets about the true nature of the train.</string>
+    <string name="btnVolverText">Back</string>
+    <string name="tvTextActores">Actors:</string>
+    <string name="tvTextSinopsis">Synopsis:</string>
+    <string name="tvRankText" translatable="false">Rank:</string>
+    <string name="tvTextAno">Year:</string>
+    <string name="tvTextDirector">Director:</string>
+    <string name="tvTextTitulo">Title:</string>
 
 
 </resources>
