@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "al.if05.testreciclerview"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "al.if05.testreciclerview"
         minSdk = 31
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 

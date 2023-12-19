@@ -7,12 +7,74 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="RECICLERVIEW REPASO"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListaPilotos"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+    <EditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/etPiloto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:hint="Piloto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvListaPilotos"/>
+        <EditText
+            android:id="@+id/etPosicion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:hint="Posicion"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etPiloto"/>
+    <Button
+        android:id="@+id/btnAgregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar"
+        android:onClick="btnEvents"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etPosicion"/>
+    <Button
+        android:id="@+id/btnEliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eliminar"
+        android:onClick="btnEvents"
+        app:layout_constraintStart_toEndOf="@id/btnAgregar"
+        app:layout_constraintTop_toBottomOf="@id/etPosicion"/>
+    <Button
+        android:id="@+id/btnModificarPos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ModificarPos"
+        android:onClick="btnEvents"
+        app:layout_constraintStart_toEndOf="@id/btnEliminar"
+        app:layout_constraintTop_toBottomOf="@id/etPosicion"/>
+    <Button
+        android:id="@+id/btnModificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modificar"
+        android:onClick="btnEvents"
+        app:layout_constraintStart_toEndOf="@id/btnModificarPos"
+        app:layout_constraintTop_toBottomOf="@id/etPosicion"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
