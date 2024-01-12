@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Practica7</string>
+    <string name="btnCerrarAppText">Cerrar App</string>
+    <string name="tituloP0">Abierto hasta el amanecer</string>
+    <string name="sinopsisP0">Los hermanos criminales Seth y Richie Gecko, huyendo de la ley, toman como rehenes a la familia Fuller y se dirigen a la frontera mexicana. Deciden detenerse en un club nocturno llamado Titty Twister, aparentemente un lugar de perdición. Sin embargo, cuando la noche cae, el lugar se convierte en un infierno literalmente, poblado por vampiros sedientos de sangre. Los sobrevivientes deben unir fuerzas para sobrevivir hasta el amanecer.</string>
+    <string name="tituloP1">El dia de la bestia</string>
+    <string name="sinopsisP1">El padre Ángel Berriatúa, un sacerdote vasco, descifra el código apocalíptico en el libro del Apocalipsis y llega a la conclusión de que el Anticristo nacerá en Madrid el 25 de diciembre. Con la intención de detener este acontecimiento, el padre Ángel decide renunciar a su vida religiosa y realizar actos impuros para ganarse el favor del Diablo y encontrar al Anticristo. Junto con un fanático del death metal llamado José María y un profesor de ocultismo, emprenden una misión para evitar el fin del mundo.</string>
+    <string name="tituloP2">Isi Disi: Alto Voltaje</string>
+    <string name="sinopsisP2">Isi y Disi, dos heavies españoles, se embarcan en una nueva aventura. Esta vez, la trama se centra en la participación de la banda Dinosaurio (encabezada por Isi y Disi) en un concurso musical llamado Alto Voltaje. Mientras luchan por ganar el concurso y alcanzar la fama, se ven envueltos en situaciones cómicas y absurdas. La película combina humor irreverente con la pasión por la música rock.</string>
+    <string name="sinopsisP3">Snowpiercer se sitúa en un futuro distópico donde un intento fallido de contrarrestar el calentamiento global ha dejado a la Tierra sumida en un invierno perpetuo. La única supervivencia humana se encuentra en un tren llamado Snowpiercer, que viaja alrededor del mundo y alberga las últimas personas vivas. La sociedad en el tren está dividida en clases, con los ricos en la parte delantera y los pobres en la parte trasera. Curtis Everett, un hombre de la cola, lidera una revuelta para avanzar hacia la parte delantera del tren, enfrentándose a numerosos desafíos y descubriendo secretos oscuros sobre la verdadera naturaleza del tren.</string>
+    <string name="btnVolverText">Volver</string>
+    <string name="tvTextActores">Actores:</string>
+    <string name="tvTextSinopsis">Sinopsis:</string>
+    <string name="tvTextAno">Año:</string>
+    <string name="tvTextDirector">Director:</string>
+    <string name="tvTextTitulo">Titulo:</string>
+</resources>

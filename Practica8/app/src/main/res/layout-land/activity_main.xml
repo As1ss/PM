@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" android:background="@color/black">
+
+    <TextView
+        android:id="@+id/tbTituloApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/bebasneue_regular"
+        android:gravity="center"
+        android:text="@string/tvTextTitleApp"
+        android:textColor="@color/red"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+    <ScrollView
+        android:id="@+id/svPeliculas"
+        android:layout_width="match_parent"
+        android:layout_height="248dp"
+        app:layout_constraintTop_toBottomOf="@id/tbTituloApp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lyGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lyP0"
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/abierto_hasta_el_amanecer"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginStart="50dp"
+                    android:id="@+id/tvTituloP0"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+
+                <RatingBar
+                    android:layout_marginStart="50dp"
+                    android:id="@+id/rbP0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:numStars="5"
+                    android:progressBackgroundTint="@color/white"
+                    android:progressTint="@color/yellow"
+                    android:stepSize="1"
+                    android:isIndicator="true"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyP1"
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/eldiadelabestia_width"
+                android:orientation="horizontal"
+               >
+                <TextView
+                    android:layout_marginStart="50dp"
+                    android:id="@+id/tvTituloP1"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="40sp" />
+                <RatingBar
+                    android:layout_marginStart="50dp"
+                    android:id="@+id/rbP1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:layout_gravity="center"
+                    android:progressBackgroundTint="@color/white"
+                    android:progressTint="@color/yellow"
+                    android:stepSize="1"
+                    android:isIndicator="true"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyP2"
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/isidisiwidth"
+                android:orientation="horizontal"
+               >
+
+                <TextView
+                    android:layout_marginStart="50dp"
+                    android:id="@+id/tvTituloP2"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="40sp" />
+
+                <RatingBar
+                    android:layout_marginStart="50dp"
+                    android:id="@+id/rbP2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:layout_gravity="center"
+                    android:progressBackgroundTint="@color/white"
+                    android:progressTint="@color/yellow"
+                    android:stepSize="1"
+                    android:isIndicator="true"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyP3"
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="5dp"
+                android:orientation="horizontal"
+                android:background="@drawable/snowpiercer_width">
+
+                <TextView
+                    android:layout_marginStart="50dp"
+                    android:id="@+id/tvTituloP3"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="40sp" />
+
+                <RatingBar
+                    android:layout_marginStart="50dp"
+                    android:id="@+id/rbP3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:max="5"
+                    android:numStars="5"
+                    android:progressBackgroundTint="@color/white"
+                    android:progressTint="@color/yellow"
+                    android:layout_gravity="center"
+                    android:stepSize="1"
+                    android:isIndicator="true"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <Button
+        android:id="@+id/btnCerrar"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btnCerrarAppText"
+        android:textColor="@color/white"
+        android:fontFamily="@font/bebasneue_regular"
+        android:backgroundTint="@color/red"
+        android:textSize="35sp"
+        app:layout_constraintTop_toBottomOf="@id/svPeliculas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cornerRadius="5dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

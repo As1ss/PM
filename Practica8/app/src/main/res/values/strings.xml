@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">Practica8</string>
+    <string name="tvTextTitleApp" translatable="false">FREELICULAS</string>
+    <string name="btnCerrarAppText">Close App</string>
+
+    <!-- PELICULA 0 -->
+
+    <string name="tituloP0">From Dusk Till Dawn</string>
+    <string name="directorP0" translatable="false">Robert Rodriguez</string>
+    <string name="anoP0" translatable="false">1996</string>
+    <string-array name="actoresP0">
+        <item>George Clooney</item>
+        <item>Quentin Tarantino</item>
+        <item>Harvey Keitel</item>
+        <item>Juliette Lewis</item>
+        <item>Salma Hayek</item>
+    </string-array>
+    <string name="sinopsisP0">The criminal brothers Seth and Richie Gecko, fleeing from the law, take the Fuller family as hostages and head towards the Mexican border. They decide to stop at a nightclub called Titty Twister, seemingly a den of iniquity. However, when night falls, the place turns into a literal hell, inhabited by blood-thirsty vampires. The survivors must join forces to survive until dawn.</string>
+
+    <!-- PELICULA 1 -->
+    <string name="tituloP1">The Day of the Beast</string>
+    <string name ="directorP1" translatable="false">Álex de la Iglesia</string>
+    <string name ="anoP1" translatable="false">1995</string>
+    <string-array name="actoresP1">
+        <item>Álex Angulo</item>
+        <item>Santiago Segura</item>
+        <item>Armando De Razza</item>
+        <item>Terele Pávez</item>
+        <item>Nathalie Seseña</item>
+    </string-array>
+    <string name="sinopsisP1">Father Ángel Berriatúa, a Basque priest, deciphers the apocalyptic code in the Book of Revelation and comes to the conclusion that the Antichrist will be born in Madrid on December 25th. With the intention of stopping this event, Father Ángel decides to renounce his religious life and perform impure acts to gain the favor of the Devil and find the Antichrist. Along with a death metal fanatic named José María and an occultism professor, they embark on a mission to prevent the end of the world.</string>
+
+
+
+    <!-- PELICULA 2-->
+
+    <string name="tituloP2">" Isi Disi: High Voltage"</string>
+    <string name ="directorP2" translatable="false">Miguel Ángel Lamata</string>
+    <string name ="anoP2" translatable="false">2006</string>
+    <string-array name="actoresP2">
+        <item>Santiago Segura</item>
+        <item>Florentino Fernández</item>
+        <item>Kira Miró</item>
+        <item>Jaydy Michel</item>
+    </string-array>
+    <string name="sinopsisP2">Isi and Disi, two Spanish heavy metal enthusiasts, embark on a new adventure. This time, the plot revolves around the participation of the band Dinosaurio (led by Isi and Disi) in a musical competition called High Voltage. As they strive to win the contest and achieve fame, they find themselves involved in comic and absurd situations. The film combines irreverent humor with a passion for rock music.</string>
+
+    <!-- PELICULA 3-->
+
+    <string name="tituloP3" translatable="false">SnowPiercer</string>
+    <string name ="directorP3" translatable="false">Bong Joon-ho</string>
+    <string name ="anoP3" translatable="false">2013</string>
+    <string-array name="actoresP3">
+        <item>Chris Evans</item>
+        <item>Song Kang-ho</item>
+        <item>Tilda Swinton</item>
+        <item>Jamie Bell</item>
+        <item>Octavia Spencer</item>
+    </string-array>
+    <string name="sinopsisP3">Snowpiercer is set in a dystopian future where a failed attempt to counteract global warming has plunged the Earth into perpetual winter. The only human survival exists on a train called Snowpiercer, which travels around the world and houses the last living people. Society on the train is divided into classes, with the rich at the front and the poor at the back. Curtis Everett, a man from the tail section, leads a rebellion to advance toward the front of the train, facing numerous challenges and uncovering dark secrets about the true nature of the train.</string>
+    <string name="btnVolverText">Back</string>
+    <string name="tvTextActores">Actors:</string>
+    <string name="tvTextSinopsis">Synopsis:</string>
+    <string name="tvRankText" translatable="false">Rank:</string>
+    <string name="tvTextAno">Year:</string>
+    <string name="tvTextDirector">Director:</string>
+    <string name="tvTextTitulo">Title:</string>
+
+
+</resources>
