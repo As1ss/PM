@@ -17,29 +17,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81f5216c-3f85-4a54-af4c-1487a7bdf7e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ReReciclerView/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ReReciclerView/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ReReciclerView/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ReReciclerView/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ReReciclerView/.idea/migrations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ReReciclerView/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ReReciclerView/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ReReciclerView/app/src/main/java/al/if05/rereciclerview/Pelicula.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ReReciclerView/app/src/main/java/al/if05/rereciclerview/PeliculaAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ReReciclerView/app/src/main/res/layout/ficha_pelicula.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practica6/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica6/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practica6/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica6/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practica6/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica6/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practica6/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica6/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practica7/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica7/.idea/deploymentTargetDropDown.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practica7/app/src/main/res/layout-land/activity_detalles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica7/app/src/main/res/layout-land/activity_detalles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Practica7/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../Practica7/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.0/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/TestReciclerView.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/TestReciclerView.app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TestReciclerVista/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../TestReciclerVista/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +30,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\dam2t05\.android\avd\Pixel_3a_API_31_2.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\As1ss\.android\avd\Pixel_3a_API_31.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -112,16 +93,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/DAM2T/PM/TestReciclerView&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "C:/Users/As1ss/Desktop/COSAS CLASE KEK/DAM2T/PM/Practica8"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="TestReciclerView.app.main" />

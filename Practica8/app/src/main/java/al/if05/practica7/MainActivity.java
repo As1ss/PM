@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity  implements  FragmentPelicul
 
     private static final int REQUEST_CODE_DETALLES_ACTIVITY = 1;
     List<Pelicula> peliculas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,32 +55,39 @@ public class MainActivity extends AppCompatActivity  implements  FragmentPelicul
 
 
 
-      Toast.makeText(this,""+peliculaAdapter.getItemCount(),Toast.LENGTH_SHORT).show();
 
 
 
-        for (int i = 0; i < peliculaAdapter.getItemCount(); i++) {
-            LinearLayout layout = (LinearLayout) recyclerView.getChildAt(i);
-            Pelicula peliculaIntent = peliculas.get(i);
 
-            layout.setOnClickListener(view -> {
-                //Si es en tablet landscape
-                if (isTablet()){
-                    FragmentPelicula fragmentPelicula = new FragmentPelicula();
 
-                    bundle.putSerializable("pelicula",peliculaIntent);
-                    fragmentPelicula.setArguments(bundle);
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerMain,fragmentPelicula).commit();
+            peliculaAdapter.setOnItemClickListener((view, position) -> {
+                LinearLayout lyFilm = view.findViewById(R.id.lyFilmLista);
+                Pelicula peliculaIntent = peliculas.get(position);
 
-                }
+                lyFilm.setOnClickListener(v -> {
+                    //Si es en tablet landscape
+                    if (isTablet()){
+                        FragmentPelicula fragmentPelicula = new FragmentPelicula();
 
-                else{
-                    //Si es portrait movil
-                      intent.putExtra("pelicula", peliculaIntent);
-                    startActivityForResult(intent, REQUEST_CODE_DETALLES_ACTIVITY);
-                }
+                        bundle.putSerializable("pelicula",peliculaIntent);
+                        fragmentPelicula.setArguments(bundle);
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerMain,fragmentPelicula).commit();
+
+                    }
+
+                    else{
+                        //Si es portrait movil
+                        intent.putExtra("pelicula", peliculaIntent);
+                        startActivityForResult(intent, REQUEST_CODE_DETALLES_ACTIVITY);
+                    }
+                });
+
             });
-        }
+
+
+
+
+
 
 
 

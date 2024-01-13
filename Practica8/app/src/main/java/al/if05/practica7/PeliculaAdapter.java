@@ -17,6 +17,7 @@ import java.util.List;
 
 public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHolder>{
     private List<Pelicula> peliculaList;
+    private OnItemClickListener itemListener;
 
     public PeliculaAdapter(List<Pelicula> newPeliculaList){
         this.peliculaList=newPeliculaList;
@@ -27,8 +28,6 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHo
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pelicula_vista_lista,parent,false);
 
-
-
         return new ViewHolder(view);
     }
 
@@ -37,9 +36,11 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHo
 
         holder.tvTitulo.setText(peliculaList.get(position).getTitulo());
         holder.rbPuntuacion.setProgress(peliculaList.get(position).getPuntuacion());
-
-
-
+        holder.lyFilm.setOnClickListener(view -> {
+            if(itemListener!=null){
+                itemListener.onItemClick(view,position);
+            }
+        });
 
     }
 
@@ -51,6 +52,7 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHo
     public static class ViewHolder extends RecyclerView.ViewHolder{
         private TextView tvTitulo;
         private RatingBar rbPuntuacion;
+
         private LinearLayout lyFilm;
 
 
@@ -63,4 +65,15 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHo
 
         }
     }
+
+    public interface OnItemClickListener{
+        public void onItemClick(View view,int position);
+    }
+
+
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.itemListener=listener;
+    }
+
 }
