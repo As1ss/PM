@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,64 +22,107 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity  implements  FragmentPelicula.onFragmentInteractListener{
+public class MainActivity extends AppCompatActivity implements FragmentPelicula.onFragmentInteractListener {
 
     private static final int REQUEST_CODE_DETALLES_ACTIVITY = 1;
     private List<Pelicula> peliculas;
     private PeliculaAdapter peliculaAdapter;
+    private RecyclerView recyclerView;
+    private Button btnSalir;
+    private Button btnFiltrar;
+    private Spinner spFiltrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent intent = new Intent(this, DetallesActivity.class);
-
-        RecyclerView recyclerView = findViewById(R.id.rvPeliculas);
-        FragmentContainerView fragmentContainer = findViewById(R.id.fragmentContainerMain);
         Bundle bundle = new Bundle();
-        Button btnSalir = findViewById(R.id.btnCerrar);
+        cargarComponentes();
         peliculas = cargarPeliculas();
-        peliculaAdapter = new PeliculaAdapter(peliculas);
-        recyclerView.setAdapter(peliculaAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        getResources().getIdentifier("isidisiwidth.jpg","id",getPackageName());
-
+        cargarAdapter(recyclerView);
 
 
         if (isTablet()) {
             // Si es una tablet, establece la orientación en landscape
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         }
-
-            peliculaAdapter.setOnItemClickListener((view, position) -> {
-                LinearLayout lyFilm = view.findViewById(R.id.lyFilmLista);
-                Pelicula peliculaIntent = peliculas.get(position);
-
-                lyFilm.setOnClickListener(v -> {
-                    //Si es en tablet landscape
-                    if (isTablet()){
-                        FragmentPelicula fragmentPelicula = new FragmentPelicula();
-
-                        bundle.putSerializable("pelicula",peliculaIntent);
-                        fragmentPelicula.setArguments(bundle);
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerMain,fragmentPelicula).commit();
-
-                    }
-
-                    else{
-                        //Si es portrait movil
-                        intent.putExtra("pelicula", peliculaIntent);
-                        startActivityForResult(intent, REQUEST_CODE_DETALLES_ACTIVITY);
-                    }
-                });
-
-            });
+        adatperEvent(intent, bundle);
 
 
         //Finalizar la app cuando pulsemos sobre cerrar app
         btnSalir.setOnClickListener(view -> {
             finishAffinity();
         });
+
+        btnFiltrar.setOnClickListener(view -> {
+            List<Pelicula> auxPeliculas = new ArrayList<Pelicula>();
+            List<Integer> puntuaciones = new ArrayList<Integer>();
+            String opcion = spFiltrar.getSelectedItem().toString();
+
+
+            if (opcion.equalsIgnoreCase("Vistas")) {
+                for (int i = 0; i < peliculas.size(); i++) {
+                    if (peliculas.get(i).getPuntuacion() > 0) {
+                        auxPeliculas.add(peliculas.get(i));
+
+
+
+                    }
+                }
+                peliculas= auxPeliculas;
+
+            } else {
+
+                peliculas=cargarPeliculas();
+               
+
+            }
+
+            cargarAdapter(recyclerView);
+            adatperEvent(intent, bundle);
+
+        });
+
+    }
+
+    private void cargarComponentes() {
+        recyclerView = findViewById(R.id.rvPeliculas);
+        spFiltrar = findViewById(R.id.spinnerOpciones);
+        btnSalir = findViewById(R.id.btnCerrar);
+        btnFiltrar = findViewById(R.id.btnFiltrar);
+    }
+
+    private void adatperEvent(Intent intent, Bundle bundle) {
+        peliculaAdapter.setOnItemClickListener((view, position) -> {
+            LinearLayout lyFilm = view.findViewById(R.id.lyFilmLista);
+            Pelicula peliculaIntent = peliculas.get(position);
+
+            lyFilm.setOnClickListener(v -> {
+                //Si es en tablet landscape
+                if (isTablet()) {
+                    FragmentPelicula fragmentPelicula = new FragmentPelicula();
+                    bundle.putSerializable("pelicula", peliculaIntent);
+                    fragmentPelicula.setArguments(bundle);
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerMain, fragmentPelicula).commit();
+
+
+
+                } else {
+                    //Si es portrait movil
+                    intent.putExtra("pelicula", peliculaIntent);
+                    startActivityForResult(intent, REQUEST_CODE_DETALLES_ACTIVITY);
+
+                }
+            });
+
+        });
+    }
+
+    private void cargarAdapter(RecyclerView recyclerView) {
+        peliculaAdapter = new PeliculaAdapter(peliculas);
+        recyclerView.setAdapter(peliculaAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
     //Este metodo es para saber con que tipo de dispositivo estamos operando y poder actuar en consecuencia con los fragments
@@ -96,20 +140,19 @@ public class MainActivity extends AppCompatActivity  implements  FragmentPelicul
             // Obtener la puntuación desde DetallesActivity
             int puntuacion = data.getIntExtra("puntuacionDesdeFragmento", 0);
             String titulo = data.getStringExtra("tituloFragment");
-            actualizarPelicula(titulo,puntuacion);
+            actualizarPelicula(titulo, puntuacion);
             peliculaAdapter.notifyDataSetChanged();
         }
     }
 
     //Método implementado con la interfaz del fragment
-    private void actualizarPelicula(String titulo,int puntuacion){
-        for (int i =0;i<peliculas.size();i++){
-            if (titulo.equalsIgnoreCase(peliculas.get(i).getTitulo())){
+    private void actualizarPelicula(String titulo, int puntuacion) {
+        for (int i = 0; i < peliculas.size(); i++) {
+            if (titulo.equalsIgnoreCase(peliculas.get(i).getTitulo())) {
                 peliculas.get(i).setPuntuacion(puntuacion);
             }
         }
     }
-
 
 
     private List<Pelicula> cargarPeliculas() {
@@ -175,7 +218,6 @@ public class MainActivity extends AppCompatActivity  implements  FragmentPelicul
         p5.setPuntuacion(0);
 
 
-
         Pelicula p6 = new Pelicula();
         p6.setTitulo(getResources().getString(R.string.tituloP6));
         p6.setDirector(getResources().getString(R.string.directorP6));
@@ -214,11 +256,6 @@ public class MainActivity extends AppCompatActivity  implements  FragmentPelicul
         p9.setPuntuacion(0);
 
 
-
-
-
-
-
         peliculas.add(p0);
         peliculas.add(p1);
         peliculas.add(p2);
@@ -231,15 +268,13 @@ public class MainActivity extends AppCompatActivity  implements  FragmentPelicul
         peliculas.add(p9);
 
 
-
-
         return peliculas;
     }
 
 
     @Override
     public void actualizarPuntuaciones(String titulo, int puntuacion) {
-        actualizarPelicula(titulo,puntuacion);
+        actualizarPelicula(titulo, puntuacion);
         peliculaAdapter.notifyDataSetChanged();
 
     }

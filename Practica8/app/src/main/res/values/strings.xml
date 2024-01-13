@@ -155,6 +155,10 @@
     <string name="tvTextAno">Year:</string>
     <string name="tvTextDirector">Director:</string>
     <string name="tvTextTitulo">Title:</string>
+    <string-array name="opcionesFiltrado">
+        <item>Todas</item>
+        <item>Vistas</item>
+    </string-array>
 
 
 </resources>
