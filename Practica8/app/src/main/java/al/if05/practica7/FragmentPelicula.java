@@ -50,7 +50,7 @@ public class FragmentPelicula extends Fragment {
 
         Pelicula pelicula =(Pelicula) bundle.getSerializable("pelicula");
 
-        ivPelicula.setBackground(getResources().getDrawable(pelicula.getImagenFondo()));
+        ivPelicula.setBackgroundResource(getResources().getIdentifier(pelicula.getImagenFondo(),"drawable", getActivity().getPackageName()));
         tvTitulo.setText("Titulo: "+pelicula.getTitulo());
         tvDirector.setText("Director: "+pelicula.getDirector());
         tvAno.setText("Año: "+pelicula.getAno());

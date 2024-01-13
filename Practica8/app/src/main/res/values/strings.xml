@@ -34,7 +34,7 @@
 
     <!-- PELICULA 2-->
 
-    <string name="tituloP2">" Isi Disi: High Voltage"</string>
+    <string name="tituloP2">"Isi Disi: High Voltage"</string>
     <string name ="directorP2" translatable="false">Miguel Ángel Lamata</string>
     <string name ="anoP2" translatable="false">2006</string>
     <string-array name="actoresP2">
@@ -58,6 +58,96 @@
         <item>Octavia Spencer</item>
     </string-array>
     <string name="sinopsisP3">Snowpiercer is set in a dystopian future where a failed attempt to counteract global warming has plunged the Earth into perpetual winter. The only human survival exists on a train called Snowpiercer, which travels around the world and houses the last living people. Society on the train is divided into classes, with the rich at the front and the poor at the back. Curtis Everett, a man from the tail section, leads a rebellion to advance toward the front of the train, facing numerous challenges and uncovering dark secrets about the true nature of the train.</string>
+
+
+    <!-- PELICULA 4-->
+
+    <string name="tituloP4" translatable="false">Inception</string>
+    <string name="directorP4" translatable="false">Christopher Nolan</string>
+    <string name="anoP4" translatable="false">2010</string>
+    <string-array name="actoresP4">
+        <item>Leonardo DiCaprio</item>
+        <item>Joseph Gordon-Levitt</item>
+        <item>Ellen Page</item>
+        <item>Tom Hardy</item>
+        <item>Ken Watanabe</item>
+    </string-array>
+    <string name="sinopsisP4">Dom Cobb (Leonardo DiCaprio) is a skilled thief specializing in the art of extraction, stealing valuable secrets from the subconscious during dreams. Now, he faces a unique challenge: implanting an idea instead of stealing it, known as "inception." Directed by Christopher Nolan, this science fiction film explores the complexity of the human mind and reality.</string>
+
+    <!-- PELICULA 5 -->
+
+    <string name="tituloP5" translatable="false">Pulp Fiction</string>
+    <string name="directorP5" translatable="false">Quentin Tarantino</string>
+    <string name="anoP5" translatable="false">1994</string>
+    <string-array name="actoresP5">
+        <item>John Travolta</item>
+        <item>Uma Thurman</item>
+        <item>Samuel L. Jackson</item>
+        <item>Bruce Willis</item>
+        <item>Harvey Keitel</item>
+    </string-array>
+    <string name="sinopsisP5">Directed by Quentin Tarantino, "Pulp Fiction" is a postmodern masterpiece that intertwines various stories in Los Angeles. With a stellar cast, including John Travolta and Uma Thurman, the film follows intriguing characters through peculiar situations, exploring themes of violence, redemption, and pop culture.</string>
+
+    <!-- PELICULA 6 -->
+
+    <string name="tituloP6" translatable="false">The Shawshank Redemption</string>
+    <string name="directorP6" translatable="false">Frank Darabont</string>
+    <string name="anoP6" translatable="false">1994</string>
+    <string-array name="actoresP6">
+        <item>Tim Robbins</item>
+        <item>Morgan Freeman</item>
+        <item>Bob Gunton</item>
+        <item>William Sadler</item>
+        <item>Clancy Brown</item>
+    </string-array>
+    <string name="sinopsisP6">Adapted from a Stephen King story, this film directed by Frank Darabont follows the life of Andy Dufresne (Tim Robbins), a banker wrongly convicted. In Shawshank prison, he forges unusual friendships and uses his wits to confront injustice while dreaming of freedom.</string>
+
+    <!-- PELICULA 7 -->
+
+    <string name="tituloP7" translatable="false">The Matrix</string>
+    <string name="directorP7" translatable="false">The Wachowskis</string>
+    <string name="anoP7" translatable="false">1999</string>
+    <string-array name="actoresP7">
+        <item>Keanu Reeves</item>
+        <item>Laurence Fishburne</item>
+        <item>Carrie-Anne Moss</item>
+        <item>Hugo Weaving</item>
+        <item>Joe Pantoliano</item>
+    </string-array>
+    <string name="sinopsisP7">Directed by the Wachowski siblings, "The Matrix" is a groundbreaking science fiction film that follows Neo (Keanu Reeves), a hacker who discovers the truth behind the apparent reality. In a world controlled by machines, Neo becomes the destined hero to free humanity.</string>
+
+    <!-- PELICULA 8 -->
+
+    <string name="tituloP8" translatable="false">Eternal Sunshine of the Spotless Mind</string>
+    <string name="directorP8" translatable="false">Michel Gondry</string>
+    <string name="anoP8" translatable="false">2004</string>
+    <string-array name="actoresP8">
+        <item>Jim Carrey</item>
+        <item>Kate Winslet</item>
+        <item>Mark Ruffalo</item>
+        <item>Kirsten Dunst</item>
+        <item>Elijah Wood</item>
+    </string-array>
+    <string name="sinopsisP8">A modern love and ambition story set in Los Angeles, directed by Michel Gondry. The film follows Mia (Emma Stone), an aspiring actress, and Sebastian (Ryan Gosling), a jazz pianist, as they pursue their dreams and face the challenges posed by the fame and reality of the entertainment industry.</string>
+
+    <!-- PELICULA 9 -->
+
+    <string name="tituloP9" translatable="false">La La Land</string>
+    <string name="directorP9" translatable="false">Damien Chazelle</string>
+    <string name="anoP9" translatable="false">2016</string>
+    <string-array name="actoresP9">
+        <item>Ryan Gosling</item>
+        <item>Emma Stone</item>
+        <item>John Legend</item>
+        <item>Rosemarie DeWitt</item>
+        <item>J.K. Simmons</item>
+    </string-array>
+    <string name="sinopsisP9">A modern love and ambition story set in Los Angeles, directed by Damien Chazelle. The film follows Mia (Emma Stone), an aspiring actress, and Sebastian (Ryan Gosling), a jazz pianist, as they pursue their dreams and face the challenges posed by the fame and reality of the entertainment industry.</string>
+
+
+
+
+    <!-- Textos de botones y labels -->
     <string name="btnVolverText">Back</string>
     <string name="tvTextActores">Actors:</string>
     <string name="tvTextSinopsis">Synopsis:</string>

@@ -9,25 +9,51 @@
     <LinearLayout
         android:id="@+id/lyFilmLista"
         android:layout_width="match_parent"
-        android:layout_height="155dp"
+        android:layout_height="185dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:background="@drawable/abierto_hasta_el_amanecer"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-
-    <TextView
-        android:id="@+id/tvTituloLista"
-        android:layout_width="150dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:orientation="vertical"
         android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/tvTituloLista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:shadowDx="8"
+            android:shadowDy="8"
+            android:shadowRadius="8"
+            android:shadowColor="@color/black"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/tvAutorLista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:shadowDx="8"
+            android:shadowDy="8"
+            android:shadowRadius="8"
+            android:shadowColor="@color/black"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
 
     <RatingBar
+        android:layout_marginTop="20dp"
         android:id="@+id/rbPuntuacionLista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
