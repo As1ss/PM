@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
     private Button btnSalir;
     private Button btnFiltrar;
     private Spinner spFiltrar;
+    private List<Pelicula> auxBackup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
         Bundle bundle = new Bundle();
         cargarComponentes();
         peliculas = cargarPeliculas();
+        auxBackup = peliculas;
         cargarAdapter(recyclerView);
 
 
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
 
         btnFiltrar.setOnClickListener(view -> {
             List<Pelicula> auxPeliculas = new ArrayList<Pelicula>();
-            List<Integer> puntuaciones = new ArrayList<Integer>();
+
             String opcion = spFiltrar.getSelectedItem().toString();
 
 
@@ -67,15 +69,14 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
                         auxPeliculas.add(peliculas.get(i));
 
 
-
                     }
                 }
-                peliculas= auxPeliculas;
+                peliculas = auxPeliculas;
 
             } else {
 
-                peliculas=cargarPeliculas();
-               
+                peliculas = auxBackup;
+
 
             }
 
@@ -105,7 +106,6 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
                     bundle.putSerializable("pelicula", peliculaIntent);
                     fragmentPelicula.setArguments(bundle);
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerMain, fragmentPelicula).commit();
-
 
 
                 } else {
@@ -150,6 +150,7 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
         for (int i = 0; i < peliculas.size(); i++) {
             if (titulo.equalsIgnoreCase(peliculas.get(i).getTitulo())) {
                 peliculas.get(i).setPuntuacion(puntuacion);
+                auxBackup.get(i).setPuntuacion(puntuacion);
             }
         }
     }
