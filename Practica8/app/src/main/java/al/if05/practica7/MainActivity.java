@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
         for (int i = 0; i < peliculas.size(); i++) {
             if (titulo.equalsIgnoreCase(peliculas.get(i).getTitulo())) {
                 peliculas.get(i).setPuntuacion(puntuacion);
-                auxBackup.get(i).setPuntuacion(puntuacion);
+
             }
         }
     }
