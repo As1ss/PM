@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +32,14 @@ public class MainActivity extends AppCompatActivity {
         etPosicion = findViewById(R.id.etPosicion);
         pilotosList = new ArrayList<>();
 
+        SharedPreferences config = getSharedPreferences("FicheroConfiguratorio", MODE_PRIVATE);
+        String usuario = config.getString("usuario", "invitado");
+
+        Toast.makeText(this, "Usuario" + usuario, Toast.LENGTH_SHORT).show();
+
+        config.edit().putString("usuario","Alexis").apply();
+
+
         p1 = new Piloto("Mario", 2);
         p2 = new Piloto("Bowser", 3);
         p3 = new Piloto("Luigi", 1);
@@ -41,12 +51,11 @@ public class MainActivity extends AppCompatActivity {
         pilotosList.add(p4);
         pilotosList.add(p5);
 
-        adapter= new Adapter(pilotosList);
+        adapter = new Adapter(pilotosList);
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
-
 
 
     }
@@ -54,23 +63,22 @@ public class MainActivity extends AppCompatActivity {
     public void btnEvents(View view) {
         String nombre = etPiloto.getText().toString();
         int posicion = Integer.parseInt(etPosicion.getText().toString());
-        Piloto piloto = pilotosList.get(posicion-1);
+        Piloto piloto = pilotosList.get(posicion - 1);
 
-        if (view.getId()==R.id.btnAgregar){
-            pilotosList.add(new Piloto(nombre,posicion));
+        if (view.getId() == R.id.btnAgregar) {
+            pilotosList.add(new Piloto(nombre, posicion));
             adapter.notifyDataSetChanged();
 
 
+        }
+        if (view.getId() == R.id.btnModificar) {
+
 
         }
-        if (view.getId()==R.id.btnModificar){
-
-
-        }
-        if (view.getId()==R.id.btnModificarPos){
+        if (view.getId() == R.id.btnModificarPos) {
 
         }
-        if (view.getId()==R.id.btnEliminar){
+        if (view.getId() == R.id.btnEliminar) {
             pilotosList.remove(piloto);
             adapter.notifyDataSetChanged();
 
