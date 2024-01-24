@@ -1,14 +1,10 @@
-package al.if05.practica7;
+package al.if05.practica9;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.Toast;
-
-import java.io.Serializable;
 
 public class DetallesActivity extends AppCompatActivity implements FragmentPelicula.onFragmentInteractListener{
 

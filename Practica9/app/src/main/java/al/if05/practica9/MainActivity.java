@@ -1,8 +1,7 @@
-package al.if05.practica7;
+package al.if05.practica9;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentContainerView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,12 +11,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RatingBar;
 import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
         peliculas = cargarPeliculas();
         auxBackup = peliculas;
         cargarAdapter(recyclerView);
+        SQLHelper sqlHelper = new SQLHelper(this);
+
+        sqlHelper.getWritableDatabase();
 
 
         if (isTablet()) {

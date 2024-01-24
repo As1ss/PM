@@ -1,7 +1,4 @@
-package al.if05.practica7;
-
-import android.graphics.drawable.Drawable;
-import android.media.Image;
+package al.if05.practica9;
 
 import java.io.Serializable;
 

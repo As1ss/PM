@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "al.if05.practica7"
+    namespace = "al.if05.practica9"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "al.if05.practica7"
+        applicationId = "al.if05.practica9"
         minSdk = 31
         targetSdk = 34
         versionCode = 1

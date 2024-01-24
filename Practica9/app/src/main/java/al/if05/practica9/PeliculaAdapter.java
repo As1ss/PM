@@ -1,4 +1,4 @@
-package al.if05.practica7;
+package al.if05.practica9;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,8 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 
