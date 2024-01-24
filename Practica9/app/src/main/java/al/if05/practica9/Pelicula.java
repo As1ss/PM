@@ -91,10 +91,11 @@ public class Pelicula implements Serializable {
     public int getId() {
         return id;
     }
-    private boolean getVista(){
+    public boolean getVista(){
         return vista;
     }
-    private void setVista(boolean vista){
+    public void setVista(boolean vista){
+
         this.vista=vista;
     }
 

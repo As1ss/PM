@@ -8,11 +8,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
     private Button btnFiltrar;
     private Spinner spFiltrar;
     private List<Pelicula> auxBackup;
+    private SQLHelper sqlHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +40,11 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
         Intent intent = new Intent(this, DetallesActivity.class);
         Bundle bundle = new Bundle();
         cargarComponentes();
+        sqlHelper = new SQLHelper(this);
         peliculas = cargarPeliculas();
         auxBackup = peliculas;
         cargarAdapter(recyclerView);
-        SQLHelper sqlHelper = new SQLHelper(this);
 
-        sqlHelper.getWritableDatabase();
 
 
         if (isTablet()) {
@@ -157,7 +162,34 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
 
         List<Pelicula> peliculas = new ArrayList<Pelicula>();
 
-        Pelicula p0 = new Pelicula();
+        SQLiteDatabase sqlDB = sqlHelper.getReadableDatabase();
+
+
+        Cursor c = sqlDB.rawQuery("SELECT * FROM PELICULA", null);
+
+        while (c.moveToNext()) {
+            Pelicula pelicula = new Pelicula();
+            pelicula.setId(c.getInt(0));
+            pelicula.setTitulo(c.getString(1));
+            pelicula.setDirector(c.getString(2));
+            pelicula.setAno(c.getString(3));
+            pelicula.setActores(new String[]{c.getString(4)});
+            pelicula.setSinopsis(c.getString(5));
+            pelicula.setImagenFondo(c.getString(6));
+            pelicula.setPuntuacion(c.getInt(7));
+            pelicula.setVista(false);
+            peliculas.add(pelicula);
+        }
+
+
+
+
+
+
+
+
+/*
+ Pelicula p0 = new Pelicula();
         p0.setTitulo(getString(R.string.tituloP0));
         p0.setDirector(getResources().getString(R.string.directorP0));
         p0.setAno(getResources().getString(R.string.anoP0));
@@ -264,6 +296,8 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
         peliculas.add(p7);
         peliculas.add(p8);
         peliculas.add(p9);
+
+ */
 
 
         return peliculas;

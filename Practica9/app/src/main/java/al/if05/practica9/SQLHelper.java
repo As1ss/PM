@@ -83,7 +83,7 @@ public class SQLHelper extends SQLiteOpenHelper {
                 mContext.getString(R.string.anoP1) + ", " +
                 "'" + TextUtils.join(",", mContext.getResources().getStringArray(R.array.actoresP1)) + "', " +
                 "'" + mContext.getString(R.string.sinopsisP1) + "', " +
-                "'" + "abierto_hasta_el_amanecer" + "', " +
+                "'" + "eldiadelabestia_width" + "', " +
                 0 + ", " +  // Añade una coma aquí para separar los dos valores enteros
                 0 +  // Los valores enteros no necesitan coma al final
                 ")";
@@ -105,7 +105,7 @@ public class SQLHelper extends SQLiteOpenHelper {
                 mContext.getString(R.string.anoP2) + ", " +
                 "'" + TextUtils.join(",", mContext.getResources().getStringArray(R.array.actoresP2)) + "', " +
                 "'" + mContext.getString(R.string.sinopsisP2) + "', " +
-                "'" + "abierto_hasta_el_amanecer" + "', " +
+                "'" + "isidisiwidth" + "', " +
                 0 + ", " +  // Añade una coma aquí para separar los dos valores enteros
                 0 +  // Los valores enteros no necesitan coma al final
                 ")";
@@ -127,7 +127,7 @@ public class SQLHelper extends SQLiteOpenHelper {
                 mContext.getString(R.string.anoP3) + ", " +
                 "'" + TextUtils.join(",", mContext.getResources().getStringArray(R.array.actoresP3)) + "', " +
                 "'" + mContext.getString(R.string.sinopsisP3) + "', " +
-                "'" + "abierto_hasta_el_amanecer" + "', " +
+                "'" + "snowpiercer_width" + "', " +
                 0 + ", " +  // Añade una coma aquí para separar los dos valores enteros
                 0 +  // Los valores enteros no necesitan coma al final
                 ")";
@@ -150,7 +150,7 @@ public class SQLHelper extends SQLiteOpenHelper {
                 mContext.getString(R.string.anoP4) + ", " +
                 "'" + TextUtils.join(",", mContext.getResources().getStringArray(R.array.actoresP4)) + "', " +
                 "'" + mContext.getString(R.string.sinopsisP4) + "', " +
-                "'" + "abierto_hasta_el_amanecer" + "', " +
+                "'" + "inception" + "', " +
                 0 + ", " +  // Añade una coma aquí para separar los dos valores enteros
                 0 +  // Los valores enteros no necesitan coma al final
                 ")";
@@ -172,7 +172,7 @@ public class SQLHelper extends SQLiteOpenHelper {
                 mContext.getString(R.string.anoP5) + ", " +
                 "'" + TextUtils.join(",", mContext.getResources().getStringArray(R.array.actoresP5)) + "', " +
                 "'" + mContext.getString(R.string.sinopsisP5) + "', " +
-                "'" + "abierto_hasta_el_amanecer" + "', " +
+                "'" + "pulp_fiction" + "', " +
                 0 + ", " +  // Añade una coma aquí para separar los dos valores enteros
                 0 +  // Los valores enteros no necesitan coma al final
                 ")";
@@ -195,7 +195,7 @@ public class SQLHelper extends SQLiteOpenHelper {
                 mContext.getString(R.string.anoP6) + ", " +
                 "'" + TextUtils.join(",", mContext.getResources().getStringArray(R.array.actoresP6)) + "', " +
                 "'" + mContext.getString(R.string.sinopsisP6) + "', " +
-                "'" + "abierto_hasta_el_amanecer" + "', " +
+                "'" + "shawshank" + "', " +
                 0 + ", " +  // Añade una coma aquí para separar los dos valores enteros
                 0 +  // Los valores enteros no necesitan coma al final
                 ")";
@@ -218,7 +218,7 @@ public class SQLHelper extends SQLiteOpenHelper {
                 mContext.getString(R.string.anoP7) + ", " +
                 "'" + TextUtils.join(",", mContext.getResources().getStringArray(R.array.actoresP7)) + "', " +
                 "'" + mContext.getString(R.string.sinopsisP7) + "', " +
-                "'" + "abierto_hasta_el_amanecer" + "', " +
+                "'" + "matrix" + "', " +
                 0 + ", " +  // Añade una coma aquí para separar los dos valores enteros
                 0 +  // Los valores enteros no necesitan coma al final
                 ")";
@@ -240,7 +240,7 @@ public class SQLHelper extends SQLiteOpenHelper {
                 mContext.getString(R.string.anoP8) + ", " +
                 "'" + TextUtils.join(",", mContext.getResources().getStringArray(R.array.actoresP8)) + "', " +
                 "'" + mContext.getString(R.string.sinopsisP8) + "', " +
-                "'" + "abierto_hasta_el_amanecer" + "', " +
+                "'" + "eternal_sunshine" + "', " +
                 0 + ", " +  // Añade una coma aquí para separar los dos valores enteros
                 0 +  // Los valores enteros no necesitan coma al final
                 ")";
@@ -263,7 +263,7 @@ public class SQLHelper extends SQLiteOpenHelper {
                 mContext.getString(R.string.anoP9) + ", " +
                 "'" + TextUtils.join(",", mContext.getResources().getStringArray(R.array.actoresP9)) + "', " +
                 "'" + mContext.getString(R.string.sinopsisP9) + "', " +
-                "'" + "abierto_hasta_el_amanecer" + "', " +
+                "'" + "lalaland" + "', " +
                 0 + ", " +  // Añade una coma aquí para separar los dos valores enteros
                 0 +  // Los valores enteros no necesitan coma al final
                 ")";
