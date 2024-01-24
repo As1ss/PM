@@ -6,6 +6,8 @@ import android.media.Image;
 import java.io.Serializable;
 
 public class Pelicula implements Serializable {
+
+    private int id;
     private String titulo;
     private String director;
     private String ano;
@@ -13,6 +15,8 @@ public class Pelicula implements Serializable {
     private String sinopsis;
     private String imagenFondo;
     private int puntuacion;
+
+    private boolean vista;
 
     public Pelicula() {
 
@@ -86,4 +90,19 @@ public class Pelicula implements Serializable {
         }
         return actoresString.toString();
     }
+
+    public int getId() {
+        return id;
+    }
+    private boolean getVista(){
+        return vista;
+    }
+    private void setVista(boolean vista){
+        this.vista=vista;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }
