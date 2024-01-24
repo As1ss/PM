@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Practica7</string>
+    <string name="btnCerrarAppText">Cerrar App</string>
+    <string name="tituloP0">Abierto hasta el amanecer</string>
+    <string name="sinopsisP0">Los hermanos criminales Seth y Richie Gecko, huyendo de la ley, toman como rehenes a la familia Fuller y se dirigen a la frontera mexicana. Deciden detenerse en un club nocturno llamado Titty Twister, aparentemente un lugar de perdición. Sin embargo, cuando la noche cae, el lugar se convierte en un infierno literalmente, poblado por vampiros sedientos de sangre. Los sobrevivientes deben unir fuerzas para sobrevivir hasta el amanecer.</string>
+    <string name="tituloP1">El dia de la bestia</string>
+    <string name="sinopsisP1">El padre Ángel Berriatúa, un sacerdote vasco, descifra el código apocalíptico en el libro del Apocalipsis y llega a la conclusión de que el Anticristo nacerá en Madrid el 25 de diciembre. Con la intención de detener este acontecimiento, el padre Ángel decide renunciar a su vida religiosa y realizar actos impuros para ganarse el favor del Diablo y encontrar al Anticristo. Junto con un fanático del death metal llamado José María y un profesor de ocultismo, emprenden una misión para evitar el fin del mundo.</string>
+    <string name="tituloP2">Isi Disi: Alto Voltaje</string>
+    <string name="sinopsisP2">Isi y Disi, dos heavies españoles, se embarcan en una nueva aventura. Esta vez, la trama se centra en la participación de la banda Dinosaurio (encabezada por Isi y Disi) en un concurso musical llamado Alto Voltaje. Mientras luchan por ganar el concurso y alcanzar la fama, se ven envueltos en situaciones cómicas y absurdas. La película combina humor irreverente con la pasión por la música rock.</string>
+    <string name="sinopsisP3">Snowpiercer se sitúa en un futuro distópico donde un intento fallido de contrarrestar el calentamiento global ha dejado a la Tierra sumida en un invierno perpetuo. La única supervivencia humana se encuentra en un tren llamado Snowpiercer, que viaja alrededor del mundo y alberga las últimas personas vivas. La sociedad en el tren está dividida en clases, con los ricos en la parte delantera y los pobres en la parte trasera. Curtis Everett, un hombre de la cola, lidera una revuelta para avanzar hacia la parte delantera del tren, enfrentándose a numerosos desafíos y descubriendo secretos oscuros sobre la verdadera naturaleza del tren.</string>
+
+
+    <string name="btnVolverText">Volver</string>
+    <string name="tvTextActores">Actores:</string>
+    <string name="tvTextSinopsis">Sinopsis:</string>
+    <string name="tvTextAno">Año:</string>
+    <string name="tvTextDirector">Director:</string>
+    <string name="tvTextTitulo">Titulo:</string>
+    <string name="sinopsisP4">" Dom Cobb (Leonardo DiCaprio) es un ladrón habilidoso que se especializa en el arte de la extracción, robar secretos valiosos del subconsciente durante los sueños. Pero ahora se le presenta un desafío único: implantar una idea en lugar de robarla, conocido como \"inception\". Dirigida por Christopher Nolan, esta película de ciencia ficción explora la complejidad de la mente humana y la realidad."</string>
+    <string name="sinopsisP5">Dirigida por Quentin Tarantino, \"Pulp Fiction\" es una obra maestra posmoderna que entrelaza varias historias en Los Ángeles. Con un elenco estelar, incluyendo a John Travolta y Uma Thurman, la película sigue a personajes intrigantes a través de situaciones peculiares, explorando temas de violencia, redención y cultura pop.</string>
+    <string name="sinopsisP6">Adaptada de una historia de Stephen King, esta película dirigida por Frank Darabont sigue la vida de Andy Dufresne (Tim Robbins), un banquero condenado por un crimen que no cometió. En la prisión de Shawshank, forja amistades inusuales y utiliza su ingenio para enfrentarse a la injusticia mientras sueña con la libertad.</string>
+    <string name="sinopsisP7">Dirigida por las hermanas Wachowski, \"The Matrix\" es una película de ciencia ficción revolucionaria que sigue a Neo (Keanu Reeves), un hacker que descubre la verdad detrás de la realidad aparente. En un mundo controlado por máquinas, Neo se convierte en el héroe destinado a liberar a la humanidad.</string>
+    <string name="sinopsisP8">Joel (Jim Carrey) y Clementine (Kate Winslet) deciden borrar los recuerdos de su fallida relación mediante un innovador procedimiento científico. Dirigida por Michel Gondry, la película explora la naturaleza efímera del amor y cómo los recuerdos moldean nuestras experiencias.</string>
+    <string name="sinopsisP9">Una historia moderna de amor y ambición en la ciudad de Los Ángeles, dirigida por Damien Chazelle. La película sigue a Mia (Emma Stone), una aspirante a actriz, y Sebastian (Ryan Gosling), un pianista de jazz, mientras persiguen sus sueños y enfrentan los desafíos que plantea la fama y la realidad de la industria del entretenimiento.</string>
+</resources>
