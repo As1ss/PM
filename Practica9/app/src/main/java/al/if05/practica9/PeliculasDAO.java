@@ -1,14 +1,17 @@
 package al.if05.practica9;
 
-import android.content.Context;
+public class PeliculasDAO implements CRUDPeliculas {
 
-public class OperacionesPelicula implements CRUDPeliculas{
+    private SQLHelper sqlHelper;
 
-
-
-
+    public PeliculasDAO() {
 
 
+    }
+
+    public PeliculasDAO(SQLHelper sqlHelper) {
+        this.sqlHelper = sqlHelper;
+    }
 
 
     @Override
