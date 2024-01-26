@@ -6,16 +6,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+
+
 public class DetallesActivity extends AppCompatActivity implements FragmentPelicula.onFragmentInteractListener{
+    private SQLHelper sqlHelper;
+    private PeliculasDAO peliculasDAO;
+
 
     Intent intent = new Intent();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles);
+        sqlHelper= new SQLHelper(this);
+        peliculasDAO = new PeliculasDAO(sqlHelper);
 
         Button btnVolver = findViewById(R.id.btnVolver);
-        FragmentPelicula fragmentPelicula = new FragmentPelicula();
+        FragmentPelicula fragmentPelicula = new FragmentPelicula(peliculasDAO);
         Bundle bundle = new Bundle();
         Pelicula pelicula = (Pelicula) getIntent().getExtras().getSerializable("pelicula");
         bundle.putSerializable("pelicula",pelicula);
@@ -38,6 +45,7 @@ public class DetallesActivity extends AppCompatActivity implements FragmentPelic
         intent.putExtra("tituloFragment",titulo);
         intent.putExtra("puntuacionDesdeFragmento", puntuacion);
         setResult(RESULT_OK, intent);
+
 
     }
 }

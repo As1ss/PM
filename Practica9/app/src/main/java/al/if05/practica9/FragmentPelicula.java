@@ -18,12 +18,17 @@ import android.widget.TextView;
 
 
 public class FragmentPelicula extends Fragment {
+    private Bundle bundle;
 
     private onFragmentInteractListener fListener;
+    private PeliculasDAO peliculasDAO;
 
 
     public FragmentPelicula() {
-        // Required empty public constructor
+
+    }
+    public FragmentPelicula(PeliculasDAO newPeliculasDAO){
+        this.peliculasDAO=newPeliculasDAO;
     }
 
 
@@ -31,13 +36,17 @@ public class FragmentPelicula extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        bundle =this.getArguments();
+
+
+
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Bundle bundle =this.getArguments();
+
         View view = inflater.inflate(R.layout.fragment_pelicula,container,false );
 
         ImageView ivPelicula = view.findViewById(R.id.ivPelicula);
@@ -63,6 +72,10 @@ public class FragmentPelicula extends Fragment {
             // Solo pasa la data si la calificación cambió debido a la interacción del usuario
             if (fromUser) {
                 pasarData(pelicula.getTitulo(),(int) rating);
+                pelicula.setPuntuacion((int)rating);
+                peliculasDAO.update(pelicula);
+
+
             }
         });
 

@@ -1,6 +1,16 @@
 package al.if05.practica9;
 
-public class PeliculasDAO implements CRUDPeliculas {
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+import android.widget.Toast;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+public class PeliculasDAO implements CRUDPeliculas  {
 
     private SQLHelper sqlHelper;
 
@@ -20,12 +30,48 @@ public class PeliculasDAO implements CRUDPeliculas {
     }
 
     @Override
+    public List<Pelicula> readAll() {
+
+        List<Pelicula> peliculas = new ArrayList<Pelicula>();
+
+        SQLiteDatabase sqlDB = sqlHelper.getReadableDatabase();
+
+
+        Cursor c = sqlDB.rawQuery("SELECT * FROM PELICULA", null);
+
+        while (c.moveToNext()) {
+            Pelicula pelicula = new Pelicula();
+            pelicula.setId(c.getInt(0));
+            pelicula.setTitulo(c.getString(1));
+            pelicula.setDirector(c.getString(2));
+            pelicula.setAno(c.getString(3));
+            pelicula.setActores(new String[]{c.getString(4)});
+            pelicula.setSinopsis(c.getString(5));
+            pelicula.setImagenFondo(c.getString(6));
+            pelicula.setPuntuacion(c.getInt(7));
+            pelicula.setVista(false);
+            peliculas.add(pelicula);
+        }
+
+        return peliculas;
+    }
+
+
+    @Override
     public void create(Pelicula pelicula) {
 
     }
 
     @Override
     public void update(Pelicula pelicula) {
+
+        SQLiteDatabase sqlDB = sqlHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("puntuacion",pelicula.getPuntuacion());
+
+        int resultado = sqlDB.update("pelicula",values,"id ="+pelicula.getId(),null);
+
+        Log.d("RESULTADO","RESULTADO: "+resultado);
 
     }
 
