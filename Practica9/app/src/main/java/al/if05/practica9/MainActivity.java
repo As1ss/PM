@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
 
             if (opcion.equalsIgnoreCase("Vistas")) {
                 for (int i = 0; i < peliculas.size(); i++) {
-                    if (peliculas.get(i).getPuntuacion() > 0) {
+                    if (peliculas.get(i).getVista()) {
                         auxPeliculas.add(peliculas.get(i));
 
 
