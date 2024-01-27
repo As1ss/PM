@@ -72,8 +72,10 @@ public class FragmentPelicula extends Fragment {
             // Solo pasa la data si la calificación cambió debido a la interacción del usuario
             if (fromUser) {
                 pasarData(pelicula.getTitulo(),(int) rating);
-                pelicula.setPuntuacion((int)rating);
-                peliculasDAO.update(pelicula);
+                //Actualizamos la pelicula y guardamos en la base de datos
+                  pelicula.setPuntuacion((int)rating);
+                  peliculasDAO.update(pelicula);
+
 
 
             }

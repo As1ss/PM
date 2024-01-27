@@ -103,9 +103,8 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
             lyFilm.setOnClickListener(v -> {
                 //Si es en tablet landscape
                 if (isTablet()) {
-                    FragmentPelicula fragmentPelicula = new FragmentPelicula();
+                    FragmentPelicula fragmentPelicula = new FragmentPelicula(peliculasDAO);
                     bundle.putSerializable("pelicula", peliculaIntent);
-
                     fragmentPelicula.setArguments(bundle);
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerMain, fragmentPelicula).commit();
 
@@ -113,7 +112,6 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
                 } else {
                     //Si es portrait movil
                     intent.putExtra("pelicula", peliculaIntent);
-
                     startActivityForResult(intent, REQUEST_CODE_DETALLES_ACTIVITY);
 
                 }
@@ -144,7 +142,6 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
             int puntuacion = data.getIntExtra("puntuacionDesdeFragmento", 0);
             String titulo = data.getStringExtra("tituloFragment");
             actualizarPelicula(titulo, puntuacion);
-            peliculas=peliculasDAO.readAll();
             peliculaAdapter.notifyDataSetChanged();
         }
     }
@@ -161,7 +158,6 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
         }
 
 
-        peliculas=peliculasDAO.readAll();
         peliculaAdapter.notifyDataSetChanged();
 
     }
@@ -173,7 +169,6 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
     @Override
     public void actualizarPuntuaciones(String titulo, int puntuacion) {
         actualizarPelicula(titulo, puntuacion);
-        peliculas=peliculasDAO.readAll();
         peliculaAdapter.notifyDataSetChanged();
 
     }
