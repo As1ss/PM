@@ -1,12 +1,16 @@
 package al.if05.practica9;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
@@ -31,6 +35,7 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHo
         return new ViewHolder(view);
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
@@ -38,10 +43,14 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHo
         Context context = holder.itemView.getContext();
 
         int puntuacion = peliculaList.get(position).getPuntuacion();
+        boolean vista = peliculaList.get(position).getVista();
+
         if(puntuacion>0){
             holder.rbPuntuacion.setProgress(puntuacion);
             holder.rbPuntuacion.setVisibility(View.VISIBLE);
+
         }
+
         else{
             holder.rbPuntuacion.setVisibility(View.INVISIBLE);
         }
@@ -50,6 +59,7 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHo
         holder.tvTitulo.setText(peliculaList.get(position).getTitulo());
         holder.lyFilm.setBackgroundResource(context.getResources().getIdentifier(peliculaList.get(position).getImagenFondo(),"drawable",context.getPackageName()));
         holder.tvAutor.setText(peliculaList.get(position).getDirector());
+        holder.tvVista.setVisibility(peliculaList.get(position).getVista()?View.VISIBLE:View.INVISIBLE);
         holder.lyFilm.setOnClickListener(view -> {
             if(itemListener!=null){
                 itemListener.onItemClick(view,position);
@@ -69,6 +79,7 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHo
         private LinearLayout lyFilm;
         private TextView tvAutor;
 
+        private  TextView tvVista;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -77,6 +88,7 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHo
             rbPuntuacion = itemView.findViewById(R.id.rbPuntuacionLista);
             lyFilm = itemView.findViewById(R.id.lyFilmLista);
             tvAutor = itemView.findViewById(R.id.tvAutorLista);
+            tvVista =itemView.findViewById(R.id.tvVista);
 
         }
     }

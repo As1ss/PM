@@ -15,7 +15,8 @@
         android:background="@drawable/abierto_hasta_el_amanecer"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        >
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,6 +50,10 @@
             android:shadowRadius="8"
             android:shadowColor="@color/black"
             android:textStyle="bold"/>
+
+
+
+
     </LinearLayout>
 
 
@@ -64,6 +69,15 @@
         android:stepSize="1"
         android:isIndicator="true"
         />
+        <TextView
+            android:id="@+id/tvVista"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vista"
+            android:textSize="25sp"
+            android:fontFamily="@font/bebasneue_regular"
+            android:textColor="@color/white"
+            android:visibility="invisible"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

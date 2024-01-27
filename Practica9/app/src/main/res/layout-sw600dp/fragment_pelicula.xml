@@ -87,7 +87,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp">
                 <TextView
                     android:layout_marginStart="10dp"
                     android:layout_width="wrap_content"
@@ -106,6 +108,32 @@
                     android:progressTint="@color/yellow"
                     />
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp"
+                >
+                <TextView
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvViewed"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/bebasneue_regular"
+                    android:textSize="50sp"/>
+                <CheckBox
+                    android:id="@+id/cbViewed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:layout_marginLeft="40dp"/>
+            </LinearLayout>
+
+
+
         </LinearLayout>
     </ScrollView>
 
