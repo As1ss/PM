@@ -152,6 +152,7 @@
     <string name="tvTextActores">Actors:</string>
     <string name="tvTextSinopsis">Synopsis:</string>
     <string name="tvRankText" translatable="false">Rank:</string>
+    <string name="tvViewed">Viewed:</string>
     <string name="tvTextAno">Year:</string>
     <string name="tvTextDirector">Director:</string>
     <string name="tvTextTitulo">Title:</string>

@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -56,6 +57,7 @@ public class FragmentPelicula extends Fragment {
         TextView tvActores = view.findViewById(R.id.tvActores);
         TextView tvSinopsis = view.findViewById(R.id.tvSinopsis);
         RatingBar rbPuntuacion = view.findViewById(R.id.rbPuntuacion);
+        CheckBox cbVista = view.findViewById(R.id.cbViewed);
 
         Pelicula pelicula =(Pelicula) bundle.getSerializable("pelicula");
 
@@ -66,20 +68,32 @@ public class FragmentPelicula extends Fragment {
         tvActores.setText("Actores: "+pelicula.getActoresString(pelicula.getActores()));
         tvSinopsis.setText(pelicula.getSinopsis());
         rbPuntuacion.setProgress(pelicula.getPuntuacion());
+        cbVista.setChecked(pelicula.getVista());
+
+        cbVista.setOnClickListener(view1 -> {
+            pelicula.setVista(cbVista.isChecked()==true?true:false);
+            pasarData(pelicula.getTitulo(),(int)pelicula.getPuntuacion(),pelicula.getVista());
+            peliculasDAO.update(pelicula);
+        });
+
 
 
         rbPuntuacion.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
             // Solo pasa la data si la calificación cambió debido a la interacción del usuario
             if (fromUser) {
-                pasarData(pelicula.getTitulo(),(int) rating);
+                pasarData(pelicula.getTitulo(),(int) rating,pelicula.getVista());
                 //Actualizamos la pelicula y guardamos en la base de datos
                   pelicula.setPuntuacion((int)rating);
                   peliculasDAO.update(pelicula);
 
 
 
+
+
             }
         });
+
+
 
 
 
@@ -101,12 +115,12 @@ public class FragmentPelicula extends Fragment {
     }
 
     public interface onFragmentInteractListener{
-        void actualizarPuntuaciones (String titulo,int puntuacion);
+        void actualizarPuntuaciones (String titulo,int puntuacion,boolean vista);
 
     }
-    public void pasarData(String titulo,int puntuacion){
+    public void pasarData(String titulo,int puntuacion,boolean vista){
         if(fListener!=null){
-            fListener.actualizarPuntuaciones(titulo,puntuacion);
+            fListener.actualizarPuntuaciones(titulo,puntuacion,vista);
         }
 
     }

@@ -14,6 +14,7 @@
     <string name="btnVolverText">Volver</string>
     <string name="tvTextActores">Actores:</string>
     <string name="tvTextSinopsis">Sinopsis:</string>
+    <string name="tvViewed">Vista:</string>
     <string name="tvTextAno">Año:</string>
     <string name="tvTextDirector">Director:</string>
     <string name="tvTextTitulo">Titulo:</string>

@@ -12,6 +12,7 @@ public class DetallesActivity extends AppCompatActivity implements FragmentPelic
     private SQLHelper sqlHelper;
     private PeliculasDAO peliculasDAO;
 
+    private MainActivity mainActivity;
 
     Intent intent = new Intent();
     @Override
@@ -36,14 +37,19 @@ public class DetallesActivity extends AppCompatActivity implements FragmentPelic
            onBackPressed();
            finish();
 
+
+
+
        });
     }
 
 
     @Override
-    public void actualizarPuntuaciones(String titulo,int puntuacion) {
+    public void actualizarPuntuaciones(String titulo,int puntuacion,boolean vista) {
         intent.putExtra("tituloFragment",titulo);
         intent.putExtra("puntuacionDesdeFragmento", puntuacion);
+        intent.putExtra("vistaFragment",vista);
+
         setResult(RESULT_OK, intent);
 
 

@@ -49,7 +49,7 @@ public class PeliculasDAO implements CRUDPeliculas  {
             pelicula.setSinopsis(c.getString(5));
             pelicula.setImagenFondo(c.getString(6));
             pelicula.setPuntuacion(c.getInt(7));
-            pelicula.setVista(false);
+            pelicula.setVista((c.getInt(8) ==0) ? false : true); //Exrpresion ternaria para indicar el campo true o false
             peliculas.add(pelicula);
         }
 
@@ -64,10 +64,12 @@ public class PeliculasDAO implements CRUDPeliculas  {
 
     @Override
     public void update(Pelicula pelicula) {
+        int vista = (pelicula.getVista()) ? 1 : 0;
 
         SQLiteDatabase sqlDB = sqlHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("puntuacion",pelicula.getPuntuacion());
+        values.put("vista",vista);
 
         int resultado = sqlDB.update("pelicula",values,"id ="+pelicula.getId(),null);
 

@@ -88,6 +88,11 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
 
     }
 
+    public void cargarPeliculas(){
+        peliculas =peliculasDAO.readAll();
+        peliculaAdapter.notifyDataSetChanged();
+    }
+
     private void cargarComponentes() {
         recyclerView = findViewById(R.id.rvPeliculas);
         spFiltrar = findViewById(R.id.spinnerOpciones);
@@ -141,18 +146,22 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
             // Obtener la puntuación desde DetallesActivity
             int puntuacion = data.getIntExtra("puntuacionDesdeFragmento", 0);
             String titulo = data.getStringExtra("tituloFragment");
-            actualizarPelicula(titulo, puntuacion);
+            Boolean vista = data.getBooleanExtra("vistaFragment",false);
+            actualizarPelicula(titulo, puntuacion,vista);
             peliculaAdapter.notifyDataSetChanged();
         }
     }
 
     //Método implementado con la interfaz del fragment
-    private void actualizarPelicula(String titulo, int puntuacion) {
+    private void actualizarPelicula(String titulo, int puntuacion,boolean vista) {
+
+
 
 
          for (int i = 0; i < peliculas.size(); i++) {
             if (titulo.equalsIgnoreCase(peliculas.get(i).getTitulo())) {
                 peliculas.get(i).setPuntuacion(puntuacion);
+                peliculas.get(i).setVista(vista);
 
             }
         }
@@ -167,8 +176,8 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
 
 
     @Override
-    public void actualizarPuntuaciones(String titulo, int puntuacion) {
-        actualizarPelicula(titulo, puntuacion);
+    public void actualizarPuntuaciones(String titulo, int puntuacion,boolean vista) {
+        actualizarPelicula(titulo, puntuacion,vista);
         peliculaAdapter.notifyDataSetChanged();
 
     }
