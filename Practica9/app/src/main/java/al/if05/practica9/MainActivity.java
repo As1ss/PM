@@ -187,6 +187,13 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
             });
 
         });
+        peliculaAdapter.setBtnBorrarListener(pelicula -> {
+            peliculasDAO.delete(pelicula);
+            cargarPeliculas();
+
+
+
+        });
     }
 
     private void cargarAdapter(RecyclerView recyclerView) {

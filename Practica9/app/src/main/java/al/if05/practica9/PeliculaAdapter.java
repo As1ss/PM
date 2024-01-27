@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -22,6 +23,8 @@ import java.util.List;
 public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHolder>{
     private List<Pelicula> peliculaList;
     private OnItemClickListener itemListener;
+    private BtnBorrarListener btnBorrarListener;
+
 
     public PeliculaAdapter(List<Pelicula> newPeliculaList){
         this.peliculaList=newPeliculaList;
@@ -65,6 +68,12 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHo
                 itemListener.onItemClick(view,position);
             }
         });
+        holder.btnBorrar.setOnClickListener(view -> {
+            if(btnBorrarListener!=null){
+                btnBorrarListener.borrarPelicula(peliculaList.get(position));
+                this.peliculaList.remove(position);
+            }
+        });
 
     }
 
@@ -80,6 +89,7 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHo
         private TextView tvAutor;
 
         private  TextView tvVista;
+        private Button btnBorrar;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -89,6 +99,7 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHo
             lyFilm = itemView.findViewById(R.id.lyFilmLista);
             tvAutor = itemView.findViewById(R.id.tvAutorLista);
             tvVista =itemView.findViewById(R.id.tvVista);
+            btnBorrar =itemView.findViewById(R.id.btnBorrar);
 
         }
     }
@@ -97,10 +108,16 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHo
         public void onItemClick(View view,int position);
     }
 
+    public interface BtnBorrarListener{
+        public void borrarPelicula(Pelicula pelicula);
+    }
 
 
     public void setOnItemClickListener(OnItemClickListener listener){
         this.itemListener=listener;
+    }
+    public void setBtnBorrarListener(BtnBorrarListener listener){
+        this.btnBorrarListener=listener;
     }
 
 }

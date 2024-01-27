@@ -59,6 +59,22 @@ public class PeliculasDAO implements CRUDPeliculas  {
 
     @Override
     public void create(Pelicula pelicula) {
+        int vista = (pelicula.getVista()) ? 1 : 0;
+
+        SQLiteDatabase sqlDB = sqlHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("titulo",pelicula.getTitulo());
+        values.put("director",pelicula.getDirector());
+        values.put("ano",pelicula.getAno());
+        values.put("actores",pelicula.getActores()[0]);
+        values.put("sinopsis",pelicula.getSinopsis());
+        values.put("imagenFondo",pelicula.getImagenFondo());
+        values.put("puntuacion",pelicula.getPuntuacion());
+        values.put("vista",vista);
+
+        long resultado = sqlDB.insert("pelicula",null,values);
+
+        Log.d("RESULTADO","RESULTADO: "+resultado);
 
     }
 
@@ -80,5 +96,9 @@ public class PeliculasDAO implements CRUDPeliculas  {
     @Override
     public void delete(Pelicula pelicula) {
 
+        SQLiteDatabase sqlDB = sqlHelper.getWritableDatabase();
+        int resultado = sqlDB.delete("pelicula","id ="+pelicula.getId(),null);
+
+        Log.d("RESULTADO","RESULTADO: "+resultado);
     }
 }

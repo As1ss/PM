@@ -18,11 +18,20 @@
         app:layout_constraintStart_toStartOf="parent"
         >
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/btnBorrar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="right"
+            android:background="@drawable/baseline_block_24"
+            app:backgroundTint="@color/red"
+            />
 
         <TextView
             android:id="@+id/tvTituloLista"
@@ -37,6 +46,7 @@
             android:shadowDy="8"
             android:shadowRadius="8"
             android:shadowColor="@color/black"/>
+
         <TextView
             android:layout_marginTop="10dp"
             android:id="@+id/tvAutorLista"
@@ -54,11 +64,12 @@
 
 
 
+
     </LinearLayout>
 
 
     <RatingBar
-        android:layout_marginTop="20dp"
+
         android:id="@+id/rbPuntuacionLista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -78,6 +89,7 @@
             android:fontFamily="@font/bebasneue_regular"
             android:textColor="@color/white"
             android:visibility="invisible"/>
+
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
