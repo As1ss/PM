@@ -4,34 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" android:background="@color/black">
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tbTituloApp"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbOperaciones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="@font/bebasneue_regular"
-        android:gravity="center"
-        android:text="@string/tvTextTitleApp"
-        android:textColor="@color/red"
-        android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:id="@+id/tbTituloApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/bebasneue_regular"
+            android:gravity="center"
+            android:text="@string/tvTextTitleApp"
+            android:textColor="@color/red"
+            android:textSize="50sp"
+            tools:ignore="TextContrastCheck" />
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swModoNocturno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:thumb="@drawable/baseline_bedtime_24"
+            />
+
+
+    </androidx.appcompat.widget.Toolbar>
     <LinearLayout
         android:id="@+id/lyFiltrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tbTituloApp">
+        app:layout_constraintTop_toBottomOf="@id/tbOperaciones">
         <Spinner
             android:layout_weight="1"
             android:id="@+id/spinnerOpciones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"
             android:layout_marginTop="3dp"
             android:textAlignment="center"
             android:entries="@array/opcionesFiltrado" />

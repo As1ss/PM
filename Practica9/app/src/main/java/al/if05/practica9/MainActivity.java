@@ -2,17 +2,27 @@ package al.if05.practica9;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Switch;
+import android.widget.Toast;
 
 
 import java.util.ArrayList;
@@ -30,6 +40,11 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
     private List<Pelicula> auxBackup;
     private SQLHelper sqlHelper;
     private PeliculasDAO peliculasDAO;
+    private SwitchCompat swModoNocturno;
+    private Toolbar toolbar;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+    private boolean modoNocturno =false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +53,60 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
         Intent intent = new Intent(this, DetallesActivity.class);
         Bundle bundle = new Bundle();
         cargarComponentes();
+        toolbar = findViewById(R.id.tbOperaciones);
+        setSupportActionBar(toolbar);
         sqlHelper = new SQLHelper(this);
         peliculasDAO = new PeliculasDAO(sqlHelper);
         peliculas = peliculasDAO.readAll();
         auxBackup = peliculas;
         cargarAdapter(recyclerView);
+
+        swModoNocturno= findViewById(R.id.swModoNocturno);
+        sharedPreferences = getPreferences(Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        modoNocturno = sharedPreferences.getBoolean("modoNocturno",false);
+        swModoNocturno.setChecked(sharedPreferences.getBoolean("modoNocturno",false));
+
+
+
+
+
+
+        if (modoNocturno){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
+        }
+        else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+        }
+
+
+
+
+        swModoNocturno.setOnClickListener(view -> {
+
+            // Verificar si el interruptor está activado
+            if (swModoNocturno.isChecked()) {
+                // Activar el modo nocturno
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                modoNocturno=true;
+                editor.putBoolean("modoNocturno",modoNocturno);
+                editor.apply();
+
+            } else {
+                // Desactivar el modo nocturno
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                modoNocturno=false;
+                editor.putBoolean("modoNocturno",modoNocturno);
+                editor.apply();
+
+            }
+
+
+
+
+        });
 
 
 
