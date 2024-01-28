@@ -68,7 +68,7 @@ public class PeliculasDAO implements CRUDPeliculas  {
         values.put("ano",pelicula.getAno());
         values.put("actores",pelicula.getActores()[0]);
         values.put("sinopsis",pelicula.getSinopsis());
-        values.put("imagenFondo",pelicula.getImagenFondo());
+        values.put("imagen",pelicula.getImagenFondo());
         values.put("puntuacion",pelicula.getPuntuacion());
         values.put("vista",vista);
 

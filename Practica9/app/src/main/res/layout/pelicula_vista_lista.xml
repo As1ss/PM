@@ -82,13 +82,15 @@
         />
         <TextView
             android:id="@+id/tvVista"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:text="Vista"
             android:textSize="25sp"
+            android:translationY="-40dp"
             android:fontFamily="@font/bebasneue_regular"
             android:textColor="@color/white"
-            android:visibility="invisible"/>
+            android:visibility="invisible"
+            />
 
 
     </LinearLayout>

@@ -62,7 +62,7 @@ public class PeliculaAdapter extends RecyclerView.Adapter<PeliculaAdapter.ViewHo
         holder.tvTitulo.setText(peliculaList.get(position).getTitulo());
         holder.lyFilm.setBackgroundResource(context.getResources().getIdentifier(peliculaList.get(position).getImagenFondo(),"drawable",context.getPackageName()));
         holder.tvAutor.setText(peliculaList.get(position).getDirector());
-        holder.tvVista.setVisibility(peliculaList.get(position).getVista()?View.VISIBLE:View.INVISIBLE);
+        holder.tvVista.setVisibility(vista?View.VISIBLE:View.INVISIBLE);
         holder.lyFilm.setOnClickListener(view -> {
             if(itemListener!=null){
                 itemListener.onItemClick(view,position);

@@ -18,12 +18,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
+            android:layout_marginLeft="80dp"
+            android:scaleY="4"
+            android:scaleX="4"
             android:thumb="@drawable/baseline_bedtime_24"
             />
 
         <TextView
             android:id="@+id/tbTituloApp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/bebasneue_regular"
@@ -35,6 +38,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="TextContrastCheck" />
+        <Button
+            android:id="@+id/btnAgregar"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_gravity="right"
+            android:background="@drawable/baseline_add_circle_outline_24"
+            app:backgroundTint="#1F770B"/>
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout

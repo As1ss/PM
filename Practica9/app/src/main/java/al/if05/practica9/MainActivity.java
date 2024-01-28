@@ -1,6 +1,9 @@
 package al.if05.practica9;
 
+import static com.google.android.material.internal.ViewUtils.hideKeyboard;
+
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SwitchCompat;
@@ -9,6 +12,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,7 +22,10 @@ import android.content.res.Configuration;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -44,44 +51,46 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
     private Toolbar toolbar;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
-    private boolean modoNocturno =false;
+    private boolean modoNocturno = false;
+
+    private Button btnAgregar;
+    private Intent intent;
+    private Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent = new Intent(this, DetallesActivity.class);
-        Bundle bundle = new Bundle();
+        intent = new Intent(this, DetallesActivity.class);
+         bundle = new Bundle();
         cargarComponentes();
         toolbar = findViewById(R.id.tbOperaciones);
+        btnAgregar = findViewById(R.id.btnAgregar);
         setSupportActionBar(toolbar);
         sqlHelper = new SQLHelper(this);
         peliculasDAO = new PeliculasDAO(sqlHelper);
+
         peliculas = peliculasDAO.readAll();
         auxBackup = peliculas;
         cargarAdapter(recyclerView);
 
-        swModoNocturno= findViewById(R.id.swModoNocturno);
+        swModoNocturno = findViewById(R.id.swModoNocturno);
         sharedPreferences = getPreferences(Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
-        modoNocturno = sharedPreferences.getBoolean("modoNocturno",false);
-        swModoNocturno.setChecked(sharedPreferences.getBoolean("modoNocturno",false));
+        modoNocturno = sharedPreferences.getBoolean("modoNocturno", false);
+        swModoNocturno.setChecked(sharedPreferences.getBoolean("modoNocturno", false));
 
 
-
-
-
-
-        if (modoNocturno){
+        if (modoNocturno) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
 
-        }
-        else{
+        } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         }
-
-
+        btnAgregar.setOnClickListener(view -> {
+            showAddMovieDialog();
+        });
 
 
         swModoNocturno.setOnClickListener(view -> {
@@ -90,24 +99,21 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
             if (swModoNocturno.isChecked()) {
                 // Activar el modo nocturno
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                modoNocturno=true;
-                editor.putBoolean("modoNocturno",modoNocturno);
+                modoNocturno = true;
+                editor.putBoolean("modoNocturno", modoNocturno);
                 editor.apply();
 
             } else {
                 // Desactivar el modo nocturno
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                modoNocturno=false;
-                editor.putBoolean("modoNocturno",modoNocturno);
+                modoNocturno = false;
+                editor.putBoolean("modoNocturno", modoNocturno);
                 editor.apply();
 
             }
 
 
-
-
         });
-
 
 
         if (isTablet()) {
@@ -152,8 +158,76 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
 
     }
 
-    public void cargarPeliculas(){
-        peliculas =peliculasDAO.readAll();
+    private void showAddMovieDialog() {
+
+        Toast.makeText(this, "DIALGOO PAWNEADO", Toast.LENGTH_SHORT).show();
+        // Inflar el diseño del cuadro de diálogo
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_crear_pelicula, null);
+
+        // Obtener referencias a los elementos del diseño del cuadro de diálogo
+        EditText editTextTitle = dialogView.findViewById(R.id.etTitle);
+        EditText editTextDirector = dialogView.findViewById(R.id.etDirector);
+        EditText editTextYear = dialogView.findViewById(R.id.etYear);
+        EditText editTextActors = dialogView.findViewById(R.id.etActores);
+        EditText editTextSinopsis = dialogView.findViewById(R.id.etSinopsis);
+
+        Button btnAddMovie = dialogView.findViewById(R.id.btnAddMovie);
+
+        // Crear el cuadro de diálogo
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(dialogView);
+        builder.setTitle("Agregar Película");
+
+
+
+        // Configurar el botón Agregar Película
+        Dialog dialog = builder.create();
+        btnAddMovie.setOnClickListener(v -> {
+            // Obtener los valores de los campos
+            String title = editTextTitle.getText().toString();
+            String year = editTextYear.getText().toString();
+            String director = editTextDirector.getText().toString();
+            String actors = editTextActors.getText().toString();
+            String sinopsis = editTextSinopsis.getText().toString();
+            String imagenFondo = "movie";
+            int puntuacion = 0;
+            boolean vista = false;
+
+            Pelicula pelicula = new Pelicula();
+            pelicula.setTitulo(title);
+            pelicula.setDirector(director);
+            pelicula.setAno(year);
+            pelicula.setActores(new String[]{actors});
+            pelicula.setSinopsis(sinopsis);
+            pelicula.setPuntuacion(puntuacion);
+            pelicula.setVista(vista);
+            pelicula.setImagenFondo(imagenFondo);
+            peliculasDAO.create(pelicula);
+
+
+           cargarPeliculas();
+
+           cargarAdapter(recyclerView);
+           adatperEvent(intent, bundle);
+
+
+            Toast.makeText(this, "Película añadida", Toast.LENGTH_SHORT).show();
+            // Cerrar el cuadro de diálogo
+
+
+           dialog.dismiss();
+
+
+        });
+
+        // Mostrar el cuadro de diálogo
+        dialog.show();
+
+    }
+
+
+    public void cargarPeliculas() {
+        peliculas = peliculasDAO.readAll();
         peliculaAdapter.notifyDataSetChanged();
     }
 
@@ -190,9 +264,6 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
         peliculaAdapter.setBtnBorrarListener(pelicula -> {
             peliculasDAO.delete(pelicula);
             cargarPeliculas();
-
-
-
         });
     }
 
@@ -217,19 +288,17 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
             // Obtener la puntuación desde DetallesActivity
             int puntuacion = data.getIntExtra("puntuacionDesdeFragmento", 0);
             String titulo = data.getStringExtra("tituloFragment");
-            Boolean vista = data.getBooleanExtra("vistaFragment",false);
-            actualizarPelicula(titulo, puntuacion,vista);
+            Boolean vista = data.getBooleanExtra("vistaFragment", false);
+            actualizarPelicula(titulo, puntuacion, vista);
             peliculaAdapter.notifyDataSetChanged();
         }
     }
 
     //Método implementado con la interfaz del fragment
-    private void actualizarPelicula(String titulo, int puntuacion,boolean vista) {
+    private void actualizarPelicula(String titulo, int puntuacion, boolean vista) {
 
 
-
-
-         for (int i = 0; i < peliculas.size(); i++) {
+        for (int i = 0; i < peliculas.size(); i++) {
             if (titulo.equalsIgnoreCase(peliculas.get(i).getTitulo())) {
                 peliculas.get(i).setPuntuacion(puntuacion);
                 peliculas.get(i).setVista(vista);
@@ -243,12 +312,9 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
     }
 
 
-
-
-
     @Override
-    public void actualizarPuntuaciones(String titulo, int puntuacion,boolean vista) {
-        actualizarPelicula(titulo, puntuacion,vista);
+    public void actualizarPuntuaciones(String titulo, int puntuacion, boolean vista) {
+        actualizarPelicula(titulo, puntuacion, vista);
         peliculaAdapter.notifyDataSetChanged();
 
     }

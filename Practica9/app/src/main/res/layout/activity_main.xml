@@ -30,6 +30,13 @@
             android:text=""
             android:thumb="@drawable/baseline_bedtime_24"
             />
+        <Button
+            android:id="@+id/btnAgregar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="right"
+            android:background="@drawable/baseline_add_circle_outline_24"
+            app:backgroundTint="#1F770B"/>
 
 
     </androidx.appcompat.widget.Toolbar>

@@ -1,0 +1,50 @@
+<!-- res/layout/dialog_add_movie.xml -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:hint="Título de la película"/>
+    <EditText
+        android:id="@+id/etDirector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:hint="Director"/>
+
+    <EditText
+        android:id="@+id/etYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:hint="Año de lanzamiento"/>
+    <EditText
+        android:id="@+id/etActores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:hint="Actores"/>
+    <EditText
+        android:id="@+id/etSinopsis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:hint="Sinopsis"/>
+
+
+
+
+    <Button
+        android:id="@+id/btnAddMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar Película"/>
+</LinearLayout>
