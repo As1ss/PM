@@ -120,6 +120,9 @@ public class MainActivity extends AppCompatActivity implements FragmentPelicula.
             // Si es una tablet, establece la orientación en landscape
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         }
+        else{
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
         adatperEvent(intent, bundle);
 
 
